@@ -4,13 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ведение Google Ads — M:E agency · Прага</title>
-<script data-cfasync="false">
-function setCookie(n,v,d){var e=new Date();e.setTime(e.getTime()+(d*24*60*60*1000));document.cookie=n+"="+v+";expires="+e.toUTCString()+";path=/;SameSite=Lax"}
-function getCookie(n){var a=document.cookie.split(';');for(var i=0;i<a.length;i++){var x=a[i].trim();if(x.indexOf(n+"=")===0)return x.substring(n.length+1)}return null}
-function loadGA(){var s=document.createElement('script');s.src='https://www.googletagmanager.com/gtag/js?id=G-SPKHXMCQGM';s.async=true;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','G-SPKHXMCQGM')}
-if(getCookie('cookie_consent')==='yes')loadGA();
-</script>
-<meta name="description" content="Профессиональная настройка и ведение Google Ads в Праге. От 320€/мес.">
+<meta name="description" content="Профессиональная настройка и ведение кампаний в Google Ads в Праге. От 320€/мес.">
 <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -511,21 +505,76 @@ footer{background:var(--burg);padding:32px 48px;display:flex;align-items:center;
     <button id="cb-accept" style="background:#E8941A;border:none;color:#fff;padding:10px 20px;cursor:pointer;font-size:13px;font-family:'Inter',sans-serif;font-weight:700">Принять</button>
   </div>
 </div>
+
 <script data-cfasync="false">
-(function(){
-  var b=document.getElementById('cookie-banner');
-  if(getCookie('cookie_consent')===null){b.style.display='flex';}
-  document.getElementById('cb-accept').addEventListener('click',function(){
-    setCookie('cookie_consent','yes',365);
-    b.style.display='none';
-    loadGA();
-  });
-  document.getElementById('cb-reject').addEventListener('click',function(){
-    setCookie('cookie_consent','no',365);
-    b.style.display='none';
-  });
+(function() {
+    var banner = document.getElementById('cookie-banner');
+    var acceptBtn = document.getElementById('cb-accept');
+    var rejectBtn = document.getElementById('cb-reject');
+    var cookieName = 'cookie_consent';
+
+    // Функция записи согласия
+    function setConsent(v, d) {
+        var e = new Date();
+        e.setTime(e.getTime() + (d * 24 * 60 * 60 * 1000));
+        document.cookie = cookieName + "=" + v + ";expires=" + e.toUTCString() + ";path=/;SameSite=Lax";
+    }
+
+    // Функция проверки согласия
+    function getConsent() {
+        var nameEQ = cookieName + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i].trim();
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // Функция загрузки GA4 (строго по правилам GDPR)
+    function loadGA() {
+        if (window.gaLoaded) return; 
+        window.gaLoaded = true;
+
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SPKHXMCQGM';
+        s.async = true;
+        document.head.appendChild(s);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-SPKHXMCQGM');
+    }
+
+    var currentStatus = getConsent();
+
+    // Если уже есть согласие — грузим GA4 сразу, баннер не показываем
+    if (currentStatus === 'yes') {
+        loadGA();
+    } 
+    // Если решения ещё нет — показываем баннер
+    else if (currentStatus === null) {
+        banner.style.display = 'flex';
+    }
+
+    // Клик на «Принять»
+    acceptBtn.addEventListener('click', function() {
+        setConsent('yes', 365);
+        banner.style.display = 'none';
+        loadGA();
+    });
+
+    // Клик на «Отклонить»
+    rejectBtn.addEventListener('click', function() {
+        setConsent('no', 365);
+        banner.style.display = 'none';
+    });
 })();
 </script>
 
+</body>
+</html>
 </body>
 </html>
