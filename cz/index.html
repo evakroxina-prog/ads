@@ -823,7 +823,7 @@ html.form-modal-open{overflow:hidden}
     </a>
     <div class="site-footer__middle">
       <div class="site-footer__links" role="navigation" aria-label="Další služby M:E">
-        <a href="https://consult.marketexpert.cz/cz/" target="_blank" rel="noopener noreferrer">Konzultace</a>
+        <a href="https://consult.marketexpert.cz" target="_blank" rel="noopener noreferrer">Konzultace</a>
         <a href="https://reputation.marketexpert.cz" target="_blank" rel="noopener noreferrer">Reputace</a>
         <a href="https://landing.marketexpert.cz" target="_blank" rel="noopener noreferrer">Landing pages</a>
       </div>
@@ -1144,6 +1144,14 @@ html.form-modal-open{overflow:hidden}
       return res.json().then(function(data){ return { ok: res.ok, data: data }; }).catch(function(){ return { ok: res.ok, data: {} }; });
     }).then(function(r){
       if (r.ok) {
+        var langInput = form.querySelector('input[name="jazyk"]');
+        var pkgInput = form.querySelector('input[name="balicek"]:checked');
+        if (typeof window.trackLeadConversion === 'function') {
+          window.trackLeadConversion({
+            language: langInput ? langInput.value : 'CZ',
+            package_name: pkgInput ? pkgInput.value : ''
+          });
+        }
         btn.innerHTML = '<span>✓ Žádost odeslána</span>';
         btn.classList.add('is-submitted');
         form.reset();
