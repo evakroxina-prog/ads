@@ -5,6 +5,7 @@
  * Опционально в <head>:
  *   window.__GA4_MEASUREMENT_ID__ = 'G-SPKHXMCQGM';
  *   window.__GA4_ADS_ID__ = 'AW-11432613975';  // только для РК-лендингов
+ *   window.__GA4_ADS_LEAD_SEND_TO__ = 'AW-11432613975/XXXXXXXX';  // метка конверсии из Google Ads
  */
 (function () {
   var COOKIE_KEY = 'cookie_consent';
@@ -52,6 +53,42 @@
 
   window.loadGA = loadGA4;
   window.loadGA4 = loadGA4;
+
+  function leadSendTo() {
+    var raw = typeof window.__GA4_ADS_LEAD_SEND_TO__ === 'string'
+      ? window.__GA4_ADS_LEAD_SEND_TO__.trim()
+      : '';
+    return /^AW-\d+\/.+$/i.test(raw) ? raw : null;
+  }
+
+  function trackLeadConversion(meta) {
+    if (getConsent() !== 'yes') return;
+    if (!window.__ga4Loaded) loadGA4();
+    if (typeof window.gtag !== 'function') return;
+
+    var data = meta || {};
+    var language = data.language || document.documentElement.lang || '';
+    var packageName = data.package_name || '';
+
+    window.gtag('event', 'generate_lead', {
+      currency: 'EUR',
+      value: 1,
+      lead_source: 'landing_form',
+      language: language,
+      package_name: packageName
+    });
+
+    var sendTo = leadSendTo();
+    if (sendTo) {
+      window.gtag('event', 'conversion', {
+        send_to: sendTo,
+        value: 1,
+        currency: 'EUR'
+      });
+    }
+  }
+
+  window.trackLeadConversion = trackLeadConversion;
 
   function getConsent() {
     try {

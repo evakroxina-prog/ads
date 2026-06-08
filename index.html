@@ -1145,6 +1145,14 @@ html.form-modal-open{overflow:hidden}
       return res.json().then(function(data){ return { ok: res.ok, data: data }; }).catch(function(){ return { ok: res.ok, data: {} }; });
     }).then(function(r){
       if (r.ok) {
+        var langInput = form.querySelector('input[name="jazyk"]');
+        var pkgInput = form.querySelector('input[name="balicek"]:checked');
+        if (typeof window.trackLeadConversion === 'function') {
+          window.trackLeadConversion({
+            language: langInput ? langInput.value : 'RU',
+            package_name: pkgInput ? pkgInput.value : ''
+          });
+        }
         btn.innerHTML = '<span>✓ Заявка отправлена</span>';
         btn.classList.add('is-submitted');
         form.reset();
