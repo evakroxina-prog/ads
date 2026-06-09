@@ -95,6 +95,80 @@ html[lang=ru] .hero h1{font-size:clamp(28px,2.9vw,44px)}
 .btn-gold:hover{background:var(--gold-l)}
 .btn-burg{border:2px solid var(--burg);color:var(--burg);padding:12px 26px;border-radius:4px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .2s}
 .btn-burg:hover{background:var(--burg);color:#fff}
+.sit-s{background:var(--burg)}
+.sit-in{max-width:700px;margin:0 auto 52px;text-align:center}
+.sit-in .tline{margin:10px auto 24px}
+.sit-in h2{color:#fff}
+.sit-in .lead{color:rgba(255,255,255,.45);margin:0 auto}
+.sit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:1100px;margin:0 auto}
+.sit-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);padding:28px 24px;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,border-color .35s ease,background .35s ease}
+.sit-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(245,168,0,.16) 0%,rgba(255,255,255,.04) 45%,transparent 72%);opacity:0;transition:opacity .4s ease;pointer-events:none;z-index:0}
+.sit-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transform:scaleX(0);transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1);z-index:1}
+.sit-card>*{position:relative;z-index:1}
+.sit-card h3{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:var(--gold);line-height:1.4;margin-bottom:12px;transition:color .3s ease}
+.sit-card p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;transition:color .3s ease}
+.sit-card:hover{transform:translateY(-8px);border-color:rgba(245,168,0,.38);background:rgba(255,255,255,.08);box-shadow:0 18px 44px rgba(0,0,0,.28),0 0 0 1px rgba(245,168,0,.14)}
+.sit-card:hover::before{opacity:1}
+.sit-card:hover::after{opacity:1;transform:scaleX(1)}
+.sit-card:hover h3{color:var(--gold-l)}
+.sit-card:hover p{color:rgba(255,255,255,.68)}
+.sit-s.sit-js .sit-in>*{opacity:0;transform:translateY(22px)}
+.sit-s.sit-js.is-visible .sit-in>*{opacity:1;transform:none;transition:opacity .65s ease,transform .65s cubic-bezier(.22,1,.36,1)}
+.sit-s.sit-js.is-visible .sit-in .stag{transition-delay:.05s}
+.sit-s.sit-js.is-visible .sit-in .tline{transition-delay:.12s}
+.sit-s.sit-js.is-visible .sit-in h2{transition-delay:.2s}
+.sit-s.sit-js.is-visible .sit-in .lead{transition-delay:.28s}
+.sit-s.sit-js .sit-card{opacity:0;transform:translateY(36px)}
+.sit-s.sit-js.is-visible .sit-card{animation:sitCardIn .72s cubic-bezier(.22,1,.36,1) both}
+.sit-s.sit-js.is-visible .sit-card:nth-child(1){animation-delay:.1s}
+.sit-s.sit-js.is-visible .sit-card:nth-child(2){animation-delay:.18s}
+.sit-s.sit-js.is-visible .sit-card:nth-child(3){animation-delay:.26s}
+.sit-s.sit-js.is-visible .sit-card:nth-child(4){animation-delay:.34s}
+.sit-s.sit-js.is-visible .sit-card:nth-child(5){animation-delay:.42s}
+.sit-s.sit-js.is-visible .sit-card:nth-child(6){animation-delay:.5s}
+@keyframes sitCardIn{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.sit-card:hover{transform:none;box-shadow:none}.sit-s.sit-js .sit-in>*,.sit-s.sit-js .sit-card,.sit-s.sit-js.is-visible .sit-card{opacity:1;transform:none;animation:none;transition:none}}
+section.lm-guide{background:linear-gradient(128deg,#fff4cc 0%,#ffe08a 36%,#ffc233 70%,#f5a800 100%);padding:20px 40px 20px 28px;border-top:3px solid var(--burg);border-bottom:3px solid var(--burg);position:relative;overflow:hidden}
+section.lm-guide::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 75% 55% at 10% 50%,rgba(255,255,255,.42) 0%,transparent 68%);pointer-events:none}
+.lm-guide-in{position:relative;z-index:1;max-width:1160px;margin:0 auto;display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(16px,2.2vw,28px);align-items:center}
+.lm-guide-media{flex-shrink:0;width:clamp(210px,23vw,310px);margin:0;display:flex;align-self:center;justify-content:flex-start}
+.lm-guide-cover-wrap{width:100%;overflow:visible;background:transparent;display:flex;align-items:center;justify-content:flex-start}
+.lm-guide-cover{display:block;width:100%;height:auto;max-height:min(270px,36vh);object-fit:contain;object-position:left center;filter:drop-shadow(0 10px 24px rgba(66,15,28,.28))}
+.lm-guide-body{display:flex;flex-direction:column;justify-content:center;align-self:center;min-width:0;padding:4px 0}
+.lm-guide-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.1vw,38px);color:var(--burg);line-height:1.12;margin-bottom:12px;max-width:none;letter-spacing:-.02em}
+@media(min-width:1024px){.lm-guide-title{font-size:36px}}
+.lm-guide-desc{font-size:clamp(14px,1.5vw,17px);font-weight:500;color:var(--burg-mid);line-height:1.55;margin-bottom:16px;max-width:560px}
+@keyframes lm-guide-btn-glow{0%,100%{box-shadow:0 6px 20px rgba(66,15,28,.2),0 0 0 0 rgba(255,194,51,0)}50%{box-shadow:0 10px 28px rgba(66,15,28,.3),0 0 0 3px rgba(255,194,51,.55),0 0 22px rgba(245,168,0,.4)}}
+.lm-guide-btn{background:var(--burg);color:#fff;border:none;padding:12px 26px;border-radius:4px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:background .2s,box-shadow .2s,transform .2s;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;animation:lm-guide-btn-glow 2.2s ease-in-out infinite}
+.lm-guide-btn:hover{background:var(--burg-mid);animation:none;box-shadow:0 10px 30px rgba(66,15,28,.32),0 0 18px rgba(245,168,0,.35);transform:translateY(-1px)}
+@media(prefers-reduced-motion:reduce){.lm-guide-btn{animation:none}}
+.lm-guide-note{font-size:10.5px;color:rgba(66,15,28,.58);margin-top:10px;line-height:1.4;max-width:480px}
+.checklist-form-audit{margin-top:12px;font-size:12px;color:rgba(247,242,234,.55);line-height:1.45}
+.checklist-form-audit a{color:var(--gold);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.checklist-form-audit a:hover{color:var(--gold-l)}
+.checklist-scroll-trigger{height:1px;width:100%;margin:0;padding:0;border:0;pointer-events:none;visibility:hidden}
+.form-modal-panel.checklist-panel{max-width:392px;padding:0;overflow:hidden;display:flex;flex-direction:column}
+.checklist-cover{height:88px;overflow:hidden;line-height:0;flex-shrink:0;background:#0e0609}
+.checklist-cover img{width:100%;height:100%;object-fit:cover;object-position:14% center;display:block}
+.checklist-panel-body{padding:16px 18px 18px;overflow-y:auto}
+.checklist-intro{font-size:13px;color:rgba(247,242,234,.62);line-height:1.55;margin-bottom:14px}
+.checklist-form .field{margin-bottom:10px}
+.checklist-form .field label{display:block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(247,242,234,.45);margin-bottom:5px}
+.checklist-form .field input{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:11px 12px;font-size:13px;color:#fff;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s,background .2s}
+.checklist-form .field input:focus{border-color:var(--gold);background:rgba(255,255,255,.1)}
+.checklist-form .field input::placeholder{color:rgba(247,242,234,.3)}
+.checklist-head{font-family:'Playfair Display',serif;font-size:clamp(17px,4.2vw,21px);color:#fff;margin-bottom:6px;line-height:1.25}
+.checklist-form .form-submit{padding:14px;font-size:12px;border-radius:8px}
+.checklist-form .form-note{font-size:11px;margin-top:8px;line-height:1.45}
+.checklist-form-audit{margin-top:12px;font-size:12px;line-height:1.4}
+.checklist-form-audit a{color:var(--gold);font-weight:600;text-decoration:none}
+.checklist-form-audit a:hover{text-decoration:underline}
+.checklist-success{text-align:center;padding:0}
+.checklist-success h3{font-family:'Playfair Display',serif;font-size:20px;color:#fff;margin-bottom:10px}
+.checklist-success p{font-size:13px;color:rgba(247,242,234,.65);line-height:1.55;margin-bottom:16px}
+.checklist-success .form-submit{display:inline-flex;width:100%;text-decoration:none;margin-bottom:10px;padding:14px;font-size:12px;border-radius:8px}
+.checklist-success .btn-audit{display:inline-block;font-size:12px;font-weight:600;color:var(--gold);text-decoration:none}
+.checklist-success .btn-audit:hover{text-decoration:underline}
 .btn-open{display:inline-block;padding:12px 28px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border:2px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;transition:all .2s}
 .btn-open:hover{border-color:var(--gold);color:var(--gold)}
 .pbtn-o{display:block;width:100%;text-align:center;margin-top:28px;padding:13px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:2px solid rgba(255,255,255,.2);color:#fff;text-decoration:none;transition:all .2s}
@@ -345,6 +419,17 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,46px);line-he
 .form-modal-body .form-box{padding:0;border:none;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
 .form-modal-body .form-box::before{display:none}
 html.form-modal-open{overflow:hidden}
+.checklist-drawer{align-items:flex-end;justify-content:center;padding:12px}
+.checklist-drawer .form-modal-overlay{background:rgba(26,26,26,.42);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.checklist-drawer .form-modal-panel.checklist-panel{width:100%;max-width:min(392px,calc(100vw - 24px));height:auto;max-height:min(90vh,560px);min-height:0;border-radius:14px;border-right:none;transform:translateY(calc(100% + 20px));transition:transform .3s cubic-bezier(.32,.72,0,1);animation:none;box-shadow:0 16px 48px rgba(0,0,0,.35)}
+.checklist-drawer.is-open .form-modal-panel.checklist-panel{transform:translateY(0)}
+.checklist-drawer .form-modal-x.checklist-x{top:8px;right:8px;z-index:2;background:rgba(0,0,0,.5)}
+@media(min-width:640px){
+  .checklist-drawer{align-items:center;justify-content:flex-end;padding:12px 0 12px 12px}
+  .checklist-drawer .form-modal-panel.checklist-panel{max-height:min(calc(100vh - 24px),560px);border-radius:14px 0 0 14px;transform:translateX(100%);box-shadow:-12px 0 48px rgba(0,0,0,.28)}
+  .checklist-drawer.is-open .form-modal-panel.checklist-panel{transform:translateX(0)}
+}
+@media(prefers-reduced-motion:reduce){.checklist-drawer .form-modal-panel.checklist-panel{transition:none}}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 .rev-s{background:var(--burg);position:relative;overflow:hidden}
 .rev-intro{max-width:700px;margin:0 auto 48px;text-align:center}
@@ -364,7 +449,7 @@ html.form-modal-open{overflow:hidden}
 .rev-avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(245,168,0,.4);flex-shrink:0}
 .rev-who{font-size:13px;font-weight:600;color:#fff}
 .rev-co{font-size:11.5px;color:rgba(255,255,255,.45);margin-top:2px}
-@media(max-width:1024px){.pgrid{grid-template-columns:1fr 1fr}.rev-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:1024px){.pgrid{grid-template-columns:1fr 1fr}.rev-grid{grid-template-columns:1fr 1fr}.sit-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:960px){
   nav{padding:0 16px 0 20px}
   .nav-toggle{display:flex}
@@ -401,9 +486,17 @@ html.form-modal-open{overflow:hidden}
   .audit-in{grid-template-columns:1fr;gap:32px}.audit-card{padding:32px 24px}
   .onetime-grid{grid-template-columns:1fr}
   .extras{padding:28px 24px}
+  section.lm-guide{padding:16px 20px}
+  .lm-guide-in{grid-template-columns:1fr;gap:14px;align-items:stretch}
+  .lm-guide-media{width:100%;max-width:280px;margin:0 auto}
+  .lm-guide-cover-wrap{justify-content:center}
+  .lm-guide-cover{max-height:230px;object-position:center}
+  .lm-guide-body{justify-content:flex-start;padding:0;text-align:center;align-items:center}
+  .lm-guide-desc,.lm-guide-note{max-width:none}
+  .lm-guide-btn{width:100%;justify-content:center}
 }
 @media(max-width:640px){
-  .pgrid,.srv-grid,.egrid,.fw-grid,.form-grid{grid-template-columns:1fr}
+  .pgrid,.srv-grid,.egrid,.fw-grid,.form-grid,.sit-grid{grid-template-columns:1fr}
   .eitem:nth-last-child(-n+2){border-bottom:1px solid rgba(255,255,255,.06)}
   .eitem:last-child{border-bottom:none}
   .stat-strip{padding:12px 16px}
@@ -548,6 +641,34 @@ html.form-modal-open{overflow:hidden}
   </div>
 </section>
 
+<section class="sit-s" id="situations">
+  <div class="sit-in"><div class="stag">Знакомые ситуации</div><div class="tline"></div><h2>С какими проблемами приходят</h2><p class="lead">Вы не первый, кто с этим сталкивается — и это решаемо.</p></div>
+  <div class="sit-grid">
+    <div class="sit-card"><h3>«Хочу запустить рекламу, но не знаю с чего начать»</h3><p>Поможем пройти путь от нуля до первых результатов без лишних рисков.</p></div>
+    <div class="sit-card"><h3>«Трачу на рекламу, но клиентов не становится больше»</h3><p>Разберём, куда уходит бюджет и какие кампании реально работают.</p></div>
+    <div class="sit-card"><h3>«Сливаем бюджет, а заявок нет»</h3><p>Проведём аудит, найдём технические ошибки и остановим потери.</p></div>
+    <div class="sit-card"><h3>«Работали с агентством — результата не было»</h3><p>Разберём что шло не так, сделаем по-другому. Объясняем каждый шаг.</p></div>
+    <div class="sit-card"><h3>«Отчёты есть, но не понимаю — есть ли результат»</h3><p>Настроим аналитику и переведём отчёты на язык денег: лид, ROMI, прибыль.</p></div>
+    <div class="sit-card"><h3>«Хочу масштабировать, но боюсь потерять контроль»</h3><p>Выстроим систему, где понятно что делается, зачем и какой это даёт результат.</p></div>
+  </div>
+</section>
+
+<section class="lm-guide" aria-label="Бесплатный чек-лист">
+  <div class="lm-guide-in">
+    <div class="lm-guide-media">
+      <div class="lm-guide-cover-wrap">
+        <img class="lm-guide-cover" src="files/planshet2-removebg.png" alt="Гайд на планшете: 10 ошибок Google Ads в Чехии" width="800" height="1200" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <div class="lm-guide-body">
+      <h2 class="lm-guide-title">Сливаете бюджет на Google Ads в Чехии?</h2>
+      <p class="lm-guide-desc">Скачайте чек-лист «10 критических ошибок» и проверьте подрядчика за 10 минут — до того, как начали тратить деньги на рекламу.</p>
+      <button type="button" class="lm-guide-btn" data-open-checklist>Скачать чек-лист <span aria-hidden="true">&#8594;</span></button>
+      <p class="lm-guide-note">Укажите email — пришлём копию гайда. PDF откроется сразу после отправки.</p>
+    </div>
+  </div>
+</section>
+
 <section class="proc-s" id="process">
   <div class="proc-in">
     <div class="proc-intro">
@@ -615,6 +736,7 @@ html.form-modal-open{overflow:hidden}
       <a href="#order" class="pbtn-o" data-pkg="skala">Выбрать Масштаб</a>
     </div>
   </div>
+  <div id="checklistScrollTrigger" class="checklist-scroll-trigger" aria-hidden="true"></div>
 
   <div class="pgroup-ttl">▸ Разовые <span>услуги</span></div>
   <div class="onetime-grid">
@@ -996,6 +1118,24 @@ html.form-modal-open{overflow:hidden}
 </script>
 <script>
 (function(){
+  var section = document.querySelector('.sit-s');
+  if (!section) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+  section.classList.add('sit-js');
+  if (!('IntersectionObserver' in window)) { section.classList.add('is-visible'); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (!entry.isIntersecting) return;
+      section.classList.add('is-visible');
+      io.unobserve(section);
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+  io.observe(section);
+})();
+</script>
+<script>
+(function(){
   var section = document.querySelector('.proc-s');
   var track = document.querySelector('.proc-track');
   var fill = document.getElementById('procLineFill');
@@ -1072,6 +1212,45 @@ html.form-modal-open{overflow:hidden}
 </script>
 <script src="me-analytics.js"></script>
 
+<div class="form-modal checklist-drawer" id="checklistModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="checklistTitle">
+  <div class="form-modal-overlay" data-close-checklist></div>
+  <div class="form-modal-panel checklist-panel">
+    <button type="button" class="form-modal-x checklist-x" data-close-checklist aria-label="Закрыть">&#10005;</button>
+    <div class="checklist-cover" aria-hidden="true">
+      <img src="files/guide-checklist-side.png" alt="" width="1344" height="768" loading="lazy" decoding="async">
+    </div>
+    <div class="checklist-panel-body">
+      <div id="checklistFormBlock">
+        <h2 class="checklist-head" id="checklistTitle">Сливаете бюджет на Google Ads в&nbsp;Чехии?</h2>
+        <p class="checklist-intro">Скачайте чек-лист «10 критических ошибок в Google Ads» и проверьте подрядчика за 10 минут.</p>
+        <form id="checklistForm" class="checklist-form" action="https://formspree.io/f/xaqzjoen" method="POST">
+          <input type="hidden" name="_subject" value="Чек-лист Google Ads — RU лендинг">
+          <input type="hidden" name="lead_type" value="checklist">
+          <input type="hidden" name="jazyk" value="RU">
+          <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="field">
+            <label for="checklistName">Ваше имя</label>
+            <input type="text" id="checklistName" name="name" placeholder="Как к вам обращаться?" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="checklistEmail">Email</label>
+            <input type="email" id="checklistEmail" name="email" placeholder="you@company.com" required autocomplete="email">
+          </div>
+          <button type="submit" class="form-submit checklist-submit"><span>Скачать чек-лист</span><span class="arrow">&#8594;</span></button>
+          <p class="form-note">Укажите email — пришлём копию гайда. PDF откроется сразу после отправки. Без спама.</p>
+          <p class="checklist-form-audit"><a href="#order" data-pkg="audit">Оставьте заявку на аудит &#8594;</a></p>
+        </form>
+      </div>
+      <div id="checklistSuccessBlock" class="checklist-success" hidden>
+        <h3>Готово!</h3>
+        <p>Чек-лист открыт в новой вкладке. Копию пришлём на ваш email. Если файл не открылся — нажмите кнопку ниже.</p>
+        <a href="files/checklist-google-ads-cz.pdf" class="form-submit" target="_blank" rel="noopener noreferrer">Открыть PDF ещё раз</a>
+        <a href="#order" class="btn-audit" data-pkg="audit">Оставить заявку на аудит &#8594;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="form-modal" id="formModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="leadFormTitle">
   <div class="form-modal-overlay" data-close-form></div>
   <div class="form-modal-panel">
@@ -1113,7 +1292,16 @@ html.form-modal-open{overflow:hidden}
   }
   document.addEventListener('click', function(e) {
     var link = e.target.closest('a[href="#order"]');
-    if (link) { e.preventDefault(); openModal(link.getAttribute('data-pkg')); return; }
+    if (link) {
+      e.preventDefault();
+      var checklistModal = document.getElementById('checklistModal');
+      if (checklistModal && checklistModal.classList.contains('is-open')) {
+        checklistModal.classList.remove('is-open');
+        checklistModal.setAttribute('aria-hidden', 'true');
+      }
+      openModal(link.getAttribute('data-pkg'));
+      return;
+    }
     if (e.target.closest('[data-close-form]')) closeModal();
   });
   document.addEventListener('keydown', function(e) {
@@ -1127,10 +1315,79 @@ html.form-modal-open{overflow:hidden}
 </script>
 <script>
 (function(){
+  var CHECKLIST_PDF = 'files/checklist-google-ads-cz.pdf';
+  var checklistModal = document.getElementById('checklistModal');
+  var checklistFormBlock = document.getElementById('checklistFormBlock');
+  var checklistSuccessBlock = document.getElementById('checklistSuccessBlock');
+  function openChecklistModal() {
+    if (!checklistModal) return;
+    if (checklistFormBlock) checklistFormBlock.hidden = false;
+    if (checklistSuccessBlock) checklistSuccessBlock.hidden = true;
+    var form = document.getElementById('checklistForm');
+    if (form) form.reset();
+    var btn = form && form.querySelector('.checklist-submit');
+    if (btn) { btn.disabled = false; btn.classList.remove('is-submitted'); btn.innerHTML = '<span>Скачать чек-лист</span><span class="arrow">&#8594;</span>'; }
+    checklistModal.classList.add('is-open');
+    checklistModal.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('form-modal-open');
+    var first = document.getElementById('checklistName');
+    if (first) setTimeout(function(){ first.focus(); }, 80);
+  }
+  function closeChecklistModal() {
+    if (!checklistModal) return;
+    checklistModal.classList.remove('is-open');
+    checklistModal.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('form-modal-open');
+  }
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('[data-open-checklist]')) { e.preventDefault(); openChecklistModal(); return; }
+    if (e.target.closest('[data-close-checklist]')) { e.preventDefault(); closeChecklistModal(); }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && checklistModal && checklistModal.classList.contains('is-open')) closeChecklistModal();
+  });
+  var SCROLL_KEY = 'me_checklist_scroll';
+  var DONE_KEY = 'me_checklist_done';
+  function canAutoShowChecklist() {
+    try {
+      if (localStorage.getItem(DONE_KEY)) return false;
+      if (sessionStorage.getItem(SCROLL_KEY)) return false;
+    } catch (_) {}
+    return true;
+  }
+  function markChecklistScrollShown() {
+    try { sessionStorage.setItem(SCROLL_KEY, '1'); } catch (_) {}
+  }
+  function tryAutoOpenChecklist() {
+    if (!canAutoShowChecklist()) return;
+    if (!checklistModal || checklistModal.classList.contains('is-open')) return;
+    var formModal = document.getElementById('formModal');
+    if (formModal && formModal.classList.contains('is-open')) return;
+    markChecklistScrollShown();
+    openChecklistModal();
+  }
+  var scrollTrigger = document.getElementById('checklistScrollTrigger');
+  if (scrollTrigger && 'IntersectionObserver' in window) {
+    var checklistIO = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        tryAutoOpenChecklist();
+        checklistIO.disconnect();
+      });
+    }, { root: null, rootMargin: '0px 0px -12% 0px', threshold: 0 });
+    checklistIO.observe(scrollTrigger);
+  }
+})();
+</script>
+<script>
+(function(){
+  var CHECKLIST_PDF = 'files/checklist-google-ads-cz.pdf';
+  var CHECKLIST_DONE_KEY = 'me_checklist_done';
   document.addEventListener('submit', function(e){
     var form = e.target;
     if (!form || !form.action || form.action.indexOf('formspree.io') === -1) return;
     e.preventDefault();
+    var isChecklist = form.id === 'checklistForm';
     var btn = form.querySelector('.form-submit');
     if (!btn || btn.disabled) return;
     var originalHTML = btn.innerHTML;
@@ -1150,8 +1407,17 @@ html.form-modal-open{overflow:hidden}
         if (typeof window.trackLeadConversion === 'function') {
           window.trackLeadConversion({
             language: langInput ? langInput.value : 'RU',
-            package_name: pkgInput ? pkgInput.value : ''
+            package_name: isChecklist ? 'checklist' : (pkgInput ? pkgInput.value : '')
           });
+        }
+        if (isChecklist) {
+          try { localStorage.setItem(CHECKLIST_DONE_KEY, '1'); } catch (_) {}
+          var formBlock = document.getElementById('checklistFormBlock');
+          var successBlock = document.getElementById('checklistSuccessBlock');
+          if (formBlock) formBlock.hidden = true;
+          if (successBlock) successBlock.hidden = false;
+          window.open(CHECKLIST_PDF, '_blank', 'noopener,noreferrer');
+          return;
         }
         btn.innerHTML = '<span>✓ Заявка отправлена</span>';
         btn.classList.add('is-submitted');
