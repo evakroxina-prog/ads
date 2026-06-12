@@ -96,9 +96,16 @@
     var t = COPY[lang] || COPY.ru;
     var email = opts.email || 'seo@marketexpert.cz';
     var wa = String(opts.whatsApp || opts.whatsapp || '420705995770').replace(/\D/g, '');
-    var blogUrl = opts.blog === null || opts.blog === false
-      ? null
-      : (opts.blog || 'https://marketexpert.cz/ru/blog');
+    var blogUrl;
+    if (opts.blog === null || opts.blog === false) {
+      blogUrl = null;
+    } else if (opts.blog) {
+      blogUrl = opts.blog;
+    } else if (lang === 'cs') {
+      blogUrl = null;
+    } else {
+      blogUrl = 'https://marketexpert.cz/ru/blog';
+    }
 
     var el = ensureModal();
     el.setAttribute('aria-label', t.aria);
