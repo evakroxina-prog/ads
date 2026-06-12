@@ -162,3 +162,27 @@
     text-align: center;
   }
 }
+
+/* Бейдж crafted — _shared/footer-crafted.css */
+.site-footer__crafted { margin: 10px 0 0; }
+.site-footer__crafted a {
+  display: inline-flex; align-items: center; gap: 0.55em;
+  padding: 5px 12px; border: 1px solid rgba(250, 248, 244, 0.12); border-radius: 999px;
+  background: rgba(0, 0, 0, 0.1); font-size: clamp(8.5px, 2.1vw, 9px); font-weight: 600;
+  letter-spacing: normal; text-transform: none; color: rgba(250, 248, 244, 0.42);
+  text-decoration: none; line-height: 1.2;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.site-footer__crafted-label { letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; }
+.site-footer__crafted a:hover {
+  color: rgba(250, 248, 244, 0.82); border-color: rgba(245, 166, 35, 0.4); background: rgba(245, 166, 35, 0.08);
+}
+.site-footer__crafted-brand {
+  display: inline-flex; align-items: center; gap: 0.28em; letter-spacing: -0.02em;
+  font-family: 'Fraunces', Georgia, serif; font-size: clamp(9.5px, 2.35vw, 10px); line-height: 1; white-space: nowrap;
+}
+.site-footer__crafted-me { color: rgba(250, 248, 244, 0.92); font-weight: 700; }
+.site-footer__crafted-brand em { font-style: italic; font-weight: 500; color: #f5a623; }
+.site-footer__crafted a:hover .site-footer__crafted-me { color: #fff; }
+.site-footer__crafted a:hover .site-footer__crafted-brand em { color: #f5c04a; }
+@media (max-width: 480px) { .site-footer__crafted a { padding: 6px 14px; } }
