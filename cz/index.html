@@ -30,6 +30,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="cookie.css">
 <link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="../form-success.css">
 <link rel="stylesheet" href="whatsapp-fab.css">
 <script>window.__GA4_MEASUREMENT_ID__ = 'G-SPKHXMCQGM'; window.__GA4_ADS_ID__ = 'AW-11432613975';</script>
 <script src="gsap.min.js"></script>
@@ -63,7 +64,7 @@ nav.nav-open .nav-toggle-bar:nth-child(3){transform:translateY(-7px) rotate(-45d
 .lang-switch.is-open .lang-switch__menu{opacity:1;visibility:visible;pointer-events:auto;transform:none}
 .lang-switch__option{display:block;padding:10px 14px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none!important;white-space:nowrap;transition:background .15s ease,color .15s ease}
 .lang-switch__option:hover,.lang-switch__option:focus{background:rgba(255,255,255,.1);color:#fff;text-decoration:none!important}
-.hero{min-height:100vh;background:var(--burg);position:relative;overflow:hidden;display:flex;align-items:center;padding:80px 48px 60px}
+.hero{min-height:100vh;background:var(--burg);position:relative;overflow:hidden;display:flex;align-items:center;padding:80px 48px 60px;scroll-margin-top:68px}
 .hero-bg{position:absolute;inset:0;z-index:0;background:var(--burg)}
 .tileContainer{position:absolute;inset:0;width:100%;height:100%;overflow:hidden}
 .tileHolder{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
@@ -418,7 +419,7 @@ html.form-modal-open{overflow:hidden}
 <!-- VERZE 2026-06-04: menu = Služby/Ceník/FAQ, odkazy na jiné weby jen v patičce -->
 
 <nav aria-label="Menu stránky">
-  <a href="https://marketexpert.cz/" class="nav-logo nav-brand">
+  <a href="#hero" class="nav-logo nav-brand">
     <img src="logo.png" alt="M:E agency" class="nav-brand__img" decoding="async" onerror="this.onerror=null;this.src='logo.svg'">
     <span class="nav-brand__text">M:E <em class="nav-brand__agency">agency</em></span>
   </a>
@@ -836,6 +837,9 @@ html.form-modal-open{overflow:hidden}
   </div>
   <div class="site-footer__copy-row">
     <p class="site-footer__copy">© 2026 M:E Agency · Praha · Reklama</p>
+    <p class="site-footer__crafted">
+      <a href="https://marketexpert.cz/" target="_blank" rel="noopener noreferrer"><span class="site-footer__crafted-label">Created by</span><span class="site-footer__crafted-brand"><span class="site-footer__crafted-me">M:E</span> <em>agency</em></span></a>
+    </p>
   </div>
 </footer>
 
@@ -1069,6 +1073,7 @@ html.form-modal-open{overflow:hidden}
   io.observe(grid);
 })();
 </script>
+<script src="../form-success.js"></script>
 <script src="me-analytics.js"></script>
 
 <div class="form-modal" id="formModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="leadFormTitle">
@@ -1110,6 +1115,7 @@ html.form-modal-open{overflow:hidden}
     mount.innerHTML = '';
     if (location.hash === '#order') history.replaceState(null, '', location.pathname + location.search);
   }
+  window.closeModal = closeModal;
   document.addEventListener('click', function(e) {
     var link = e.target.closest('a[href="#order"]');
     if (link) { e.preventDefault(); openModal(link.getAttribute('data-pkg')); return; }
@@ -1152,9 +1158,14 @@ html.form-modal-open{overflow:hidden}
             package_name: pkgInput ? pkgInput.value : ''
           });
         }
-        btn.innerHTML = '<span>✓ Žádost odeslána</span>';
+        btn.innerHTML = '<span>✓ Poptávka odeslána</span>';
         btn.classList.add('is-submitted');
+        btn.disabled = true;
         form.reset();
+        if (typeof window.closeModal === 'function') window.closeModal();
+        if (typeof window.showFormSuccess === 'function') {
+          window.showFormSuccess({ lang: 'cs', email: 'ads@marketexpert.cz' });
+        }
         return;
       }
       var msg = 'Nepodařilo se odeslat poptávku.';
