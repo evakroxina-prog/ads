@@ -23,9 +23,11 @@
 <meta name="twitter:description" content="Настройка и ведение Google Ads в Праге. PPC под ключ для компаний и интернет-магазинов — от 320 €/мес. Performance Max, фокус на ROI.">
 <meta name="twitter:image" content="https://ads.marketexpert.cz/logo.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"M:E Agency — Google Ads","url":"https://ads.marketexpert.cz/","logo":"https://ads.marketexpert.cz/logo.png","image":"https://ads.marketexpert.cz/logo.png","description":"Настройка и ведение Google Ads в Праге. PPC под ключ для компаний и интернет-магазинов.","email":"ads@marketexpert.cz","telephone":"+420705995770","address":{"@type":"PostalAddress","addressLocality":"Praha","addressCountry":"CZ"},"areaServed":{"@type":"Country","name":"Czech Republic"},"priceRange":"€€","inLanguage":"ru"}</script>
-<link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
-<link rel="icon" href="favicon.png" type="image/png" sizes="16x16">
-<link rel="apple-touch-icon" href="favicon.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="cookie.css">
@@ -1371,17 +1373,8 @@ html.form-modal-open{overflow:hidden}
     markChecklistScrollShown();
     openChecklistModal();
   }
-  var scrollTrigger = document.getElementById('checklistScrollTrigger');
-  if (scrollTrigger && 'IntersectionObserver' in window) {
-    var checklistIO = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (!entry.isIntersecting) return;
-        tryAutoOpenChecklist();
-        checklistIO.disconnect();
-      });
-    }, { root: null, rootMargin: '0px 0px -12% 0px', threshold: 0 });
-    checklistIO.observe(scrollTrigger);
-  }
+  var CHECKLIST_DELAY_MS = 60000;
+  window.setTimeout(tryAutoOpenChecklist, CHECKLIST_DELAY_MS);
 })();
 </script>
 <script>
