@@ -199,8 +199,8 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,46px);line-he
 @media(prefers-reduced-motion:reduce){.pgrid-monthly .pcard.pcard-anim-item:hover{transform:none}.pgrid-monthly.pgrid-js .pcard.pcard-anim-item{opacity:1;transform:none;animation:none}}
 .hot-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 16px;border-radius:20px;white-space:nowrap}
 .ptier{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.pname{font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin-bottom:6px}
-.pdesc{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:24px;line-height:1.5}
+.pname{font-family:'Playfair Display',serif;font-size:22px;line-height:1.25;color:#fff;margin-bottom:6px;min-height:56px}
+.pdesc{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:24px;line-height:1.5;min-height:80px}
 .pamount{font-size:48px;font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1}
 .pamount span{font-size:18px;font-weight:400;color:rgba(255,255,255,.35)}
 .pper{font-size:11px;color:rgba(255,255,255,.3);margin-top:4px}
@@ -216,6 +216,14 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,46px);line-he
 .pfeat-grp{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:18px 0 10px}
 .pfeat-grp:first-of-type{margin-top:0}
 .pcard-note{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);font-size:11.5px;color:rgba(255,255,255,.35);line-height:1.5}
+.price-intro .lead{margin:10px auto 0;color:rgba(255,255,255,.55)}
+.pfee{font-size:11.5px;color:var(--gold);margin-top:8px;line-height:1.45}
+.pproof{margin-top:16px;background:rgba(64,176,112,.15);border:1px solid rgba(64,176,112,.45);border-radius:8px;padding:11px 14px;font-size:12.5px;color:rgba(214,246,228,.92);line-height:1.5}
+.pguar{margin-top:18px;border-left:3px solid var(--gold);background:rgba(245,168,0,.08);padding:11px 14px;border-radius:0 8px 8px 0;font-size:12px;color:rgba(255,255,255,.62);line-height:1.5}
+.pguar strong{color:#fff;font-weight:700}
+.phelp{margin-top:12px;text-align:center;font-size:11.5px;color:rgba(255,255,255,.4);line-height:1.45}
+.phelp a{color:var(--gold);text-decoration:none}
+.phelp a:hover{text-decoration:underline}
 .onetime-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:1100px;margin:0 auto 28px}
 .onetime-grid .audit-card{padding:32px 36px}
 .onetime-grid .audit-feats{margin:20px 0}
@@ -568,49 +576,49 @@ html.form-modal-open{overflow:hidden}
 </section>
 
 <section class="price-s" id="pricing">
-  <div class="price-intro"><div class="stag">Ceník</div><div class="tline"></div><h2>Vyberte si formát spolupráce</h2></div>
+  <div class="price-intro"><div class="stag">Vedení Google Ads</div><div class="tline"></div><h2>Vyberte balíček — a první výsledky už v prvním měsíci</h2><p class="lead">Bez skrytých provizí od Googlu. Bez procent z rozpočtu. Pevná cena — platíte za práci, ne za to, kolik utratíte za reklamu.</p></div>
 
-  <div class="pgroup-ttl">▸ Měsíční <span>vedení</span></div>
   <div class="pgrid pgrid-monthly">
     <div class="pcard pcard-anim-item">
-      <div class="ptier">Start</div><div class="pname">Základní spuštění</div>
-      <div class="pdesc">Pro malé firmy, které chtějí vyzkoušet Google Ads s jasnou kontrolou rozpočtu</div>
-      <div class="pamount">320 &#8364;<span> / 8 000 Kč</span></div><div class="pper">za měsíc</div>
-      <div class="pbudget">Rekl. rozpočet: <strong>od 500 &#8364;/měs</strong></div>
+      <div class="ptier">Start</div><div class="pname">První poptávky z Googlu</div>
+      <div class="pdesc">Pro malé firmy, které potřebují funkční reklamu bez přeplácení. Spustíme, nastavíme analytiku a držíme pod kontrolou.</div>
+      <div class="pamount">&#8364;320<span> / 8 000 Kč</span></div><div class="pper">za měsíc · rekl. rozpočet od 300 &#8364;/měs</div>
+      <div class="pproof">Kampaně spuštěné a běží — do 7 dnů od startu</div>
       <div class="pdiv"></div>
       <div class="pfeat-grp">Kampaně</div>
-      <ul class="pfeats"><li>Až 2 kampaně (vyhledávání / KMS)</li><li>Klíčová slova + minus-slova + UTM</li><li>Konverze GA4 + GTM</li></ul>
-      <div class="pfeat-grp">Optimalizace</div>
-      <ul class="pfeats"><li>Týdenní kontrola kampaní</li><li>Až 3 úpravy měsíčně</li><li>1 report + chat</li></ul>
+      <ul class="pfeats"><li>Až 2 kampaně (vyhledávání / KMS)</li><li>Klíčová slova + minus-slova + UTM</li><li>Konverze GA4 + GTM — vidíte, kdo nakoupil</li></ul>
+      <div class="pfeat-grp">Vedení a kontrola</div>
+      <ul class="pfeats"><li>Týdenní kontrola kampaní</li><li>Až 3 úpravy měsíčně</li><li>Měsíční report + chat se specialistou</li></ul>
       <ul class="pfeats-no"><li>A/B testy inzerátů</li><li>Remarketing</li></ul>
-      <p class="pcard-note">&#9888; Při rekl. rozpočtu pod 500 &#8364;/měs je efekt omezený — probereme na začátku</p>
-      <a href="#order" class="pbtn-o" data-pkg="start">Vybrat Start</a>
+      <a href="#order" class="pbtn-o" data-pkg="start">Spustit reklamu &#8594;</a>
+      <p class="pcard-note">* Při rekl. rozpočtu pod 300 &#8364;/měs je efekt omezený — probereme na začátku</p>
     </div>
     <div class="pcard hot pcard-anim-item">
-      <div class="hot-badge">Populární volba</div>
-      <div class="ptier">Růst</div><div class="pname">Systémový výsledek</div>
-      <div class="pdesc">Pro byznys, kterému záleží na reálném ROI, remarketingu a transparentní analytice</div>
-      <div class="pamount">560 &#8364;<span> / 14 000 Kč</span></div><div class="pper">za měsíc</div>
-      <div class="pbudget">Rekl. rozpočet: <strong>od 800 &#8364;/měs</strong></div>
+      <div class="hot-badge">&#9733; Populární volba</div>
+      <div class="ptier">Růst</div><div class="pname">Systémový růst a srozumitelné ROI</div>
+      <div class="pdesc">Pro byznys, který už do reklamy investuje a chce konečně vědět: odkud chodí klienti, kolik stojí a co reálně funguje.</div>
+      <div class="pamount">&#8364;560<span> / 14 000 Kč</span></div><div class="pper">za měsíc · rekl. rozpočet od 800 &#8364;/měs</div>
+      <div class="pproof">Klienti tohoto balíčku v průměru snižují cenu poptávky o 30–40 % během prvních 2 měsíců</div>
       <div class="pdiv"></div>
       <div class="pfeat-grp">Kampaně</div>
-      <ul class="pfeats"><li>Až 5 kampaní (vyhledávání + remarketing + KMS)</li><li>Publika remarketingu</li><li>Mikrokonverze a trychtýř GA4</li></ul>
+      <ul class="pfeats"><li>Až 5 kampaní (vyhledávání + remarketing + KMS)</li><li>Publika remarketingu — doháníme odcházející</li><li>Mikrokonverze a trychtýř GA4</li></ul>
       <div class="pfeat-grp">Optimalizace</div>
-      <ul class="pfeats"><li>Týdenní optimalizace</li><li>A/B testy inzerátů</li><li>Neomezené úpravy</li><li>2 reporty + 1 hovor měsíčně</li><li>Analýza konkurence jednou za 2 měsíce</li><li>Doporučení k landing page</li></ul>
-      <a href="#order" class="pbtn-g" data-pkg="rust">Vybrat Růst</a>
+      <ul class="pfeats"><li>Týdenní optimalizace bez omezení úprav</li><li>A/B testy inzerátů — hledáme nejlepší variantu</li><li>2 reporty + 1 hovor měsíčně</li><li>Analýza konkurence jednou za 2 měsíce</li><li>Doporučení k landing page — aby kliky nepřišly nazmar</li></ul>
+      <a href="#order" class="pbtn-g" data-pkg="rust">Chci takový výsledek &#8594;</a>
     </div>
     <div class="pcard pcard-anim-item">
-      <div class="ptier">Škála</div><div class="pname">Plná kontrola</div>
-      <div class="pdesc">Pro ambiciózní růst — maximální zásah, vyhrazený manažer, unit-analytika</div>
-      <div class="pamount">950 &#8364;<span> / 24 000 Kč</span></div><div class="pper">za měsíc</div>
-      <div class="pbudget">Rekl. rozpočet: <strong>od 2 000 &#8364;/měs</strong></div>
+      <div class="ptier">Škála</div><div class="pname">Plná kontrola nad růstem</div>
+      <div class="pdesc">Pro ambiciózní byznys, který potřebuje vyhrazeného manažera, zásah všech kanálů a analytiku na úrovni unit-ekonomiky.</div>
+      <div class="pamount">&#8364;950<span> / 24 000 Kč</span></div><div class="pper">za měsíc · rekl. rozpočet od 2 000 &#8364;/měs</div>
+      <div class="pfee">&#9656; Při rozpočtu 2 000 &#8364;/měs je naše fee — 47 % z rozpočtu, pod tržním (50–70 %)</div>
+      <div class="pproof">Jeden telefonát — žádný tiket, žádný e-mail. Váš manažer je vždy na příjmu</div>
       <div class="pdiv"></div>
       <div class="pfeat-grp">Kampaně</div>
       <ul class="pfeats"><li>Vše z balíčku Růst</li><li>Až 15 kampaní (nebo dohodneme rozsah)</li><li>Shopping / Performance Max</li><li>Sklik (Seznam.cz) — volitelně</li></ul>
-      <div class="pfeat-grp">Optimalizace a analytika</div>
-      <ul class="pfeats"><li>Optimalizace 2&#215; týdně</li><li>ROI, ROMI, unit-ekonomika</li><li>Strategie na základě dat byznysu</li><li>2 hovory měsíčně + priorita WA/TG</li><li>Vyhrazený manažer</li></ul>
-      <p class="pcard-note">* „Až 15 kampaní“ — při větším objemu probereme individuálně</p>
-      <a href="#order" class="pbtn-o" data-pkg="skala">Vybrat Škálu</a>
+      <div class="pfeat-grp">Analytika a strategie</div>
+      <ul class="pfeats"><li>Optimalizace 2&#215; týdně</li><li>ROI, ROMI, unit-ekonomika</li><li>Strategie na základě dat vašeho byznysu</li><li>2 hovory měsíčně + priorita WA/TG</li><li>Vyhrazený manažer — jeden člověk, zná váš byznys</li></ul>
+      <a href="#order" class="pbtn-o" data-pkg="skala">Probrat škálu &#8594;</a>
+      <p class="pcard-note">* „Až 15 kampaní“ — při větším objemu dohodneme individuálně</p>
     </div>
   </div>
 
@@ -619,7 +627,7 @@ html.form-modal-open{overflow:hidden}
     <div class="audit-card feature">
       <div class="audit-badge">Jednorázově</div>
       <div class="audit-title">Nastavení reklamy od nuly</div>
-      <div class="audit-desc">Kompletní spuštění Google Ads: kampaně, klíčová slova, konverze GA4 + GTM, UTM značky. Reklamní rozpočet — zvlášť.</div>
+      <div class="audit-desc">Kompletní spuštění Google Ads: kampaně, klíčová slova, konverze GA4 + GTM, UTM značky. Reklamní rozpočet — zvlášť. Připraveno k provozu za 3 pracovní dny.</div>
       <ul class="audit-feats">
         <li>Struktura kampaní pod váš byznys</li>
         <li>Klíčová slova + minus-slova</li>
@@ -654,7 +662,7 @@ html.form-modal-open{overflow:hidden}
       <div class="eitem"><span class="ename">Další hovor</span><span class="eprice">40 &#8364; / 1 000 Kč</span></div>
     </div>
   </div>
-  <p class="pnote">Nevíte, který balíček vám sedne? <a href="#order">Napište nám</a> — vybereme společně.</p>
+  <p class="pnote">Nevíte, který balíček se hodí pro váš byznys? <a href="#order">Napište nám</a> — zdarma vybereme za 15 minut &#8594;</p>
 </section>
 
 <section class="fw-s" id="forwhom">
@@ -707,7 +715,6 @@ html.form-modal-open{overflow:hidden}
   <div class="rev-intro">
     <div class="stag">Reference</div><div class="tline"></div>
     <h2>Co říkají klienti o spolupráci</h2>
-    <p class="lead">Reálné výsledky z Google Ads — ne obecné sliby agentury.</p>
   </div>
   <div class="rev-grid">
     <article class="rev-card">
@@ -746,7 +753,7 @@ html.form-modal-open{overflow:hidden}
 <section class="faq-s" id="faq">
   <div class="faq-intro"><div class="stag">FAQ</div><div class="tline"></div><h2>Časté dotazy</h2></div>
   <div class="faq-wrap">
-    <details class="faq-item" open><summary>Kolik stojí reklama na Googlu?</summary><p>Nastavení od 220 € jednorázově, vedení od 320 €/měs. Reklamní rozpočet (od ~500 €/měs u Startu) se platí zvlášť přímo Googlu.</p></details>
+    <details class="faq-item"><summary>Kolik stojí reklama na Googlu?</summary><p>Nastavení od 220 € jednorázově, vedení od 320 €/měs. Reklamní rozpočet (od ~300 €/měs u Startu) se platí zvlášť přímo Googlu.</p></details>
     <details class="faq-item"><summary>Za jak dlouho uvidím první výsledky?</summary><p>První data sbíráme hned po spuštění, první optimalizace a závěry obvykle během 2–4 týdnů.</p></details>
     <details class="faq-item"><summary>Nastavíte Google Ads i pro malou firmu nebo e-shop?</summary><p>Ano. Pro e-shopy řešíme Performance Max a Google Nákupy, pro služby — reklamu na lokalitu.</p></details>
     <details class="faq-item"><summary>Co když už reklamu mám?</summary><p>Začneme auditem účtu: najdeme chyby a ztráty rozpočtu, pak teprve optimalizujeme.</p></details>
