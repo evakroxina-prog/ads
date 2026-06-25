@@ -276,8 +276,8 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,46px);line-he
 @media(prefers-reduced-motion:reduce){.pgrid-monthly .pcard.pcard-anim-item:hover{transform:none}.pgrid-monthly.pgrid-js .pcard.pcard-anim-item{opacity:1;transform:none;animation:none}}
 .hot-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 16px;border-radius:20px;white-space:nowrap}
 .ptier{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.pname{font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin-bottom:6px}
-.pdesc{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:24px;line-height:1.5}
+.pname{font-family:'Playfair Display',serif;font-size:22px;line-height:1.25;color:#fff;margin-bottom:6px;min-height:56px}
+.pdesc{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:24px;line-height:1.5;min-height:80px}
 .pamount{font-size:48px;font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1}
 .pamount span{font-size:18px;font-weight:400;color:rgba(255,255,255,.35)}
 .pper{font-size:11px;color:rgba(255,255,255,.3);margin-top:4px}
@@ -293,6 +293,14 @@ h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,46px);line-he
 .pfeat-grp{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:18px 0 10px}
 .pfeat-grp:first-of-type{margin-top:0}
 .pcard-note{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);font-size:11.5px;color:rgba(255,255,255,.35);line-height:1.5}
+.price-intro .lead{margin:10px auto 0;color:rgba(255,255,255,.55)}
+.pfee{font-size:11.5px;color:var(--gold);margin-top:8px;line-height:1.45}
+.pproof{margin-top:16px;background:rgba(64,176,112,.15);border:1px solid rgba(64,176,112,.45);border-radius:8px;padding:11px 14px;font-size:12.5px;color:rgba(214,246,228,.92);line-height:1.5}
+.pguar{margin-top:18px;border-left:3px solid var(--gold);background:rgba(245,168,0,.08);padding:11px 14px;border-radius:0 8px 8px 0;font-size:12px;color:rgba(255,255,255,.62);line-height:1.5}
+.pguar strong{color:#fff;font-weight:700}
+.phelp{margin-top:12px;text-align:center;font-size:11.5px;color:rgba(255,255,255,.4);line-height:1.45}
+.phelp a{color:var(--gold);text-decoration:none}
+.phelp a:hover{text-decoration:underline}
 .onetime-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:1100px;margin:0 auto 28px}
 .onetime-grid .audit-card{padding:32px 36px}
 .onetime-grid .audit-feats{margin:20px 0}
@@ -692,59 +700,58 @@ html.form-modal-open{overflow:hidden}
 </section>
 
 <section class="price-s" id="pricing">
-  <div class="price-intro"><div class="stag">Цены</div><div class="tline"></div><h2>Выберите формат сотрудничества</h2></div>
+  <div class="price-intro"><div class="stag">Ведение Google Ads</div><div class="tline"></div><h2>Выберите пакет — и первые результаты уже в первый месяц</h2><p class="lead">Без скрытых комиссий от Google. Без процента от бюджета. Фиксированная цена — вы платите за работу, а не за то, сколько тратите на рекламу.</p></div>
 
-  <div class="pgroup-ttl">▸ Ежемесячное <span>ведение</span></div>
   <div class="pgrid pgrid-monthly">
     <div class="pcard pcard-anim-item">
-      <div class="ptier">Старт</div><div class="pname">Базовый запуск</div>
-      <div class="pdesc">Для малого бизнеса, который хочет попробовать Google Ads с чётким контролем бюджета</div>
-      <div class="pamount">320 &#8364;<span> / 8 000 CZK</span></div><div class="pper">в месяц</div>
-      <div class="pbudget">Рекл. бюджет: <strong>от 500 &#8364;/мес</strong></div>
+      <div class="ptier">Старт</div><div class="pname">Первые заявки из Google</div>
+      <div class="pdesc">Для малого бизнеса, которому нужна рабочая реклама без перерасхода. Запускаем, настраиваем аналитику, держим под контролем.</div>
+      <div class="pamount">&#8364;320<span> / 8 000 CZK</span></div><div class="pper">в месяц · рекл. бюджет от 300 &#8364;/мес</div>
+      <div class="pproof">Кампании запущены и работают — в течение 7 дней после старта</div>
       <div class="pdiv"></div>
       <div class="pfeat-grp">Кампании</div>
-      <ul class="pfeats"><li>До 2 кампаний (поиск / КМС)</li><li>Ключевые слова + минус-слова + UTM</li><li>Конверсии GA4 + GTM</li></ul>
-      <div class="pfeat-grp">Оптимизация</div>
-      <ul class="pfeats"><li>Еженедельная проверка кампаний</li><li>До 3 правок в месяц</li><li>1 отчёт + чат</li></ul>
+      <ul class="pfeats"><li>До 2 кампаний (поиск / КМС)</li><li>Ключевые слова + минус-слова + UTM</li><li>Конверсии GA4 + GTM — вы видите, кто купил</li></ul>
+      <div class="pfeat-grp">Ведение и контроль</div>
+      <ul class="pfeats"><li>Еженедельная проверка кампаний</li><li>До 3 правок в месяц</li><li>Ежемесячный отчёт + чат со специалистом</li></ul>
       <ul class="pfeats-no"><li>A/B-тесты объявлений</li><li>Ремаркетинг</li></ul>
-      <p class="pcard-note">&#9888; При рекл. бюджете ниже 500 &#8364;/мес эффект ограничен — обсудим на старте</p>
-      <a href="#order" class="pbtn-o" data-pkg="start">Выбрать Старт</a>
+      <a href="#order" class="pbtn-o" data-pkg="start">Запустить рекламу &#8594;</a>
+      <p class="pcard-note">* При рекл. бюджете ниже 300 &#8364;/мес эффект ограничен — обсудим на старте</p>
     </div>
     <div class="pcard hot pcard-anim-item">
-      <div class="hot-badge">Популярный выбор</div>
-      <div class="ptier">Рост</div><div class="pname">Системный результат</div>
-      <div class="pdesc">Для бизнеса, которому важен реальный ROI, ремаркетинг и прозрачная аналитика</div>
-      <div class="pamount">560 &#8364;<span> / 14 000 CZK</span></div><div class="pper">в месяц</div>
-      <div class="pbudget">Рекл. бюджет: <strong>от 800 &#8364;/мес</strong></div>
+      <div class="hot-badge">&#9733; Популярный выбор</div>
+      <div class="ptier">Рост</div><div class="pname">Системный рост и понятный ROI</div>
+      <div class="pdesc">Для бизнеса, который уже тратит на рекламу и хочет наконец знать: откуда клиенты, сколько они стоят и что реально работает.</div>
+      <div class="pamount">&#8364;560<span> / 14 000 CZK</span></div><div class="pper">в месяц · рекл. бюджет от 800 &#8364;/мес</div>
+      <div class="pproof">Клиенты этого пакета в среднем снижают стоимость заявки на 30–40% за первые 2 месяца</div>
       <div class="pdiv"></div>
       <div class="pfeat-grp">Кампании</div>
-      <ul class="pfeats"><li>До 5 кампаний (поиск + ремаркетинг + КМС)</li><li>Аудитории ремаркетинга</li><li>Микроконверсии и воронка GA4</li></ul>
+      <ul class="pfeats"><li>До 5 кампаний (поиск + ремаркетинг + КМС)</li><li>Аудитории ремаркетинга — догоняем ушедших</li><li>Микроконверсии и воронка GA4</li></ul>
       <div class="pfeat-grp">Оптимизация</div>
-      <ul class="pfeats"><li>Еженедельная оптимизация</li><li>A/B-тесты объявлений</li><li>Без ограничений на правки</li><li>2 отчёта + 1 созвон в месяц</li><li>Анализ конкурентов раз в 2 мес.</li><li>Рекомендации по лендингу</li></ul>
-      <a href="#order" class="pbtn-g" data-pkg="rust">Выбрать Рост</a>
+      <ul class="pfeats"><li>Еженедельная оптимизация без ограничений по правкам</li><li>A/B-тесты объявлений — ищем лучший вариант</li><li>2 отчёта + 1 созвон в месяц</li><li>Анализ конкурентов раз в 2 мес.</li><li>Рекомендации по лендингу — чтобы клики не пропадали</li></ul>
+      <a href="#order" class="pbtn-g" data-pkg="rust">Хочу такой результат &#8594;</a>
     </div>
     <div class="pcard pcard-anim-item">
-      <div class="ptier">Масштаб</div><div class="pname">Полный контроль</div>
-      <div class="pdesc">Для амбициозного роста — максимальный охват, выделенный менеджер, unit-аналитика</div>
-      <div class="pamount">950 &#8364;<span> / 24 000 CZK</span></div><div class="pper">в месяц</div>
-      <div class="pbudget">Рекл. бюджет: <strong>от 2 000 &#8364;/мес</strong></div>
+      <div class="ptier">Масштаб</div><div class="pname">Полный контроль над ростом</div>
+      <div class="pdesc">Для амбициозного бизнеса, которому нужен выделенный менеджер, охват всех каналов и аналитика на уровне unit-экономики.</div>
+      <div class="pamount">&#8364;950<span> / 24 000 CZK</span></div><div class="pper">в месяц · рекл. бюджет от 2 000 &#8364;/мес</div>
+      <div class="pfee">&#9656; При бюджете 2 000 &#8364;/мес наш fee — 47% от бюджета, ниже рыночного (50–70%)</div>
+      <div class="pproof">Один звонок — не тикет, не почта. Ваш менеджер всегда на связи</div>
       <div class="pdiv"></div>
       <div class="pfeat-grp">Кампании</div>
       <ul class="pfeats"><li>Всё из пакета Рост</li><li>До 15 кампаний (или согласуем объём)</li><li>Shopping / Performance Max</li><li>Sklik (Seznam.cz) — опционально</li></ul>
-      <div class="pfeat-grp">Оптимизация и аналитика</div>
-      <ul class="pfeats"><li>Оптимизация 2&#215; в неделю</li><li>ROI, ROMI, unit-экономика</li><li>Стратегия на основе данных бизнеса</li><li>2 созвона в месяц + приоритет WA/TG</li><li>Выделенный менеджер</li></ul>
-      <p class="pcard-note">* «До 15 кампаний» — при необходимости большего объёма обсудим индивидуально</p>
-      <a href="#order" class="pbtn-o" data-pkg="skala">Выбрать Масштаб</a>
+      <div class="pfeat-grp">Аналитика и стратегия</div>
+      <ul class="pfeats"><li>Оптимизация 2&#215; в неделю</li><li>ROI, ROMI, unit-экономика</li><li>Стратегия на основе данных вашего бизнеса</li><li>2 созвона в месяц + приоритет WA/TG</li><li>Выделенный менеджер — один человек, знает ваш бизнес</li></ul>
+      <a href="#order" class="pbtn-o" data-pkg="skala">Обсудить масштаб &#8594;</a>
+      <p class="pcard-note">* «До 15 кампаний» — при необходимости большего объёма согласуем индивидуально</p>
     </div>
   </div>
-  <div id="checklistScrollTrigger" class="checklist-scroll-trigger" aria-hidden="true"></div>
 
   <div class="pgroup-ttl">▸ Разовые <span>услуги</span></div>
   <div class="onetime-grid">
     <div class="audit-card feature">
       <div class="audit-badge">Разово</div>
       <div class="audit-title">Настройка рекламы с нуля</div>
-      <div class="audit-desc">Полный запуск Google Ads: кампании, ключевые слова, конверсии GA4 + GTM, UTM-метки. Рекламный бюджет — отдельно.</div>
+      <div class="audit-desc">Полный запуск Google Ads: кампании, ключевые слова, конверсии GA4 + GTM, UTM-метки. Рекламный бюджет — отдельно. Готово к работе за 3 рабочих дня.</div>
       <ul class="audit-feats">
         <li>Структура кампаний под ваш бизнес</li>
         <li>Ключевые слова + минус-слова</li>
@@ -779,7 +786,7 @@ html.form-modal-open{overflow:hidden}
       <div class="eitem"><span class="ename">Дополнительный созвон</span><span class="eprice">40 &#8364; / 1 000 CZK</span></div>
     </div>
   </div>
-  <p class="pnote">Не уверены, какой пакет подходит? <a href="#order">Напишите нам</a> — подберём вместе.</p>
+  <p class="pnote">Не знаете, какой пакет подойдёт вашему бизнесу? <a href="#order">Напишите нам</a> — бесплатно подберём за 15 минут &#8594;</p>
 </section>
 
 <section class="fw-s" id="forwhom">
@@ -832,7 +839,6 @@ html.form-modal-open{overflow:hidden}
   <div class="rev-intro">
     <div class="stag">Отзывы</div><div class="tline"></div>
     <h2>Что говорят клиенты о сотрудничестве</h2>
-    <p class="lead">Реальные результаты из Google Ads — не общие обещания агентства.</p>
   </div>
   <div class="rev-grid">
     <article class="rev-card">
@@ -871,7 +877,7 @@ html.form-modal-open{overflow:hidden}
 <section class="faq-s" id="faq">
   <div class="faq-intro"><div class="stag">FAQ</div><div class="tline"></div><h2>Частые вопросы</h2></div>
   <div class="faq-wrap">
-    <details class="faq-item" open><summary>Сколько стоит реклама в Google?</summary><p>Настройка от 220 € разово, ведение от 320 €/мес. Рекламный бюджет (от ~500 €/мес для Старт) оплачивается отдельно напрямую Google.</p></details>
+    <details class="faq-item"><summary>Сколько стоит реклама в Google?</summary><p>Настройка от 220 € разово, ведение от 320 €/мес. Рекламный бюджет (от ~300 €/мес для Старт) оплачивается отдельно напрямую Google.</p></details>
     <details class="faq-item"><summary>Когда я увижу первые результаты?</summary><p>Первые данные собираем сразу после запуска, первая оптимизация и выводы обычно в течение 2–4 недель.</p></details>
     <details class="faq-item"><summary>Настроите Google Ads и для малого бизнеса, и для интернет-магазина?</summary><p>Да. Для интернет-магазинов — Performance Max и Google Shopping, для услуг — реклама на геолокацию.</p></details>
     <details class="faq-item"><summary>Что если реклама уже есть?</summary><p>Начнём с аудита аккаунта: найдём ошибки и потери бюджета, и только потом оптимизируем.</p></details>
@@ -1353,28 +1359,6 @@ html.form-modal-open{overflow:hidden}
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && checklistModal && checklistModal.classList.contains('is-open')) closeChecklistModal();
   });
-  var SCROLL_KEY = 'me_checklist_scroll';
-  var DONE_KEY = 'me_checklist_done';
-  function canAutoShowChecklist() {
-    try {
-      if (localStorage.getItem(DONE_KEY)) return false;
-      if (sessionStorage.getItem(SCROLL_KEY)) return false;
-    } catch (_) {}
-    return true;
-  }
-  function markChecklistScrollShown() {
-    try { sessionStorage.setItem(SCROLL_KEY, '1'); } catch (_) {}
-  }
-  function tryAutoOpenChecklist() {
-    if (!canAutoShowChecklist()) return;
-    if (!checklistModal || checklistModal.classList.contains('is-open')) return;
-    var formModal = document.getElementById('formModal');
-    if (formModal && formModal.classList.contains('is-open')) return;
-    markChecklistScrollShown();
-    openChecklistModal();
-  }
-  var CHECKLIST_DELAY_MS = 60000;
-  window.setTimeout(tryAutoOpenChecklist, CHECKLIST_DELAY_MS);
 })();
 </script>
 <script>
