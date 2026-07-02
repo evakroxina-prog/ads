@@ -50,8 +50,10 @@
 </header>
 
 <div class="wrap">
-  <!-- Карточки статей подставляются автоматически из /blog/articles.json.
-       Разметка ниже — запасной вариант, если JS не выполнится. -->
+  <div class="tag-cloud-slot" data-tag-cloud hidden></div>
+
+  <p class="grid-filter-bar">Показано: <strong data-filter-active>Все статьи</strong></p>
+
   <div class="grid" data-articles-grid>
     <a href="https://ads.marketexpert.cz/blog/kak-nastroit-reklamu-google-ads/" class="pcardt">
       <div class="cat">Google Ads · Гайд</div>
@@ -60,6 +62,8 @@
       <span class="more">Читать →</span>
     </a>
   </div>
+
+  <p class="grid-empty" data-grid-empty hidden>По этой теме пока нет опубликованных статей — скоро добавим.</p>
 
   <div class="cta-strip">
     <p>Не хотите разбираться сами? Настроим и будем вести Google Ads под ваш бизнес.</p>
