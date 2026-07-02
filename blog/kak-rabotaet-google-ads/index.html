@@ -57,8 +57,6 @@
     <div class="art-tags">
       <a href="/blog/?tag=%D0%B0%D1%83%D0%BA%D1%86%D0%B8%D0%BE%D0%BD" class="art-tag-link">аукцион</a>
       <a href="/blog/?tag=Ad%20Rank" class="art-tag-link">Ad Rank</a>
-      <a href="/blog/?tag=%D1%82%D0%B5%D0%BE%D1%80%D0%B8%D1%8F" class="art-tag-link">теория</a>
-      <a href="/blog/?tag=%D0%BA%D0%B0%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE" class="art-tag-link">качество</a>
     </div>
 
     <div class="lead-box">
@@ -68,11 +66,6 @@
       страницей. Из-за этого более релевантная реклама небольшой компании может обходить
       в выдаче конкурента с бюджетом в разы больше. Разберём механику по шагам.
     </div>
-
-    <section class="art-video">
-      <h2>Видео к статье</h2>
-      <div class="yt" data-id=""></div>
-    </section>
 
     <h2>Аукцион запускается при каждом поиске — заново</h2>
     <p>
@@ -182,15 +175,28 @@
       целях кампании и данных об отслеживаемых конверсиях.
     </p>
 
+    <section class="art-video">
+      <h2>Видео по теме</h2>
+      <div class="yt" data-id=""></div>
+    </section>
+
     <div class="lead-magnet">
       <h3>Чек-лист: 10 критических ошибок в Google Ads</h3>
       <p>Скачайте бесплатный PDF-чек-лист с ошибками, которые чаще всего сливают бюджет
         новичков в первый месяц кампании — и как их избежать.</p>
-      <form class="lm-form" action="#" method="post">
-        <input type="email" placeholder="Ваш email" required>
+      <form class="lm-form" data-checklist action="https://formspree.io/f/xaqzjoen" method="POST">
+        <input type="hidden" name="_subject" value="Чек-лист Google Ads — блог">
+        <input type="hidden" name="lead_type" value="checklist">
+        <input type="hidden" name="jazyk" value="RU">
+        <input type="text" name="_gotcha" class="lm-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="email" name="email" placeholder="Ваш email" required autocomplete="email">
         <button type="submit">Получить чек-лист</button>
       </form>
-      <div class="lm-note">Отправляя email, вы соглашаетесь на получение рассылки от M:E Agency. Отписаться можно в любой момент.</div>
+      <div class="lm-success" hidden>
+        <p><strong>Готово!</strong> Чек-лист открыт в новой вкладке. Копию пришлём на ваш email.
+        Если файл не открылся — <a href="/files/checklist-google-ads-cz.pdf" target="_blank" rel="noopener noreferrer">откройте PDF ещё раз</a>.</p>
+      </div>
+      <div class="lm-note">PDF откроется сразу после отправки. Без спама — отписаться можно в любой момент.</div>
     </div>
 
     <h2>Частые вопросы</h2>

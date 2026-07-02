@@ -70,11 +70,6 @@
       2026 года стоит учесть при планировании расходов.
     </div>
 
-    <section class="art-video">
-      <h2>Видео к статье</h2>
-      <div class="yt" data-id=""></div>
-    </section>
-
     <h2>Что нужно, чтобы запустить рекламу</h2>
     <p>
       Коротко: рабочий сайт или лендинг с чётким предложением, аккаунт Google Ads с корректно
@@ -187,15 +182,28 @@
       сразу получить настроенную и управляемую кампанию.
     </p>
 
+    <section class="art-video">
+      <h2>Видео по теме</h2>
+      <div class="yt" data-id=""></div>
+    </section>
+
     <div class="lead-magnet">
       <h3>Чек-лист: 10 критических ошибок в Google Ads</h3>
       <p>Скачайте бесплатный PDF-чек-лист с ошибками, которые чаще всего сливают бюджет
         новичков в первый месяц кампании — и как их избежать.</p>
-      <form class="lm-form" action="#" method="post">
-        <input type="email" placeholder="Ваш email" required>
+      <form class="lm-form" data-checklist action="https://formspree.io/f/xaqzjoen" method="POST">
+        <input type="hidden" name="_subject" value="Чек-лист Google Ads — блог">
+        <input type="hidden" name="lead_type" value="checklist">
+        <input type="hidden" name="jazyk" value="RU">
+        <input type="text" name="_gotcha" class="lm-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="email" name="email" placeholder="Ваш email" required autocomplete="email">
         <button type="submit">Получить чек-лист</button>
       </form>
-      <div class="lm-note">Отправляя email, вы соглашаетесь на получение рассылки от M:E Agency. Отписаться можно в любой момент.</div>
+      <div class="lm-success" hidden>
+        <p><strong>Готово!</strong> Чек-лист открыт в новой вкладке. Копию пришлём на ваш email.
+        Если файл не открылся — <a href="/files/checklist-google-ads-cz.pdf" target="_blank" rel="noopener noreferrer">откройте PDF ещё раз</a>.</p>
+      </div>
+      <div class="lm-note">PDF откроется сразу после отправки. Без спама — отписаться можно в любой момент.</div>
     </div>
 
     <h2>Частые вопросы</h2>

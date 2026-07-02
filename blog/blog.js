@@ -167,4 +167,62 @@
   }
 
   initCookieConsent();
+
+  /* --- Чек-лист (Formspree + PDF) --- */
+  var CHECKLIST_PDF = "/files/checklist-google-ads-cz.pdf";
+
+  document.addEventListener("submit", function (e) {
+    var form = e.target;
+    if (!form || !form.matches(".lm-form[data-checklist]")) return;
+    if (!form.action || form.action.indexOf("formspree.io") === -1) return;
+
+    e.preventDefault();
+
+    var btn = form.querySelector('button[type="submit"]');
+    if (!btn || btn.disabled) return;
+
+    var magnet = form.closest(".lead-magnet");
+    var success = magnet && magnet.querySelector(".lm-success");
+    var originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = "Отправка…";
+
+    var data = new FormData(form);
+    if (!data.get("source_page")) {
+      data.set("source_page", window.location.pathname || "/blog/");
+    }
+
+    fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" }
+    })
+      .then(function (res) {
+        return res.json()
+          .then(function (payload) { return { ok: res.ok, data: payload }; })
+          .catch(function () { return { ok: res.ok, data: {} }; });
+      })
+      .then(function (r) {
+        if (!r.ok) {
+          var msg = "Не удалось отправить. Попробуйте позже или напишите на ads@marketexpert.cz";
+          if (r.data && r.data.error) {
+            msg = typeof r.data.error === "string" ? r.data.error : (r.data.error.message || msg);
+          }
+          throw new Error(msg);
+        }
+
+        if (typeof window.trackLeadConversion === "function") {
+          window.trackLeadConversion({ language: "RU", package_name: "checklist" });
+        }
+
+        form.hidden = true;
+        if (success) success.hidden = false;
+        window.open(CHECKLIST_PDF, "_blank", "noopener,noreferrer");
+      })
+      .catch(function (err) {
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+        alert(err && err.message ? err.message : "Ошибка сети. Попробуйте позже.");
+      });
+  });
 })();

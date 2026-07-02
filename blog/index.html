@@ -43,9 +43,15 @@
 </nav>
 
 <header class="hero">
-  <div class="tag">База знаний</div>
-  <h1>Гайды по Google Ads</h1>
-  <p>Практические статьи о рекламе в Google: как настроить, снизить цену заявки и не слить бюджет. Без воды — от практикующего агентства.</p>
+  <div class="hero-bg" id="fixed-bg" aria-hidden="true">
+    <canvas id="hero-canvas"></canvas>
+  </div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="tag">База знаний</div>
+    <h1>Гайды по Google Ads</h1>
+    <p>Практические статьи о рекламе в Google: как настроить, снизить цену заявки и не слить бюджет. Без воды — от практикующего агентства.</p>
+  </div>
 </header>
 
 <div class="wrap">
@@ -95,5 +101,6 @@
 </footer>
 
 <script src="/blog/blog.js"></script>
+<script src="/blog/blog-hero.js" defer></script>
 </body>
 </html>
