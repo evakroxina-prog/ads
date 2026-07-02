@@ -1,4 +1,4 @@
-/* M:E blog — articles.json, tag cloud, YouTube, cookie consent */
+/* M:E blog — articles.json, YouTube, cookie consent */
 (function () {
   "use strict";
 
@@ -20,21 +20,6 @@
     var d = parseInt(p[2], 10);
     var m = parseInt(p[1], 10) - 1;
     return d + " " + (MONTHS_RU[m] || p[1]) + " " + p[0];
-  }
-
-  function tagParam() {
-    try {
-      return new URLSearchParams(window.location.search).get("tag") || "";
-    } catch (_) {
-      return "";
-    }
-  }
-
-  function setTagParam(tag) {
-    var url = new URL(window.location.href);
-    if (tag) url.searchParams.set("tag", tag);
-    else url.searchParams.delete("tag");
-    window.history.replaceState({}, "", url.pathname + url.search + url.hash);
   }
 
   function renderTagsHtml(tags, linkable) {
@@ -79,87 +64,34 @@
       '<span class="more">Читать →</span></a>';
   }
 
-  function renderGrid(list, activeTag) {
+  function renderGrid(list) {
     var grid = document.querySelector("[data-articles-grid]");
-    var label = document.querySelector("[data-filter-active]");
     if (!grid) return;
 
-    var sorted = sortArticles(list);
-    var filtered = activeTag
-      ? sorted.filter(function (a) { return (a.tags || []).indexOf(activeTag) >= 0; })
-      : sorted;
-
-    grid.innerHTML = filtered.map(renderCard).join("");
-
-    if (label) {
-      label.textContent = activeTag ? "Тема: «" + activeTag + "»" : "Все статьи";
-    }
-
-    var empty = document.querySelector("[data-grid-empty]");
-    if (empty) empty.hidden = filtered.length > 0;
+    grid.innerHTML = sortArticles(list).map(renderCard).join("");
   }
 
-  function renderTagCloud(list, activeTag) {
-    var cloud = document.querySelector("[data-tag-cloud]");
-    if (!cloud) return;
+  function ensureHubChrome() {
+    var grid = document.querySelector("[data-articles-grid]");
+    if (!grid) return null;
 
-    var counts = {};
-    list.forEach(function (a) {
-      (a.tags || []).forEach(function (t) {
-        counts[t] = (counts[t] || 0) + 1;
-      });
-    });
-
-    var tags = Object.keys(counts).sort(function (a, b) {
-      return counts[b] - counts[a] || a.localeCompare(b, "ru");
-    });
-
-    if (!tags.length) {
-      cloud.hidden = true;
-      return;
+    if (!document.querySelector("[data-grid-empty]")) {
+      grid.insertAdjacentHTML(
+        "afterend",
+        '<p class="grid-empty" data-grid-empty hidden>По этой теме пока нет опубликованных статей — скоро добавим.</p>'
+      );
     }
-
-    cloud.hidden = false;
-    var max = Math.max.apply(null, tags.map(function (t) { return counts[t]; }));
-
-    cloud.innerHTML =
-      '<div class="tag-cloud-panel">' +
-        '<p class="tag-cloud-label">Выберите тему</p>' +
-        '<div class="tag-cloud" role="group" aria-label="Темы статей">' +
-          '<button type="button" class="tag-pill tag-pill--all' + (!activeTag ? " tag-pill--active" : "") + '" data-tag="">Все темы</button>' +
-          tags.map(function (t, i) {
-            var scale = 0.88 + (counts[t] / max) * 0.28;
-            var hue = i % 3;
-            return '<button type="button" class="tag-pill tag-pill--c' + hue +
-              (activeTag === t ? " tag-pill--active" : "") +
-              '" data-tag="' + esc(t) + '" style="font-size:' + scale.toFixed(2) + 'em">' +
-              esc(t) + ' <span class="tag-count">' + counts[t] + "</span></button>";
-          }).join("") +
-        "</div>" +
-      "</div>";
-
-    cloud.querySelectorAll(".tag-pill").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var tag = btn.getAttribute("data-tag") || "";
-        setTagParam(tag);
-        cloud.querySelectorAll(".tag-pill").forEach(function (b) {
-          b.classList.toggle("tag-pill--active", b === btn);
-        });
-        renderGrid(list, tag || null);
-      });
-    });
+    return grid;
   }
 
   /* --- ХАБ --- */
-  var grid = document.querySelector("[data-articles-grid]");
+  var grid = ensureHubChrome();
   if (grid) {
     fetch("/blog/articles.json", { cache: "no-cache" })
       .then(function (r) { return r.json(); })
       .then(function (list) {
         if (!Array.isArray(list) || !list.length) return;
-        var active = tagParam();
-        renderTagCloud(list, active);
-        renderGrid(list, active || null);
+        renderGrid(list);
       })
       .catch(function () { /* fallback HTML */ });
   }

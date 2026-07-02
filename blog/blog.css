@@ -45,9 +45,14 @@ img{max-width:100%;display:block}
 .hero p{max-width:620px;margin:0 auto;color:rgba(255,255,255,.82);font-size:16px}
 
 /* ---- hub grid ---- */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0 auto 60px;position:relative}
-.tag-cloud-slot{margin:-36px auto 22px;position:relative;z-index:2}
-.tag-cloud-panel{background:#fff;border:1px solid var(--bd);border-radius:18px;padding:22px 24px 20px;box-shadow:0 16px 40px rgba(161,11,86,.12)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:32px auto 60px;position:relative}
+.tag-cloud-slot{margin:-48px auto 28px;position:relative;z-index:5}
+.tag-cloud-panel{
+  background:#fff;border:1px solid var(--bd);border-radius:18px;
+  padding:24px 26px 22px;
+  box-shadow:0 20px 50px rgba(161,11,86,.18);
+  border-top:4px solid var(--gold);
+}
 .tag-cloud-label{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--magenta);margin:0 0 14px}
 .tag-cloud{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .tag-pill{
@@ -72,12 +77,13 @@ img{max-width:100%;display:block}
 .pcardt-date{font-size:11px;font-weight:600;color:var(--txl);white-space:nowrap}
 .pcardt-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
 .mini-tag{
-  display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;
+  display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;
   padding:4px 10px;border-radius:999px;
-  background:rgba(207,26,207,.1);color:var(--plum);
-  text-decoration:none;transition:background .2s,color .2s;
+  background:var(--gold);color:var(--burg);
+  border:1px solid rgba(59,3,47,.12);
+  text-decoration:none;transition:background .2s,color .2s,border-color .2s;
 }
-a.mini-tag:hover{background:var(--magenta);color:#fff}
+a.mini-tag:hover{background:var(--gold-l);color:var(--burg);border-color:rgba(59,3,47,.2)}
 .pcardt.soon .mini-tag{opacity:.65}
 .pcardt{position:relative;background:#fff;border:1px solid var(--bd);border-radius:16px;padding:28px 24px 24px;display:flex;flex-direction:column;text-decoration:none;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
 .pcardt::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--pink),var(--magenta),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
@@ -209,5 +215,5 @@ a.pcardt:hover .more{color:var(--magenta)}
 .related li:last-child a{border-bottom:none}
 
 @media(max-width:860px){.grid{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.bnav{padding:0 18px}.bnav-links a:not(.bnav-cta){display:none}}
+@media(max-width:640px){.bnav{padding:0 18px}.bnav-links{gap:14px}.bnav-links a{font-size:12px}}
 @media(max-width:600px){.grid{grid-template-columns:1fr}}

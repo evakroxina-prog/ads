@@ -52,7 +52,6 @@
   <div class="bnav-links">
     <a href="https://ads.marketexpert.cz/blog/">База знаний</a>
     <a href="https://ads.marketexpert.cz/#pricing">Цены</a>
-    <a href="https://ads.marketexpert.cz/#order" class="bnav-cta">Бесплатная заявка</a>
   </div>
 </nav>
 
@@ -64,7 +63,12 @@
   <article class="art">
     <div class="art-tag">{{CATEGORY}}</div>
     <h1>{{TITLE}}</h1>
-    <div class="art-meta">Обновлено {{DATE_HUMAN}} · ~{{READ_MIN}} минут чтения</div>
+    <div class="art-meta">Опубликовано {{DATE_HUMAN}} · ~{{READ_MIN}} минут чтения</div>
+    <!-- Теги — те же, что в articles.json. Ссылки ведут на фильтр хаба /blog/?tag=... -->
+    <div class="art-tags">
+      <a href="/blog/?tag={{TAG1_URL}}" class="art-tag-link">{{TAG1}}</a>
+      <a href="/blog/?tag={{TAG2_URL}}" class="art-tag-link">{{TAG2}}</a>
+    </div>
 
     <div class="lead-box">
       {{LEAD}}
