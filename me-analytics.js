@@ -1,5 +1,5 @@
 /**
- * GA4 + Microsoft Clarity + cookie consent — общий для всех лендингов marketexpert.cz
+ * GA4 + Microsoft Clarity + cookie consent — общий для всех лендингов и блога ads.marketexpert.cz
  * Ключ localStorage: cookie_consent (yes | no)
  * Скрипты аналитики не загружаются до явного согласия (Принять).
  *
