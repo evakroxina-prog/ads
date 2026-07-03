@@ -319,7 +319,7 @@
             '<button type="button" class="art-feedback-btn" data-helpful="yes">Да</button>' +
             '<button type="button" class="art-feedback-btn" data-helpful="no">Нет</button>' +
           "</div>" +
-          '<p class="art-feedback-thx" data-feedback-thx hidden>Спасибо за ответ!</p>' +
+          '<p class="art-feedback-thx" data-feedback-thx hidden>Спасибо за ответ! <span data-feedback-no-extra hidden>Не хватило деталей? <a href="https://ads.marketexpert.cz/#order">Напишите нам</a> — подскажем.</span></p>' +
         "</div>" +
       "</div>";
 
@@ -407,14 +407,178 @@
     }
 
     var feedbackKey = "me-blog-feedback-" + pagePath;
-    var feedbackBox = engage.querySelector("[data-article-feedback]");
+    var auditKey = "me-blog-audit-" + pagePath;
     var feedbackRow = engage.querySelector(".art-feedback-row");
     var feedbackThx = engage.querySelector("[data-feedback-thx]");
+    var feedbackNoExtra = engage.querySelector("[data-feedback-no-extra]");
+    var AUDIT_FORM_ACTION = "https://formspree.io/f/xnjkorww";
 
-    if (localStorage.getItem(feedbackKey)) {
+    function getStoredFeedback() {
+      try { return localStorage.getItem(feedbackKey) || ""; } catch (e) { return ""; }
+    }
+
+    function getAuditState() {
+      try { return localStorage.getItem(auditKey) || ""; } catch (e) { return ""; }
+    }
+
+    function setAuditState(value) {
+      try { localStorage.setItem(auditKey, value); } catch (e) { /* private mode */ }
+    }
+
+    function applyFeedbackUi(mode) {
       if (feedbackRow) feedbackRow.hidden = true;
       if (feedbackThx) feedbackThx.hidden = false;
+      if (feedbackNoExtra) feedbackNoExtra.hidden = mode !== "no";
     }
+
+    function ensureAuditModal() {
+      var modal = document.querySelector("[data-blog-audit-modal]");
+      if (modal) return modal;
+
+      document.body.insertAdjacentHTML(
+        "beforeend",
+        '<div class="blog-audit-modal" data-blog-audit-modal hidden>' +
+          '<div class="blog-audit-modal__backdrop" data-blog-audit-close tabindex="-1" aria-hidden="true"></div>' +
+          '<div class="blog-audit-modal__panel" role="dialog" aria-modal="true" aria-labelledby="blog-audit-title">' +
+            '<button type="button" class="blog-audit-modal__close" data-blog-audit-close aria-label="Закрыть">&times;</button>' +
+            '<p class="blog-audit-modal__tag">Бонус за полезную статью</p>' +
+            '<h2 id="blog-audit-title">Спасибо за высокую оценку!</h2>' +
+            '<p class="blog-audit-modal__lead">Раз материал зашёл — для вас бонус: <strong>бесплатный аудит</strong> рекламного аккаунта Google Ads.</p>' +
+            '<form class="blog-audit-form" data-blog-audit-form action="' + AUDIT_FORM_ACTION + '" method="POST">' +
+              '<input type="hidden" name="_subject" value="Блог: бонус-аудит после положительной оценки">' +
+              '<input type="hidden" name="lead_type" value="blog_audit_bonus">' +
+              '<input type="hidden" name="source_page" value="">' +
+              '<input type="hidden" name="article_title" value="">' +
+              '<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="blog-audit-form__hp">' +
+              '<label class="blog-audit-form__label" for="blog-audit-email">Email</label>' +
+              '<input type="email" id="blog-audit-email" name="email" placeholder="vy@firma.cz" required autocomplete="email">' +
+              '<button type="submit">Получить аудит</button>' +
+              '<p class="blog-audit-form__note">Свяжемся в течение 1 рабочего дня. Без спама.</p>' +
+            "</form>" +
+            '<p class="blog-audit-modal__success" data-blog-audit-success hidden>Заявка отправлена — мы свяжемся с вами в ближайший рабочий день.</p>' +
+            '<button type="button" class="blog-audit-modal__skip" data-blog-audit-close>Нет, спасибо</button>' +
+          "</div>" +
+        "</div>"
+      );
+
+      modal = document.querySelector("[data-blog-audit-modal]");
+      if (!modal) return null;
+
+      var form = modal.querySelector("[data-blog-audit-form]");
+      var success = modal.querySelector("[data-blog-audit-success]");
+
+      function closeAuditModal(markDismissed) {
+        modal.hidden = true;
+        document.body.classList.remove("blog-audit-modal-open");
+        if (markDismissed && getAuditState() !== "sent") setAuditState("dismissed");
+      }
+
+      modal.querySelectorAll("[data-blog-audit-close]").forEach(function (el) {
+        el.addEventListener("click", function () { closeAuditModal(true); });
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && !modal.hidden) closeAuditModal(true);
+      });
+
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          if (!form.action || form.action.indexOf("formspree.io") === -1) return;
+
+          var btn = form.querySelector('button[type="submit"]');
+          if (!btn || btn.disabled) return;
+
+          var originalLabel = btn.textContent;
+          btn.disabled = true;
+          btn.textContent = "Отправка…";
+
+          var data = new FormData(form);
+          if (!data.get("source_page")) data.set("source_page", pagePath);
+          if (!data.get("article_title")) data.set("article_title", shareTitle);
+
+          fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: { Accept: "application/json" }
+          })
+            .then(function (res) {
+              return res.json()
+                .then(function (payload) { return { ok: res.ok, data: payload }; })
+                .catch(function () { return { ok: res.ok, data: {} }; });
+            })
+            .then(function (r) {
+              if (!r.ok) {
+                var msg = "Не удалось отправить. Напишите на ads@marketexpert.cz";
+                if (r.data && r.data.error) {
+                  msg = typeof r.data.error === "string" ? r.data.error : (r.data.error.message || msg);
+                }
+                alert(msg);
+                btn.disabled = false;
+                btn.textContent = originalLabel;
+                return;
+              }
+
+              setAuditState("sent");
+              form.hidden = true;
+              modal.querySelector(".blog-audit-modal__skip").hidden = true;
+              if (success) success.hidden = false;
+
+              if (typeof window.gtag === "function") {
+                window.gtag("event", "generate_lead", {
+                  lead_type: "blog_audit_bonus",
+                  article_path: pagePath,
+                  article_title: shareTitle
+                });
+              }
+              if (typeof window.trackLeadConversion === "function") {
+                window.trackLeadConversion({ language: "RU", package_name: "blog_audit_bonus" });
+              }
+
+              setTimeout(function () { closeAuditModal(false); }, 2800);
+            })
+            .catch(function () {
+              alert("Ошибка сети. Попробуйте позже или напишите на ads@marketexpert.cz");
+              btn.disabled = false;
+              btn.textContent = originalLabel;
+            });
+        });
+      }
+
+      modal.openForArticle = function (path, title) {
+        if (getAuditState() === "sent" || getAuditState() === "dismissed") return;
+
+        var sourceInput = form && form.querySelector('input[name="source_page"]');
+        var titleInput = form && form.querySelector('input[name="article_title"]');
+        if (sourceInput) sourceInput.value = path;
+        if (titleInput) titleInput.value = title;
+
+        if (form) {
+          form.hidden = false;
+          form.reset();
+          if (sourceInput) sourceInput.value = path;
+          if (titleInput) titleInput.value = title;
+          var submitBtn = form.querySelector('button[type="submit"]');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Получить аудит";
+          }
+        }
+        if (success) success.hidden = true;
+        var skipBtn = modal.querySelector(".blog-audit-modal__skip");
+        if (skipBtn) skipBtn.hidden = false;
+
+        modal.hidden = false;
+        document.body.classList.add("blog-audit-modal-open");
+        var emailInput = modal.querySelector("#blog-audit-email");
+        if (emailInput) setTimeout(function () { emailInput.focus(); }, 50);
+      };
+
+      return modal;
+    }
+
+    var storedFeedback = getStoredFeedback();
+    if (storedFeedback) applyFeedbackUi(storedFeedback);
 
     engage.querySelectorAll("[data-helpful]").forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -429,8 +593,14 @@
           });
         }
 
-        if (feedbackRow) feedbackRow.hidden = true;
-        if (feedbackThx) feedbackThx.hidden = false;
+        applyFeedbackUi(helpful ? "yes" : "no");
+
+        if (helpful) {
+          var modal = ensureAuditModal();
+          if (modal && typeof modal.openForArticle === "function") {
+            modal.openForArticle(pagePath, shareTitle);
+          }
+        }
       });
     });
   }
