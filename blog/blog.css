@@ -371,7 +371,70 @@ a.pcardt:hover .more{color:var(--magenta)}
 }
 .art-feedback-btn:hover{border-color:var(--magenta);color:var(--magenta);transform:translateY(-1px)}
 .art-feedback-btn[data-helpful="yes"]:hover{background:rgba(255,200,0,.25);border-color:var(--gold);color:var(--burg)}
-.art-feedback-thx{font-family:'Inter',sans-serif;font-size:14px;color:var(--txl);margin:0}
+.art-feedback-thx{font-family:'Inter',sans-serif;font-size:14px;color:var(--txl);margin:0;line-height:1.55}
+.art-feedback-thx a{color:var(--plum);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.art-feedback-thx a:hover{color:var(--magenta)}
+
+/* ---- blog audit popup (after positive feedback) ---- */
+body.blog-audit-modal-open{overflow:hidden}
+.blog-audit-modal{
+  position:fixed;inset:0;z-index:1000;
+  display:flex;align-items:center;justify-content:center;padding:20px
+}
+.blog-audit-modal[hidden]{display:none!important}
+.blog-audit-modal__backdrop{
+  position:absolute;inset:0;background:rgba(26,6,20,.62);
+  backdrop-filter:blur(3px)
+}
+.blog-audit-modal__panel{
+  position:relative;z-index:1;width:min(100%,440px);
+  background:#fff;border:1px solid var(--bd);border-radius:16px;
+  padding:28px 28px 22px;box-shadow:0 24px 60px rgba(59,3,47,.22)
+}
+.blog-audit-modal__close{
+  position:absolute;top:12px;right:14px;
+  width:36px;height:36px;border:none;border-radius:8px;
+  background:transparent;color:var(--txl);font-size:28px;line-height:1;
+  cursor:pointer;transition:background .2s,color .2s
+}
+.blog-audit-modal__close:hover{background:var(--cream-d);color:var(--burg)}
+.blog-audit-modal__tag{
+  display:inline-block;margin:0 0 10px;
+  font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--burg);background:var(--gold);padding:5px 12px;border-radius:20px
+}
+.blog-audit-modal__panel h2{
+  margin:0 0 10px;font-family:'Playfair Display',serif;
+  font-size:24px;line-height:1.2;color:var(--burg2)
+}
+.blog-audit-modal__lead{margin:0 0 18px;font-size:15px;color:var(--txl);line-height:1.6}
+.blog-audit-form{display:flex;flex-direction:column;gap:10px;margin:0}
+.blog-audit-form__hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.blog-audit-form__label{font-size:13px;font-weight:600;color:var(--burg2)}
+.blog-audit-form input[type=email]{
+  width:100%;padding:13px 15px;border:1px solid var(--bd);border-radius:8px;
+  font-size:15px;font-family:'Inter',sans-serif;background:#fff
+}
+.blog-audit-form input[type=email]:focus{outline:2px solid var(--magenta);border-color:var(--magenta)}
+.blog-audit-form button[type=submit]{
+  margin-top:4px;background:var(--gold);color:var(--burg);border:none;
+  padding:13px 22px;border-radius:8px;font-weight:800;font-size:14px;
+  cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s,transform .2s
+}
+.blog-audit-form button[type=submit]:hover{background:var(--gold-l);transform:translateY(-1px)}
+.blog-audit-form button[type=submit]:disabled{opacity:.75;cursor:wait;transform:none}
+.blog-audit-form__note{margin:0;font-size:12px;color:var(--txl);line-height:1.45}
+.blog-audit-modal__success{
+  margin:0 0 12px;padding:14px 16px;border-radius:10px;
+  background:rgba(255,200,0,.18);border:1px solid rgba(255,200,0,.45);
+  font-size:14px;color:var(--burg2);line-height:1.5
+}
+.blog-audit-modal__skip{
+  display:block;margin:14px auto 0;background:none;border:none;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:600;
+  color:var(--txl);cursor:pointer;text-decoration:underline;text-underline-offset:2px
+}
+.blog-audit-modal__skip:hover{color:var(--plum)}
 
 @media(max-width:720px){.art-engage{grid-template-columns:1fr;gap:28px}}
 
