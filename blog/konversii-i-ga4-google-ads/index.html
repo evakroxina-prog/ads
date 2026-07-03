@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/footer.css">
-<link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/blog/blog.css?v=20260703b">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Конверсии и GA4 для Google Ads: как настроить отслеживание и не оптимизировать вслепую","description":"Связка Google Ads ↔ GA4: тег, события, thank-you page, импорт конверсий и типичные ошибки, из-за которых алгоритм оптимизирует не ту цифру.","inLanguage":"ru","mainEntityOfPage":"https://ads.marketexpert.cz/blog/konversii-i-ga4-google-ads/","image":"https://ads.marketexpert.cz/logo.png","author":{"@type":"Organization","name":"M:E Agency"},"publisher":{"@type":"Organization","name":"M:E Agency","logo":{"@type":"ImageObject","url":"https://ads.marketexpert.cz/logo.png"}},"datePublished":"2026-05-31","dateModified":"2026-05-31"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://ads.marketexpert.cz/"},{"@type":"ListItem","position":2,"name":"База знаний","item":"https://ads.marketexpert.cz/blog/"},{"@type":"ListItem","position":3,"name":"Конверсии и GA4","item":"https://ads.marketexpert.cz/blog/konversii-i-ga4-google-ads/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Нужно ли настраивать consent mode и cookie-баннер для рекламы в Чехии?","acceptedAnswer":{"@type":"Answer","text":"Да — в рамках требований GDPR и ePrivacy сайт должен запрашивать согласие на использование cookie до их установки, а Google tag должен работать через Consent Mode, чтобы корректно учитывать согласие пользователя. Без этого часть данных о конверсиях может не передаваться или передаваться некорректно, особенно от пользователей, отклонивших cookie."}},{"@type":"Question","name":"Можно ли оптимизировать рекламу по микроконверсиям, если основных заявок мало?","acceptedAnswer":{"@type":"Answer","text":"Можно, как временное решение, пока не накопится достаточно основных конверсий — например, использовать в качестве промежуточной цели просмотр ключевой страницы или добавление в корзину. Но такую конверсию стоит держать как дополнительную (Secondary) или временную основную с последующей заменой, поскольку микроконверсия не всегда коррелирует с реальным результатом бизнеса."}},{"@type":"Question","name":"Что делать, если конверсий стабильно мало даже спустя месяц после запуска?","acceptedAnswer":{"@type":"Answer","text":"В первую очередь проверить сам факт корректной настройки по чек-листу — часто «мало конверсий» на самом деле означает «конверсии не считаются», а не «трафик не конвертируется». Если настройка верна, а конверсий действительно немного, стоит оставаться на ручных стратегиях ставок дольше и не переключаться на автостратегии до накопления достаточного объёма данных."}},{"@type":"Question","name":"Как проверить, что тег на сайте вообще работает?","acceptedAnswer":{"@type":"Answer","text":"Через расширение Google Tag Assistant или встроенный инструмент «Диагностика тегов» в Google Ads — они показывают, срабатывает ли тег на странице и передаются ли события корректно, без необходимости ждать реальных конверсий для проверки."}}]}</script>
@@ -353,7 +353,7 @@
     </a>
     <div class="site-footer__middle">
       <div class="site-footer__links" role="navigation" aria-label="Другие направления M:E">
-        <a href="https://ads.marketexpert.cz/blog/">База знаний</a>
+        <a href="https://ads.marketexpert.cz/">Google Ads</a>
         <a href="https://consult.marketexpert.cz" target="_blank" rel="noopener noreferrer">Консультации</a>
         <a href="https://seo.marketexpert.cz" target="_blank" rel="noopener noreferrer">SEO</a>
         <a href="https://reputation.marketexpert.cz" target="_blank" rel="noopener noreferrer">Репутация</a>
@@ -373,6 +373,6 @@
   </div>
 </footer>
 
-<script src="/blog/blog.js"></script>
+<script src="/blog/blog.js?v=20260703b"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* M:E blog — articles.json, YouTube, cookie consent */
+/* M:E blog.js v20260703b — tags, share, audit popup, copy fix */
 (function () {
   "use strict";
 
@@ -355,21 +355,97 @@
     }
 
     function copyPageUrl(onDone) {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(pageUrl).then(function () { onDone(true); }).catch(function () { onDone(false); });
+      function legacyCopy() {
+        var ta = document.createElement("textarea");
+        ta.value = pageUrl;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.top = "0";
+        ta.style.left = "0";
+        ta.style.width = "1px";
+        ta.style.height = "1px";
+        ta.style.opacity = "0";
+        ta.style.pointerEvents = "none";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        ta.setSelectionRange(0, pageUrl.length);
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      if (legacyCopy()) {
+        onDone(true);
         return;
       }
-      var ta = document.createElement("textarea");
-      ta.value = pageUrl;
-      ta.setAttribute("readonly", "");
-      ta.style.position = "absolute";
-      ta.style.left = "-9999px";
-      document.body.appendChild(ta);
-      ta.select();
-      var ok = false;
-      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
-      document.body.removeChild(ta);
-      onDone(ok);
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(pageUrl).then(function () {
+          onDone(true);
+        }).catch(function () {
+          onDone(legacyCopy());
+        });
+        return;
+      }
+
+      onDone(false);
+    }
+
+    function showCopyLinkFallback(hint) {
+      var shareBox = engage.querySelector(".art-share");
+      if (!shareBox) return;
+
+      var box = shareBox.querySelector("[data-share-copy-fallback]");
+      if (!box) {
+        shareBox.insertAdjacentHTML(
+          "beforeend",
+          '<div class="art-share-copy-fallback" data-share-copy-fallback hidden>' +
+            '<p class="art-share-copy-fallback__hint" data-share-copy-msg></p>' +
+            '<div class="art-share-copy-fallback__row">' +
+              '<input type="text" readonly data-share-copy-input class="art-share-copy-fallback__input">' +
+              '<button type="button" class="art-share-copy-fallback__btn" data-share-copy-retry>Скопировать</button>' +
+            "</div>" +
+          "</div>"
+        );
+        box = shareBox.querySelector("[data-share-copy-fallback]");
+        box.querySelector("[data-share-copy-retry]").addEventListener("click", function () {
+          var input = box.querySelector("[data-share-copy-input]");
+          if (!input) return;
+          input.focus();
+          input.select();
+          input.setSelectionRange(0, input.value.length);
+          var ok = false;
+          try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+          if (!ok && navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(input.value).then(function () {
+              showToast("Ссылка скопирована");
+              box.hidden = true;
+            }).catch(function () {
+              showToast("Выделите ссылку и нажмите Ctrl+C");
+            });
+            return;
+          }
+          if (ok) {
+            showToast("Ссылка скопирована");
+            box.hidden = true;
+          } else {
+            showToast("Выделите ссылку и нажмите Ctrl+C");
+          }
+        });
+      }
+
+      var msgEl = box.querySelector("[data-share-copy-msg]");
+      var inputEl = box.querySelector("[data-share-copy-input]");
+      if (msgEl) msgEl.textContent = hint || "Ссылка на статью — выделите и скопируйте (Ctrl+C):";
+      if (inputEl) {
+        inputEl.value = pageUrl;
+        box.hidden = false;
+        inputEl.focus();
+        inputEl.select();
+        inputEl.setSelectionRange(0, pageUrl.length);
+      }
     }
 
     engage.querySelectorAll("[data-share-network]").forEach(function (link) {
@@ -383,7 +459,13 @@
         var action = btn.getAttribute("data-share-action");
         copyPageUrl(function (ok) {
           if (!ok) {
-            showToast("Не удалось скопировать — выделите ссылку в адресной строке");
+            if (action === "ig") {
+              showCopyLinkFallback("Instagram не принимает прямую ссылку — скопируйте URL и вставьте в Stories или bio:");
+              trackShare("instagram_copy_fallback");
+            } else {
+              showCopyLinkFallback("Не удалось скопировать автоматически — выделите ссылку ниже:");
+              trackShare("copy_link_fallback");
+            }
             return;
           }
           if (action === "ig") {
