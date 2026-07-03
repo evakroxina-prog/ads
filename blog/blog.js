@@ -586,8 +586,8 @@
         try { localStorage.setItem(feedbackKey, helpful ? "yes" : "no"); } catch (e) { /* private mode */ }
 
         if (typeof window.gtag === "function") {
-          window.gtag("event", "article_feedback", {
-            helpful: helpful ? "yes" : "no",
+          window.gtag("event", helpful ? "article_feedback_yes" : "article_feedback_no", {
+            feedback_answer: helpful ? "yes" : "no",
             article_path: pagePath,
             article_title: shareTitle
           });
