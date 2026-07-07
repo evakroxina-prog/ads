@@ -1,10 +1,10 @@
-/* M:E blog.js cs v20260707 — tags, share, audit popup, copy fix */
+/* M:E blog.js v20260703b — tags, share, audit popup, copy fix */
 (function () {
   "use strict";
 
-  var MONTHS_CS = [
-    "ledna", "února", "března", "dubna", "května", "června",
-    "července", "srpna", "září", "října", "listopadu", "prosince"
+  var MONTHS_RU = [
+    "января", "февраля", "марта", "апреля", "мая", "июня",
+    "июля", "августа", "сентября", "октября", "ноября", "декабря"
   ];
 
   function esc(s) {
@@ -13,20 +13,20 @@
     });
   }
 
-  function formatDateCs(iso) {
+  function formatDateRu(iso) {
     if (!iso) return "";
     var p = String(iso).split("-");
     if (p.length !== 3) return iso;
     var d = parseInt(p[2], 10);
     var m = parseInt(p[1], 10) - 1;
-    return d + " " + (MONTHS_CS[m] || p[1]) + " " + p[0];
+    return d + " " + (MONTHS_RU[m] || p[1]) + " " + p[0];
   }
 
   function renderTagsHtml(tags, linkable) {
     if (!tags || !tags.length) return "";
     return tags.map(function (t) {
       if (linkable) {
-        return '<a href="/cz/blog/?tag=' + encodeURIComponent(t) + '" class="mini-tag">' + esc(t) + "</a>";
+        return '<a href="/blog/?tag=' + encodeURIComponent(t) + '" class="mini-tag">' + esc(t) + "</a>";
       }
       return '<span class="mini-tag">' + esc(t) + "</span>";
     }).join("");
@@ -42,17 +42,17 @@
     var cat = esc(a.category || "Google Ads");
     var title = esc(a.title || "");
     var excerpt = esc(a.excerpt || "");
-    var dateStr = a.date ? formatDateCs(a.date) : "";
+    var dateStr = a.date ? formatDateRu(a.date) : "";
     var tagsHtml = renderTagsHtml(a.tags, false);
 
-    var href = "/cz/blog/" + esc(a.slug) + "/";
+    var href = "/blog/" + esc(a.slug) + "/";
     return '<a class="pcardt" href="' + href + '" data-tags="' + esc((a.tags || []).join("|")) + '">' +
       '<div class="pcardt-top"><span class="cat">' + cat + "</span>" +
       (dateStr ? '<time class="pcardt-date" datetime="' + esc(a.date) + '">' + esc(dateStr) + "</time>" : "") +
       "</div>" +
       "<h2>" + title + "</h2><p>" + excerpt + "</p>" +
       (tagsHtml ? '<div class="pcardt-tags">' + tagsHtml + "</div>" : "") +
-      '<span class="more">Číst →</span></a>';
+      '<span class="more">Читать →</span></a>';
   }
 
   function renderGrid(list) {
@@ -69,7 +69,7 @@
     if (!document.querySelector("[data-grid-empty]")) {
       grid.insertAdjacentHTML(
         "afterend",
-        '<p class="grid-empty" data-grid-empty hidden>K tomuto tématu zatím nejsou publikované články.</p>'
+        '<p class="grid-empty" data-grid-empty hidden>По этой теме пока нет опубликованных статей.</p>'
       );
     }
     return grid;
@@ -84,7 +84,7 @@
     });
     return Object.keys(counts)
       .sort(function (a, b) {
-        return counts[b] - counts[a] || a.localeCompare(b, "cs");
+        return counts[b] - counts[a] || a.localeCompare(b, "ru");
       })
       .map(function (t) {
         return { name: t, count: counts[t] };
@@ -122,8 +122,8 @@
         filterBar.hidden = !activeTag;
         if (activeTag) {
           filterBar.innerHTML =
-            'Zobrazeny články s tagem <strong>' + esc(activeTag) + '</strong> · ' +
-            '<a href="/cz/blog/">Zobrazit vše</a>';
+            'Показаны статьи с тегом <strong>' + esc(activeTag) + '</strong> · ' +
+            '<a href="/blog/">Показать все</a>';
         }
       }
       document.querySelectorAll("[data-tag-cloud] .tag-pill").forEach(function (pill) {
@@ -137,7 +137,7 @@
       var tagItems = collectTagCounts(articles);
       var pills =
         '<button type="button" class="tag-pill tag-pill--all' + (!activeTag ? " tag-pill--active" : "") +
-        '" data-tag="">Vše <span class="tag-count">' + articles.length + "</span></button>";
+        '" data-tag="">Все <span class="tag-count">' + articles.length + "</span></button>";
       tagItems.forEach(function (item, i) {
         var cls = "tag-pill tag-pill--c" + (i % 3);
         if (activeTag === item.name) cls += " tag-pill--active";
@@ -148,7 +148,7 @@
       grid.insertAdjacentHTML(
         "beforebegin",
         '<div class="tag-cloud-slot" data-tag-cloud><div class="tag-cloud-panel">' +
-          '<p class="tag-cloud-label">Filtr podle témat</p><div class="tag-cloud">' + pills + "</div></div></div>" +
+          '<p class="tag-cloud-label">Фильтр по темам</p><div class="tag-cloud">' + pills + "</div></div></div>" +
           '<p class="grid-filter-bar" data-grid-filter hidden></p>'
       );
       filterBar = document.querySelector("[data-grid-filter]");
@@ -156,7 +156,7 @@
         var pill = e.target.closest(".tag-pill");
         if (!pill) return;
         var tag = pill.getAttribute("data-tag") || "";
-        window.location.href = tag ? "/cz/blog/?tag=" + encodeURIComponent(tag) : "/cz/blog/";
+        window.location.href = tag ? "/blog/?tag=" + encodeURIComponent(tag) : "/blog/";
       });
     }
 
@@ -166,221 +166,25 @@
   /* --- ХАБ --- */
   /* Карточки — из этого массива (articles.json — копия для справки, хаб его не грузит) */
   var ARTICLES = [
-  {
-    "slug": "remarketing-v-google-ads",
-    "title": "Remarketing v Google Ads: doplňkové kampaně pro služby a e‑shop",
-    "excerpt": "Kdy spustit, jaké audience sestavit, RLSA vs Display vs PMax, consent mode a metriky — bez plýtvání rozpočtem na „všechny, kdo navštívili web“.",
-    "category": "Google Ads · Pokročilé",
-    "date": "2026-07-03",
-    "tags": [
-      "optimalizace",
-      "konverze",
-      "spuštění"
-    ]
-  },
-  {
-    "slug": "google-ads-pro-mistni-firmy",
-    "title": "Google Ads pro místní firmy: geotargeting, jazyky a rozpočty",
-    "excerpt": "Geotargeting na Prahu a regiony, jazyky cs/en, reálné CPC podle oborů a proč Local Services Ads v Česku zatím nejsou dostupné.",
-    "category": "Google Ads · Místní byznys",
-    "date": "2026-06-21",
-    "tags": [
-      "spuštění",
-      "rozpočet",
-      "nastavení"
-    ]
-  },
-  {
-    "slug": "cilova-stranka-pro-google-ads",
-    "title": "Cílová stránka pro Google Ads: rychlost, formulář a message match",
-    "excerpt": "Message match, Core Web Vitals, mobilní formulář a thank-you page — co zkontrolovat před spuštěním a po prvních 100 relacích.",
-    "category": "Google Ads · Pokročilé",
-    "date": "2026-06-14",
-    "tags": [
-      "optimalizace",
-      "konverze",
-      "nastavení"
-    ]
-  },
-  {
-    "slug": "optimalizace-performance-max",
-    "title": "Performance Max po spuštění: co sledovat a co ladit",
-    "excerpt": "Insights, skupiny podkladů, mínusová slova a brand exclusions v PMax, doba učení a propojení se Search bez kanibalizace rozpočtu.",
-    "category": "Google Ads · Pokročilé",
-    "date": "2026-06-07",
-    "tags": [
-      "optimalizace",
-      "konverze",
-      "spuštění"
-    ]
-  },
-  {
-    "slug": "konverze-a-ga4-pro-google-ads",
-    "title": "Konverze a GA4 pro Google Ads: jak nastavit měření",
-    "excerpt": "Tag, události, thank-you page, Primary/Secondary, Enhanced Conversions a offline import — jak neoptimalizovat reklamu naslepo.",
-    "category": "Google Ads · Nastavení",
-    "date": "2026-05-31",
-    "tags": [
-      "konverze",
-      "nastavení",
-      "optimalizace"
-    ]
-  },
-  {
-    "slug": "optimalizace-vyhledavacich-kampani",
-    "title": "Optimalizace vyhledávacích kampaní po spuštění",
-    "excerpt": "Týdenní checklist: vyhledávací dotazy, mínusová slova, RSA, Auction Insights a nabídky — co dělat v prvním měsíci a po stabilizaci.",
-    "category": "Google Ads · Pokročilé",
-    "date": "2026-05-24",
-    "tags": [
-      "optimalizace",
-      "mínusová slova",
-      "nastavení"
-    ]
-  },
-  {
-    "slug": "kvalitativni-skore-a-ad-rank",
-    "title": "Kvalitativní skóre, reklamy a landing: jak vyhrát aukci",
-    "excerpt": "Tři složky kvalitativního skóre, propojení klíč → reklama → stránka, proč SKAG zastaral a jak platit méně než konkurent při stejné nabídce.",
-    "category": "Google Ads · Pokročilé",
-    "date": "2026-05-17",
-    "tags": [
-      "Ad Rank",
-      "aukce",
-      "optimalizace"
-    ]
-  },
-  {
-    "slug": "jak-snizit-cenu-poptavky",
-    "title": "Jak snížit cenu poptávky v Google Ads",
-    "excerpt": "Pět vrstev snížení CPL: konverze, mínusová slova, kvalita reklam, landing a nabídky — co dělat postupně a co neladit předčasně.",
-    "category": "Google Ads · Optimalizace",
-    "date": "2026-05-10",
-    "tags": [
-      "CPL",
-      "optimalizace",
-      "mínusová slova"
-    ]
-  },
-  {
-    "slug": "maly-rozpocet-v-google-ads",
-    "title": "Malý rozpočet v Google Ads: stačí 10 € denně?",
-    "excerpt": "10 €/den ≈ 300 €/měs.: kdy malý rozpočet stačí, jaká jsou rizika na startu a playbook optimalizace bez plýtvání na učení algoritmu.",
-    "category": "Google Ads · Rozpočet",
-    "date": "2026-05-03",
-    "tags": [
-      "rozpočet",
-      "spuštění",
-      "optimalizace"
-    ]
-  },
-  {
-    "slug": "kurzy-google-ads-nebo-agentura",
-    "title": "Kurzy Google Ads nebo agentura: co zvolit v roce 2026",
-    "excerpt": "Srovnání kurzů a agentury podle rozpočtu, času a rizik — a kdy dává smysl obojí kombinovat místo volby jednoho.",
-    "category": "Google Ads · Volba",
-    "date": "2026-04-26",
-    "tags": [
-      "rozpočet",
-      "spuštění",
-      "nastavení"
-    ]
-  },
-  {
-    "slug": "kolik-stoji-reklama-v-google-ads",
-    "title": "Kolik stojí reklama v Google Ads",
-    "excerpt": "Z čeho se skládá cena reklamy: CPC, DPH, agentura, minimální rozpočet a proč je cena za proklik v jednom oboru různá.",
-    "category": "Google Ads · Rozpočet",
-    "date": "2026-04-19",
-    "tags": [
-      "rozpočet",
-      "CPC"
-    ]
-  },
-  {
-    "slug": "performance-max-a-vyhledavaci-kampane",
-    "title": "Performance Max a vyhledávací kampaně jednoduše",
-    "excerpt": "Čím se liší vyhledávací kampaně a Performance Max, co zvolit na start a jak oba formáty kombinovat bez kanibalizace rozpočtu.",
-    "category": "Google Ads · Formáty",
-    "date": "2026-04-12",
-    "tags": [
-      "spuštění",
-      "nastavení",
-      "optimalizace",
-      "konverze"
-    ]
-  },
-  {
-    "slug": "jak-spustit-reklamu-v-google-ads",
-    "title": "Jak spustit reklamu v Google a kolik potřebujete rozpočtu",
-    "excerpt": "Jak se formuje cena za proklik, jak spočítat reálný rozpočet pro váš obor a co se v pravidlech útraty změnilo v roce 2026.",
-    "category": "Google Ads · Rozpočet",
-    "date": "2026-04-05",
-    "tags": [
-      "rozpočet",
-      "CPC",
-      "spuštění",
-      "pravidla 2026"
-    ]
-  },
-  {
-    "slug": "klicova-slova-a-shody",
-    "title": "Klíčová slova a typy shody v Google Ads",
-    "excerpt": "Sémantika podle záměru, Exact/Phrase/Broad na startu, STAG, mínusová slova a Search Terms v prvních 14 dnech — bez prokliků na nerelevantní dotazy.",
-    "category": "Google Ads · Nastavení",
-    "date": "2026-04-02",
-    "tags": [
-      "nastavení",
-      "mínusová slova",
-      "spuštění"
-    ]
-  },
-  {
-    "slug": "ucet-google-ads",
-    "title": "Účet Google Ads: přihlášení a nastavení",
-    "excerpt": "Jak se přihlásit na ads.google.com, založit účet bez chyb, nastavit konverze, přístupová práva a neztratit účet na startu.",
-    "category": "Google Ads · Účet",
-    "date": "2026-03-28",
-    "tags": [
-      "nastavení",
-      "spuštění",
-      "konverze"
-    ]
-  },
-  {
-    "slug": "jak-funguje-google-ads",
-    "title": "Jak funguje Google Ads: aukce a hodnocení reklamy",
-    "excerpt": "Jak probíhá aukce při každém vyhledávání, z čeho se skládá Ad Rank a proč nevyhrává ten, kdo platí víc.",
-    "category": "Google Ads · Teorie",
-    "date": "2026-03-20",
-    "tags": [
-      "aukce",
-      "Ad Rank"
-    ]
-  },
-  {
-    "slug": "jak-nastavit-google-ads",
-    "title": "Jak nastavit Google Ads: podrobný návod 2026",
-    "excerpt": "9 kroků od cíle a rozpočtu po spuštění a optimalizaci. Upřímný odhad podle vaší sémantiky, bez balastu a bez plýtvání rozpočtem na testy.",
-    "category": "Google Ads · Návod",
-    "date": "2026-03-12",
-    "tags": [
-      "nastavení",
-      "konverze"
-    ]
-  },
-  {
-    "slug": "co-je-google-ads",
-    "title": "Co je Google Ads: jednoduché vysvětlení pro začátečníky",
-    "excerpt": "Jak Google Ads funguje, čím se liší od SEO, komu se hodí a jaké základní pojmy znát před spuštěním.",
-    "category": "Google Ads · Základy",
-    "date": "2026-03-05",
-    "tags": [
-      "spuštění",
-      "nastavení"
-    ]
-  }
-];
+    {"slug":"remarketing-google-ads","title":"Ремаркетинг в Google Ads: догоняющие кампании для услуг и e-commerce","excerpt":"Когда запускать, какие аудитории собирать, RLSA vs Display vs PMax, consent mode и метрики — без слива бюджета на «всех, кто заходил».","category":"Google Ads · Углубление","date":"2026-07-03","tags":["оптимизация","конверсии","запуск"]},
+    {"slug":"google-ads-lokalnyj-biznes-chehiya","title":"Google Ads для локального бизнеса в Чехии: гео, языки и бюджеты","excerpt":"Гео-таргетинг на Прагу и регионы, языки cs/ru/en, реальные CPC по нишам и почему Local Services Ads в Чехии пока недоступны.","category":"Google Ads · Локальный бизнес","date":"2026-06-21","tags":["запуск","бюджет","настройка"]},
+    {"slug":"posadochnaya-stranica-google-ads","title":"Посадочная страница под Google Ads: скорость, форма и message match","excerpt":"Message match, Core Web Vitals, мобильная форма и thank-you page — что проверить до запуска и после первых 100 сессий.","category":"Google Ads · Углубление","date":"2026-06-14","tags":["оптимизация","конверсии","настройка"]},
+    {"slug":"optimizaciya-performance-max","title":"Performance Max после запуска: что смотреть и что крутить","excerpt":"Insights, asset groups, минус-слова и brand exclusions в PMax, сроки обучения и связка с Search без каннибализации бюджета.","category":"Google Ads · Углубление","date":"2026-06-07","tags":["оптимизация","конверсии","запуск"]},
+    {"slug":"konversii-i-ga4-google-ads","title":"Конверсии и GA4 для Google Ads: как настроить отслеживание","excerpt":"Тег, события, thank-you page, Primary/Secondary, Enhanced Conversions и offline import — как не оптимизировать рекламу вслепую.","category":"Google Ads · Настройка","date":"2026-05-31","tags":["конверсии","настройка","оптимизация"]},
+    {"slug":"optimizaciya-search-kampanij","title":"Оптимизация Search-кампаний после запуска","excerpt":"Еженедельный чек-лист: поисковые запросы, минус-слова, RSA, Auction Insights и ставки — что делать в первый месяц и после стабилизации.","category":"Google Ads · Углубление","date":"2026-05-24","tags":["оптимизация","минус-слова","настройка"]},
+    {"slug":"pokazatel-kachestva-i-ad-rank","title":"Показатель качества, объявления и лендинг: как выигрывать аукцион","excerpt":"Три компонента показателя качества, связка ключ → объявление → страница, почему SKAG устарел и как платить меньше конкурента при той же ставке.","category":"Google Ads · Углубление","date":"2026-05-17","tags":["Ad Rank","аукцион","оптимизация"]},
+    {"slug":"kak-snizit-cenu-zayavki","title":"Как снизить цену заявки в Google Ads","excerpt":"Пять слоёв снижения CPL: конверсии, минус-слова, качество объявлений, лендинг и ставки — что делать по порядку и чего не трогать раньше времени.","category":"Google Ads · Оптимизация","date":"2026-05-10","tags":["CPL","оптимизация","минус-слова"]},
+    {"slug":"malyj-budzhet-google-ads","title":"Малый бюджет в Google Ads: хватит ли 10 € в день","excerpt":"10 €/день ≈ 300 €/мес: когда малого бюджета достаточно, какие риски на старте и плейбук оптимизации без слива на обучение алгоритма.","category":"Google Ads · Бюджет","date":"2026-05-03","tags":["бюджет","запуск","оптимизация"]},
+    {"slug":"kursy-google-ads-ili-agentstvo","title":"Курсы Google Ads или агентство: что выбрать в 2026 году","excerpt":"Сравнение курсов и агентства по бюджету, срокам и рискам — и когда разумно совмещать оба варианта вместо выбора одного.","category":"Google Ads · Выбор","date":"2026-04-26","tags":["бюджет","запуск","настройка"]},
+    {"slug":"skolko-stoit-google-ads","title":"Сколько стоит реклама в Google Ads","excerpt":"Из чего складывается стоимость рекламы: CPC, НДС, агентство, минимальный бюджет и почему цена клика разная в одной нише.","category":"Google Ads · Бюджет","date":"2026-04-19","tags":["бюджет","CPC"]},
+    {"slug":"performance-max-i-search-ads","title":"Performance Max и Search Ads простыми словами","excerpt":"Чем отличаются поисковые кампании и Performance Max, что выбрать для старта и как совместить оба формата без каннибализации бюджета.","category":"Google Ads · Форматы","date":"2026-04-12","tags":["запуск","настройка","оптимизация","конверсии"]},
+    {"slug":"kak-zapustit-reklamu-google-ads","title":"Как запустить рекламу в Google и сколько нужно бюджета","excerpt":"Как формируется цена клика, как посчитать реальный бюджет под свою нишу и что изменилось в правилах расхода в 2026 году.","category":"Google Ads · Бюджет","date":"2026-04-05","tags":["бюджет","CPC","запуск","правила 2026"]},
+    {"slug":"klyuchevye-slova-i-match-types","title":"Ключевые слова и типы соответствия в Google Ads","excerpt":"Семантика по интенту, Exact/Phrase/Broad на старте, STAG, минус-слова и Search Terms в первые 14 дней — без слива на нерелевантные клики.","category":"Google Ads · Настройка","date":"2026-04-02","tags":["настройка","минус-слова","запуск"]},
+    {"slug":"kabinet-google-ads","title":"Кабинет Google Ads: вход и настройка","excerpt":"Как войти в ads.google.com, создать аккаунт без ошибок, настроить конверсии, права доступа и не потерять кабинет на старте.","category":"Google Ads · Кабинет","date":"2026-03-28","tags":["настройка","запуск","конверсии"]},
+    {"slug":"kak-rabotaet-google-ads","title":"Как работает Google Ads: аукцион и рейтинг объявления","excerpt":"Как проходит аукцион при каждом поиске, из чего складывается Ad Rank и почему побеждает не тот, кто платит больше.","category":"Google Ads · Теория","date":"2026-03-20","tags":["аукцион","Ad Rank"]},
+    {"slug":"kak-nastroit-reklamu-google-ads","title":"Как настроить рекламу в Google Ads: пошаговая инструкция 2026","excerpt":"9 шагов от цели и бюджета до запуска и оптимизации. Честный прогноз по вашей семантике, без воды и без слива бюджета на тестах.","category":"Google Ads · Гайд","date":"2026-03-12","tags":["настройка","конверсии"]},
+    {"slug":"chto-takoe-google-ads","title":"Что такое Google Ads: простое объяснение для новичков","excerpt":"Как работает Google Ads, чем отличается от SEO, кому подходит и какие базовые термины знать перед запуском.","category":"Google Ads · Основы","date":"2026-03-05","tags":["запуск","настройка"]}
+  ];
 
   if (ARTICLES.length) {
     initHub(ARTICLES);
@@ -396,8 +200,8 @@
       ph.className = "yt-empty";
       ph.innerHTML =
         '<div class="yt-empty-ico"></div>' +
-        '<b>Video k tomuto článku brzy přibude</b>' +
-        '<span>Odebírejte <a href="' + CHANNEL + '" target="_blank" rel="noopener noreferrer">YouTube kanál M:E</a>, ať vám nic neuteče</span>';
+        '<b>Видео к этой статье скоро появится</b>' +
+        '<span>Подпишитесь на <a href="' + CHANNEL + '" target="_blank" rel="noopener noreferrer">YouTube-канал M:E</a>, чтобы не пропустить</span>';
       el.replaceWith(ph);
       return;
     }
@@ -407,13 +211,13 @@
     var btn = document.createElement("button");
     btn.className = "yt-play";
     btn.type = "button";
-    btn.setAttribute("aria-label", "Přehrát video");
+    btn.setAttribute("aria-label", "Смотреть видео");
     el.appendChild(btn);
     el.addEventListener("click", function () {
       var f = document.createElement("iframe");
       f.className = "yt-frame";
       f.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
-      f.title = "Video M:E Agency";
+      f.title = "Видео M:E Agency";
       f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
       f.allowFullscreen = true;
       el.innerHTML = "";
@@ -432,15 +236,15 @@
     if (!document.getElementById("cookie-banner")) {
       document.body.insertAdjacentHTML(
         "beforeend",
-        '<div id="cookie-banner" class="cookie-banner cookie-banner--closed" role="dialog" aria-label="Soubory cookie" aria-hidden="true">' +
+        '<div id="cookie-banner" class="cookie-banner cookie-banner--closed" role="dialog" aria-label="Файлы cookie" aria-hidden="true">' +
           '<div class="cookie-banner__inner">' +
             '<p class="cookie-banner__text">' +
-              "Používáme soubory cookie pro analytiku (Google Analytics). Kliknutím na „Přijmout“ souhlasíte s jejich použitím. " +
-              '<a href="https://marketexpert.cz/cookie-policy" target="_blank" rel="noopener noreferrer" class="cookie-banner__link">Zásady cookies</a>' +
+              "Мы используем файлы cookie для аналитики (Google Analytics). Нажимая «Принять», вы соглашаетесь на их использование. " +
+              '<a href="https://marketexpert.cz/cookie-policy" target="_blank" rel="noopener noreferrer" class="cookie-banner__link">Политика cookie</a>' +
             "</p>" +
             '<div class="cookie-banner__actions">' +
-              '<button type="button" class="cookie-banner__btn cookie-banner__btn--ghost" data-cookie-reject>Odmítnout</button>' +
-              '<button type="button" class="cookie-banner__btn cookie-banner__btn--primary" data-cookie-accept>Přijmout</button>' +
+              '<button type="button" class="cookie-banner__btn cookie-banner__btn--ghost" data-cookie-reject>Отклонить</button>' +
+              '<button type="button" class="cookie-banner__btn cookie-banner__btn--primary" data-cookie-accept>Принять</button>' +
             "</div>" +
           "</div>" +
         "</div>"
@@ -477,7 +281,7 @@
       { id: "x", label: "X", href: "https://twitter.com/intent/tweet?url=" + encUrl + "&text=" + encTitle, icon: "x" },
       { id: "tg", label: "Telegram", href: "https://t.me/share/url?url=" + encUrl + "&text=" + encTitle, icon: "tg" },
       { id: "wa", label: "WhatsApp", href: "https://wa.me/?text=" + encTitle + "%20" + encUrl, icon: "wa" },
-      { id: "copy", label: "Kopírovat odkaz", action: "copy", icon: "copy" }
+      { id: "copy", label: "Скопировать ссылку", action: "copy", icon: "copy" }
     ];
 
     var icons = {
@@ -499,23 +303,23 @@
     }).join("");
 
     if (navigator.share) {
-      shareBtns += '<button type="button" class="art-share-btn art-share-btn--native" data-share-native title="Sdílet" aria-label="Sdílet přes aplikaci">' + icons.share + "</button>";
+      shareBtns += '<button type="button" class="art-share-btn art-share-btn--native" data-share-native title="Поделиться" aria-label="Поделиться через приложение">' + icons.share + "</button>";
     }
 
     var html =
       '<div class="art-engage" data-article-engage>' +
         '<div class="art-share">' +
-          '<p class="art-engage-label">Sdílet článek</p>' +
+          '<p class="art-engage-label">Поделиться статьёй</p>' +
           '<div class="art-share-row">' + shareBtns + "</div>" +
           '<p class="art-share-toast" data-share-toast hidden></p>' +
         "</div>" +
         '<div class="art-feedback" data-article-feedback>' +
-          '<p class="art-engage-label">Byl článek užitečný?</p>' +
+          '<p class="art-engage-label">Была полезна статья?</p>' +
           '<div class="art-feedback-row">' +
-            '<button type="button" class="art-feedback-btn" data-helpful="yes">Ano</button>' +
-            '<button type="button" class="art-feedback-btn" data-helpful="no">Ne</button>' +
+            '<button type="button" class="art-feedback-btn" data-helpful="yes">Да</button>' +
+            '<button type="button" class="art-feedback-btn" data-helpful="no">Нет</button>' +
           "</div>" +
-          '<p class="art-feedback-thx" data-feedback-thx hidden>Děkujeme za odpověď! <span data-feedback-no-extra hidden>Chyběly detaily? <a href="https://ads.marketexpert.cz/cz/#order">Napište nám</a> — poradíme.</span></p>' +
+          '<p class="art-feedback-thx" data-feedback-thx hidden>Спасибо за ответ! <span data-feedback-no-extra hidden>Не хватило деталей? <a href="https://ads.marketexpert.cz/#order">Напишите нам</a> — подскажем.</span></p>' +
         "</div>" +
       "</div>";
 
@@ -601,7 +405,7 @@
             '<p class="art-share-copy-fallback__hint" data-share-copy-msg></p>' +
             '<div class="art-share-copy-fallback__row">' +
               '<input type="text" readonly data-share-copy-input class="art-share-copy-fallback__input">' +
-              '<button type="button" class="art-share-copy-fallback__btn" data-share-copy-retry>Kopírovat</button>' +
+              '<button type="button" class="art-share-copy-fallback__btn" data-share-copy-retry>Скопировать</button>' +
             "</div>" +
           "</div>"
         );
@@ -616,25 +420,25 @@
           try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
           if (!ok && navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(input.value).then(function () {
-              showToast("Odkaz zkopírován");
+              showToast("Ссылка скопирована");
               box.hidden = true;
             }).catch(function () {
-              showToast("Vyberte odkaz a stiskněte Ctrl+C");
+              showToast("Выделите ссылку и нажмите Ctrl+C");
             });
             return;
           }
           if (ok) {
-            showToast("Odkaz zkopírován");
+            showToast("Ссылка скопирована");
             box.hidden = true;
           } else {
-            showToast("Vyberte odkaz a stiskněte Ctrl+C");
+            showToast("Выделите ссылку и нажмите Ctrl+C");
           }
         });
       }
 
       var msgEl = box.querySelector("[data-share-copy-msg]");
       var inputEl = box.querySelector("[data-share-copy-input]");
-      if (msgEl) msgEl.textContent = hint || "Odkaz na článek — vyberte a zkopírujte (Ctrl+C):";
+      if (msgEl) msgEl.textContent = hint || "Ссылка на статью — выделите и скопируйте (Ctrl+C):";
       if (inputEl) {
         inputEl.value = pageUrl;
         box.hidden = false;
@@ -656,19 +460,19 @@
         copyPageUrl(function (ok) {
           if (!ok) {
             if (action === "ig") {
-              showCopyLinkFallback("Instagram nepřijímá přímý odkaz — zkopírujte URL a vložte do Stories nebo bio:");
+              showCopyLinkFallback("Instagram не принимает прямую ссылку — скопируйте URL и вставьте в Stories или bio:");
               trackShare("instagram_copy_fallback");
             } else {
-              showCopyLinkFallback("Nepodařilo se zkopírovat automaticky — vyberte odkaz níže:");
+              showCopyLinkFallback("Не удалось скопировать автоматически — выделите ссылку ниже:");
               trackShare("copy_link_fallback");
             }
             return;
           }
           if (action === "ig") {
-            showToast("Odkaz zkopírován — vložte do Instagram Stories nebo bio");
+            showToast("Ссылка скопирована — вставьте в Instagram Stories или bio");
             trackShare("instagram_copy");
           } else {
-            showToast("Odkaz zkopírován");
+            showToast("Ссылка скопирована");
             trackShare("copy_link");
           }
         });
@@ -718,23 +522,23 @@
         '<div class="blog-audit-modal" data-blog-audit-modal hidden>' +
           '<div class="blog-audit-modal__backdrop" data-blog-audit-close tabindex="-1" aria-hidden="true"></div>' +
           '<div class="blog-audit-modal__panel" role="dialog" aria-modal="true" aria-labelledby="blog-audit-title">' +
-            '<button type="button" class="blog-audit-modal__close" data-blog-audit-close aria-label="Zavřít">&times;</button>' +
-            '<p class="blog-audit-modal__tag">Bonus za užitečný článek</p>' +
-            '<h2 id="blog-audit-title">Děkujeme za hodnocení!</h2>' +
-            '<p class="blog-audit-modal__lead">Když vám článek pomohl — máte bonus: <strong>audit zdarma</strong> reklamního účtu Google Ads.</p>' +
+            '<button type="button" class="blog-audit-modal__close" data-blog-audit-close aria-label="Закрыть">&times;</button>' +
+            '<p class="blog-audit-modal__tag">Бонус за полезную статью</p>' +
+            '<h2 id="blog-audit-title">Спасибо за высокую оценку!</h2>' +
+            '<p class="blog-audit-modal__lead">Раз материал зашёл — для вас бонус: <strong>бесплатный аудит</strong> рекламного аккаунта Google Ads.</p>' +
             '<form class="blog-audit-form" data-blog-audit-form action="' + AUDIT_FORM_ACTION + '" method="POST">' +
-              '<input type="hidden" name="_subject" value="Blog: bonus audit po kladném hodnocení">' +
+              '<input type="hidden" name="_subject" value="Блог: бонус-аудит после положительной оценки">' +
               '<input type="hidden" name="lead_type" value="blog_audit_bonus">' +
               '<input type="hidden" name="source_page" value="">' +
               '<input type="hidden" name="article_title" value="">' +
               '<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="blog-audit-form__hp">' +
               '<label class="blog-audit-form__label" for="blog-audit-email">Email</label>' +
               '<input type="email" id="blog-audit-email" name="email" placeholder="vy@firma.cz" required autocomplete="email">' +
-              '<button type="submit">Získat audit</button>' +
-              '<p class="blog-audit-form__note">Ozveme se do 1 pracovního dne. Bez spamu.</p>' +
+              '<button type="submit">Получить аудит</button>' +
+              '<p class="blog-audit-form__note">Свяжемся в течение 1 рабочего дня. Без спама.</p>' +
             "</form>" +
-            '<p class="blog-audit-modal__success" data-blog-audit-success hidden>Poptávka odeslána — ozveme se vám v nejbližší pracovní den.</p>' +
-            '<button type="button" class="blog-audit-modal__skip" data-blog-audit-close>Ne, díky</button>' +
+            '<p class="blog-audit-modal__success" data-blog-audit-success hidden>Заявка отправлена — мы свяжемся с вами в ближайший рабочий день.</p>' +
+            '<button type="button" class="blog-audit-modal__skip" data-blog-audit-close>Нет, спасибо</button>' +
           "</div>" +
         "</div>"
       );
@@ -769,7 +573,7 @@
 
           var originalLabel = btn.textContent;
           btn.disabled = true;
-          btn.textContent = "Odesílání…";
+          btn.textContent = "Отправка…";
 
           var data = new FormData(form);
           if (!data.get("source_page")) data.set("source_page", pagePath);
@@ -787,7 +591,7 @@
             })
             .then(function (r) {
               if (!r.ok) {
-                var msg = "Odeslání se nezdařilo. Napište na ads@marketexpert.cz";
+                var msg = "Не удалось отправить. Напишите на ads@marketexpert.cz";
                 if (r.data && r.data.error) {
                   msg = typeof r.data.error === "string" ? r.data.error : (r.data.error.message || msg);
                 }
@@ -816,7 +620,7 @@
               setTimeout(function () { closeAuditModal(false); }, 2800);
             })
             .catch(function () {
-              alert("Chyba sítě. Zkuste to později nebo napište na ads@marketexpert.cz");
+              alert("Ошибка сети. Попробуйте позже или напишите на ads@marketexpert.cz");
               btn.disabled = false;
               btn.textContent = originalLabel;
             });
@@ -839,7 +643,7 @@
           var submitBtn = form.querySelector('button[type="submit"]');
           if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.textContent = "Získat audit";
+            submitBtn.textContent = "Получить аудит";
           }
         }
         if (success) success.hidden = true;
@@ -885,4 +689,61 @@
 
   initArticleEngagement();
 
+  /* --- Чек-лист (Formspree + PDF) --- */
+  var CHECKLIST_PDF = "/files/checklist-google-ads-cz.pdf";
+
+  document.addEventListener("submit", function (e) {
+    var form = e.target;
+    if (!form || !form.matches(".lm-form[data-checklist]")) return;
+    if (!form.action || form.action.indexOf("formspree.io") === -1) return;
+
+    e.preventDefault();
+
+    var btn = form.querySelector('button[type="submit"]');
+    if (!btn || btn.disabled) return;
+
+    var magnet = form.closest(".lead-magnet");
+    var success = magnet && magnet.querySelector(".lm-success");
+    var originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = "Отправка…";
+
+    var data = new FormData(form);
+    if (!data.get("source_page")) {
+      data.set("source_page", window.location.pathname || "/blog/");
+    }
+
+    fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" }
+    })
+      .then(function (res) {
+        return res.json()
+          .then(function (payload) { return { ok: res.ok, data: payload }; })
+          .catch(function () { return { ok: res.ok, data: {} }; });
+      })
+      .then(function (r) {
+        if (!r.ok) {
+          var msg = "Не удалось отправить. Попробуйте позже или напишите на ads@marketexpert.cz";
+          if (r.data && r.data.error) {
+            msg = typeof r.data.error === "string" ? r.data.error : (r.data.error.message || msg);
+          }
+          throw new Error(msg);
+        }
+
+        if (typeof window.trackLeadConversion === "function") {
+          window.trackLeadConversion({ language: "RU", package_name: "checklist" });
+        }
+
+        form.hidden = true;
+        if (success) success.hidden = false;
+        window.open(CHECKLIST_PDF, "_blank", "noopener,noreferrer");
+      })
+      .catch(function (err) {
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+        alert(err && err.message ? err.message : "Ошибка сети. Попробуйте позже.");
+      });
+  });
 })();
