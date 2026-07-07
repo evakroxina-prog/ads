@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konverze a GA4 pro Google Ads: jak nastavit měření | M:E Agency</title>
+<meta name="description" content="Propojení Google Ads ↔ GA4: tag, události, thank-you page, Primary/Secondary, Enhanced Conversions, offline import a typické chyby, kvůli kterým algoritmus optimalizuje špatné číslo.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ads.marketexpert.cz/cz/blog/konverze-a-ga4-pro-google-ads/">
+<link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/konverze-a-ga4-pro-google-ads/">
+<link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/konversii-i-ga4-google-ads/">
+<link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/konverze-a-ga4-pro-google-ads/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="M:E Agency">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:url" content="https://ads.marketexpert.cz/cz/blog/konverze-a-ga4-pro-google-ads/">
+<meta property="og:title" content="Konverze a GA4 pro Google Ads: jak nastavit měření">
+<meta property="og:description" content="Tag, události, thank-you page, import z GA4 a offline import — jak neoptimalizovat reklamu naslepo.">
+<meta property="og:image" content="https://ads.marketexpert.cz/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Konverze a GA4 pro Google Ads: jak nastavit měření">
+<meta name="twitter:description" content="Tag, události, thank-you page, import z GA4 a offline import — jak neoptimalizovat reklamu naslepo.">
+<meta name="twitter:image" content="https://ads.marketexpert.cz/logo.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/footer.css">
+<link rel="stylesheet" href="/blog/blog.css?v=20260703b">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Konverze a GA4 pro Google Ads: jak nastavit měření a neoptimalizovat naslepo","description":"Propojení Google Ads ↔ GA4: tag, události, thank-you page, import konverzí a typické chyby, kvůli kterým algoritmus optimalizuje špatné číslo.","inLanguage":"cs","mainEntityOfPage":"https://ads.marketexpert.cz/cz/blog/konverze-a-ga4-pro-google-ads/","image":"https://ads.marketexpert.cz/logo.png","author":{"@type":"Organization","name":"M:E Agency"},"publisher":{"@type":"Organization","name":"M:E Agency","logo":{"@type":"ImageObject","url":"https://ads.marketexpert.cz/logo.png"}},"datePublished":"2026-05-31","dateModified":"2026-05-31"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Úvod","item":"https://ads.marketexpert.cz/cz/"},{"@type":"ListItem","position":2,"name":"Znalostní báze","item":"https://ads.marketexpert.cz/cz/blog/"},{"@type":"ListItem","position":3,"name":"Konverze a GA4","item":"https://ads.marketexpert.cz/cz/blog/konverze-a-ga4-pro-google-ads/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Musím nastavit consent mode a cookie lištu pro reklamu v Česku?","acceptedAnswer":{"@type":"Answer","text":"Ano — v rámci GDPR a ePrivacy musí web žádat souhlas s cookies před jejich uložením a Google tag má fungovat přes Consent Mode, aby správně reflektoval souhlas uživatele. Bez toho se část dat o konverzích nemusí předat nebo se předá chybně, hlavně u uživatelů, kteří cookies odmítli."}},{"@type":"Question","name":"Mohu optimalizovat reklamu podle mikrokonverzí, když málo hlavních poptávek?","acceptedAnswer":{"@type":"Answer","text":"Ano, jako dočasné řešení, dokud nenasbíráte dost hlavních konverzí — např. zobrazení klíčové stránky nebo přidání do košíku. Takovou konverzi držte jako sekundární nebo dočasně primární s plánem nahradit ji později, protože mikrokonverze nemusí korelovat s reálným výsledkem byznysu."}},{"@type":"Question","name":"Co dělat, když je konverzí málo i po měsíci od startu?","acceptedAnswer":{"@type":"Answer","text":"Nejdřív ověřte správnost nastavení podle checklistu níže — často „málo konverzí“ znamená „konverze se nepočítají“, ne „traffic nekonvertuje“. Pokud je nastavení v pořádku a konverzí opravdu málo, zůstaňte déle na manuálních strategiích nabídek a nepřepínejte na automatiku, dokud nenasbíráte dost dat."}},{"@type":"Question","name":"Jak ověřit, že tag na webu vůbec funguje?","acceptedAnswer":{"@type":"Answer","text":"Přes rozšíření Google Tag Assistant nebo vestavěnou Diagnostiku značek v Google Ads — ukážou, zda tag na stránce spouští a zda se události předávají správně, aniž byste čekali na reálné konverze."}}]}</script>
+</head>
+<body>
+
+<nav class="bnav" aria-label="Menu">
+  <a href="https://ads.marketexpert.cz/cz/" class="bnav-logo">
+    <img src="/logo.png" alt="M:E agency" decoding="async" onerror="this.onerror=null;this.src='/logo.svg'">
+    <span class="bnav-name">M:E <em>agency</em></span>
+  </a>
+  <div class="bnav-links">
+    <a href="https://ads.marketexpert.cz/cz/blog/">Znalostní báze</a>
+    <a href="https://ads.marketexpert.cz/cz/#pricing">Ceník</a>
+    <a href="https://ads.marketexpert.cz/blog/konversii-i-ga4-google-ads/" hreflang="ru">RU</a>
+  </div>
+</nav>
+
+<div class="wrap wrap--art">
+  <nav class="crumbs" aria-label="Drobečková navigace">
+    <a href="https://ads.marketexpert.cz/cz/">Úvod</a> / <a href="https://ads.marketexpert.cz/cz/blog/">Znalostní báze</a> / <span>Konverze a GA4</span>
+  </nav>
+
+  <article class="art">
+    <div class="art-tag">Znalostní báze · Google Ads</div>
+    <h1>Konverze a GA4 pro Google Ads: jak nastavit měření a neoptimalizovat naslepo</h1>
+    <div class="art-meta">Publikováno 31. května 2026 · ~12 minut čtení</div>
+    <div class="art-tags">
+      <a href="/cz/blog/?tag=konverze" class="art-tag-link">konverze</a>
+      <a href="/cz/blog/?tag=nastaven%C3%AD" class="art-tag-link">nastavení</a>
+      <a href="/cz/blog/?tag=optimalizace" class="art-tag-link">optimalizace</a>
+    </div>
+
+    <div class="lead-box">
+      Bez správně nastavených konverzí Google Ads neví, co je dobrý výsledek — a každá
+      automatická strategie nabídek pak optimalizuje náhodné číslo, ne reálné poptávky.
+      Stručná odpověď: nejdřív nastavte a ověřte konverze (tag na webu → událost → cíl
+      v Ads), ujistěte se, že se počítá poptávka, ne klik na tlačítko, a teprve potom
+      přepínejte na automatické strategie — do té chvíle je každá optimalizace naslepo.
+    </div>
+
+    <h2>Proč je Smart Bidding bez konverzí zbytečný</h2>
+    <p>
+      Automatické strategie nabídek (Smart Bidding) — cílová CPA, maximální konverze,
+      cílová ROAS — běží na strojovém učení: algoritmus hledá vzorce v datech o tom,
+      která zobrazení vedly k výsledku. Bez dostatečného objemu těchto dat se nemá čeho učit.
+    </p>
+    <table class="myth-table">
+      <tr><th>Objem konverzí za 30 dní</th><th>Co použít</th><th>Proč</th></tr>
+      <tr>
+        <td>0–15</td>
+        <td>Manuální CPC nebo maximální počet kliknutí, opatrně</td>
+        <td>Málo dat pro učení, automatika „hledá“ publikum naslepo</td>
+      </tr>
+      <tr>
+        <td>15–30</td>
+        <td>Cílová CPA (opatrně) nebo dál sbírat data</td>
+        <td>Prahová hodnota, kdy strategie může začít učení</td>
+      </tr>
+      <tr>
+        <td>30+</td>
+        <td>Cílová CPA, cílová ROAS, maximální konverze</td>
+        <td>Dost dat pro stabilní učení a korekce</td>
+      </tr>
+    </table>
+    <p>
+      Prah 15–30 konverzí není tvrdé číslo z dokumentace Google, ale praktický orientační
+      bod: čím méně konverzí, tím méně stabilní výsledky algoritmu a vyšší riziko,
+      že se „přepálí“ na pár náhodných úspěšných nebo neúspěšných zobrazeních.
+    </p>
+
+    <h2>Co počítat jako konverzi: přehled variant</h2>
+    <p>
+      Jedna z nejčastějších chyb je záměna mezi tím, co se technicky snadno změří,
+      a tím, co je pro byznys skutečný výsledek.
+    </p>
+    <table class="myth-table">
+      <tr><th>Varianta</th><th>Plusy</th><th>Rizika</th></tr>
+      <tr>
+        <td>Klik na tlačítko Odeslat</td>
+        <td>Snadné nastavení</td>
+        <td>Počítá pokus, ne fakt odeslání — formulář mohl selhat</td>
+      </tr>
+      <tr>
+        <td>Otevření děkovné stránky</td>
+        <td>Spolehlivější než klik, potvrzuje úspěch</td>
+        <td>Děkovná stránka musí otevřít jen po reálném úspěchu</td>
+      </tr>
+      <tr>
+        <td>Hovor (sledování hovorů)</td>
+        <td>Zachytí offline kanál důležitý pro mnoho oborů</td>
+        <td>Potřebujete call tracking nebo Google číslo pro délku hovoru</td>
+      </tr>
+      <tr>
+        <td>Offline poptávka z CRM</td>
+        <td>Nejpřesnější vazba na reálný lead nebo obchod</td>
+        <td>Vyžaduje import, data přicházejí se zpožděním</td>
+      </tr>
+    </table>
+    <p>
+      Správná praxe u formulářů je <strong>otevření děkovné stránky</strong>, ne klik na tlačítko,
+      jako hlavní konverze. Klik je jen signál záměru, ne potvrzený výsledek.
+    </p>
+
+    <h2>Nastavení krok za krokem: od tagu po import</h2>
+    <ol>
+      <li><strong>Nainstalujte Google tag nebo Google Tag Manager (GTM) na web.</strong> Základní
+        kód, přes který Google Ads a GA4 dostávají data o chování na webu.</li>
+      <li><strong>Nastavte událost.</strong> V GTM vytvoříte trigger — např. zobrazení stránky
+        <code>/dekujeme</code> nebo odeslání formuláře přes událost <code>form_submit</code> — a propojíte ho
+        se značkou, která posílá data do Google Ads a GA4.</li>
+      <li><strong>Vytvořte konverzní akci v Google Ads.</strong> V nastavení konverzních akcí
+        přidejte novou konverzi na základě události ze webu, případně hodnotu a kategorii
+        (např. poptávka nebo nákup).</li>
+      <li><strong>Volitelně propojte s GA4.</strong> Pokud analytiku vedete v GA4, událost
+        nejdřív nastavte tam jako klíčovou událost a pak ji importujte do Google Ads —
+        vhodné, když potřebujete flexibilnější nastavení funnelů a atribuce.</li>
+      <li><strong>Ověřte konverzi testovacím průchodem.</strong> Projdete formulář sami
+        a v reportu kampaně přidáte sloupce <strong>Konverze</strong> a <strong>Všechny konverze</strong> —
+        ujistěte se, že se záznam objevil. Bez tohoto kroku snadno týdny optimalizujete
+        podle neexistujících dat.</li>
+    </ol>
+    <p>
+      Více o přihlášení do účtu a prvním nastavení — v článku „<a href="/cz/blog/ucet-google-ads/">Účet
+      Google Ads: přihlášení a nastavení</a>“.
+    </p>
+
+    <h2>Primary vs Secondary: která konverze řídí nabídky</h2>
+    <p>
+      U každé konverzní akce v Google Ads je stav — primární (Primary) nebo sekundární
+      (Secondary). To přímo ovlivňuje, co vidí algoritmus při optimalizaci nabídek.
+    </p>
+    <table class="myth-table">
+      <tr><th>Stav v nastavení akce</th><th>Sloupec Konverze v reportu</th><th>Ovlivňuje automatické strategie</th></tr>
+      <tr>
+        <td>Primární (Primary)</td>
+        <td>Ano</td>
+        <td>Ano</td>
+      </tr>
+      <tr>
+        <td>Sekundární (Secondary)</td>
+        <td>Jen ve sloupci Všechny konverze</td>
+        <td>Ne</td>
+      </tr>
+    </table>
+    <p>
+      Typická chyba, kvůli které vypadá cena poptávky zkresleně — jedna akce uživatele
+      se zapíše dvěma konverzními akcemi (např. klik na tlačítko a otevření děkovné stránky)
+      a obě jsou nastavené jako primární. Google Ads pak počítá jednu poptávku jako dvě
+      konverze, automatika optimalizuje na zdvojené číslo a reálná cena leadu je dvojnásobek
+      reportované.
+    </p>
+    <p><strong>Jak se vyhnout zdvojení:</strong></p>
+    <ul>
+      <li>Pro jednu akci nechte jen jednu konverzní akci jako primární — ostatní, pokud
+        je potřebujete pro analytiku, přepněte na sekundární.</li>
+      <li>Pravidelně porovnávejte počet ve sloupci <strong>Konverze</strong> s reálným počtem
+        poptávek v CRM nebo e-mailu za stejné období.</li>
+      <li>Máte-li více formulářů (poptávka a newsletter), ověřte, že jsou to oddělené
+        konverzní akce, ne jedna společná číslice.</li>
+    </ul>
+
+    <h2>Enhanced Conversions: k čemu a kdy zapnout</h2>
+    <p>
+      Rozšířené konverze (Enhanced Conversions) — mechanismus, kdy na server Google
+      navíc dostane hashovaná data o uživateli (e-mail, telefon) z formuláře. Pomáhá
+      přesněji započítat konverze, když prohlížeče blokují část cookie trackingu, a je
+      užitečné zejména pokud:
+    </p>
+    <ul>
+      <li>Významná část trafficu jde z mobilů nebo prohlížečů s přísnou ochranou soukromí (Safari, Firefox).</li>
+      <li>V reportech vidíte propast mezi reálnými poptávkami z CRM a sloupcem <strong>Konverze</strong> v Ads.</li>
+      <li>Obchodní cyklus je dlouhý a část konverzí se zapíše se zpožděním nebo z jiného zařízení.</li>
+    </ul>
+    <p>
+      Zapínejte až po základním nastavení běžných konverzí a ověření, že se počítají
+      správně — Enhanced Conversions doplňuje přesnost měření, nenahrazuje samotné události.
+    </p>
+
+    <div class="cta-box">
+      <h3>Nejste si jistí, že jsou konverze v účtu nastavené správně?</h3>
+      <p>Zkontrolujeme tag, události, stavy Primary/Secondary a porovnáme čísla Google Ads
+        s reálnými poptávkami — dřív než začnete ladit nabídky podle možná chybných dat.</p>
+      <div class="cta-row">
+        <a href="https://ads.marketexpert.cz/cz/#setup" class="btn-g">Zkontrolovat nastavení konverzí</a>
+        <a href="https://ads.marketexpert.cz/cz/#pricing" class="btn-o">Ceník</a>
+      </div>
+    </div>
+
+    <h2>GA4 vs Google Ads: proč se čísla liší</h2>
+    <p>
+      Rozdíl v počtu konverzí mezi GA4 a Google Ads je běžný a samo o sobě ne vždy znamená chybu.
+    </p>
+    <table class="myth-table">
+      <tr><th>Příčina rozdílu</th><th>Norma nebo chyba</th></tr>
+      <tr>
+        <td>Různé modely atribuce (data-driven v Ads, výchozí v GA4)</td>
+        <td>Norma — jiná metodika počítání</td>
+      </tr>
+      <tr>
+        <td>Různá okna konverze (např. 30 dní v Ads vs. 90 v GA4)</td>
+        <td>Norma, pokud jsou okna záměrně nastavená jinak</td>
+      </tr>
+      <tr>
+        <td>Blokování cookies u části uživatelů</td>
+        <td>Norma, pokud je rozdíl stabilní a neroste skokově</td>
+      </tr>
+      <tr>
+        <td>Konverze z GA4 není importovaná do Ads nebo je nastavená jinak</td>
+        <td>Chyba nastavení — zkontrolujte propojení</td>
+      </tr>
+      <tr>
+        <td>Náhlý skok rozdílu po změně na webu</td>
+        <td>Pravděpodobná chyba — zkontrolujte, zda se po aktualizaci webu nerozbil tag</td>
+      </tr>
+    </table>
+    <p>
+      Rozumný orientační bod: malý stabilní rozdíl (řádově 10–20 %) bývá metodická
+      vlastnost, ne důvod k panice. Náhlý nebo rostoucí propast je signál zkontrolovat
+      technické nastavení.
+    </p>
+
+    <h2>Offline import: kdy zapojit CRM</h2>
+    <p>
+      U byznysu s dlouhým cyklem — B2B, nemovitosti, složité služby — je poptávka na webu
+      ještě ne prodej, ale první kontakt. Pak má smysl import offline konverzí z CRM
+      (Bitrix24, HubSpot nebo tabulka s GCLID) zpět do Google Ads:
+    </p>
+    <ul>
+      <li>Poptávka na webu se zapíše jako konverze s identifikátorem kliknutí (GCLID) —
+        potřebujete automatické tagování URL v Google Ads a uložení GCLID v CRM nebo formuláři.</li>
+      <li>Obchod pak projde cestou v CRM — od Poptávka po Zaplaceno nebo Odmítnuto.</li>
+      <li>Konečný stav se periodicky exportuje zpět do Google Ads a algoritmus začne
+        optimalizovat ne jen na poptávku, ale na skutečně zaplacené obchody.</li>
+    </ul>
+    <p>
+      To výrazně zvyšuje kvalitu automatických strategií, protože Google hledá uživatele
+      podobné těm, kdo opravdu koupili, ne jen zanechali kontakt.
+    </p>
+
+    <h2>Checklist před optimalizací: ověřte, že číslo sedí</h2>
+    <p>
+      Než měníte nabídky nebo strategie podle čísel z Google Ads, projděte tento seznam —
+      je to stejný „nulový“ krok jako v článku
+      „<a href="/cz/blog/jak-snizit-cenu-poptavky/">Jak snížit cenu poptávky v Google Ads</a>“:
+    </p>
+    <ol>
+      <li>Konverze měří potvrzenou akci (děkovná stránka nebo stav v CRM), ne klik na tlačítko.</li>
+      <li>Nejsou duplicitní primární akce pro stejnou událost — kontrola v nastavení konverzních akcí
+        a ve sloupcích <strong>Konverze</strong> vs. <strong>Všechny konverze</strong>.</li>
+      <li>Počet ve sloupci Konverze je srovnaný s reálným počtem poptávek za stejné období.</li>
+      <li>Proběhl testovací průchod — konverze se při reálném odeslání formuláře zapíše.</li>
+      <li>Při importu z GA4 je událost v GA4 označená jako klíčová a správně přenáší se do Ads.</li>
+    </ol>
+
+    <h2>Časté dotazy</h2>
+    <div class="faq">
+      <details><summary>Musím nastavit consent mode a cookie lištu pro reklamu v Česku?</summary><p>Ano — v rámci GDPR a ePrivacy musí web žádat souhlas s cookies před jejich uložením a Google tag má fungovat přes Consent Mode, aby správně reflektoval souhlas uživatele. Bez toho se část dat o konverzích nemusí předat nebo se předá chybně, hlavně u uživatelů, kteří cookies odmítli.</p></details>
+      <details><summary>Mohu optimalizovat reklamu podle mikrokonverzí, když málo hlavních poptávek?</summary><p>Ano, jako dočasné řešení, dokud nenasbíráte dost hlavních konverzí — např. zobrazení klíčové stránky nebo přidání do košíku. Takovou konverzi držte jako sekundární nebo dočasně primární s plánem nahradit ji později, protože mikrokonverze nemusí korelovat s reálným výsledkem byznysu.</p></details>
+      <details><summary>Co dělat, když je konverzí málo i po měsíci od startu?</summary><p>Nejdřív ověřte správnost nastavení podle checklistu výše — často „málo konverzí“ znamená „konverze se nepočítají“, ne „traffic nekonvertuje“. Pokud je nastavení v pořádku a konverzí opravdu málo, zůstaňte déle na manuálních strategiích nabídek a nepřepínejte na automatiku, dokud nenasbíráte dost dat.</p></details>
+      <details><summary>Jak ověřit, že tag na webu vůbec funguje?</summary><p>Přes rozšíření Google Tag Assistant nebo vestavěnou Diagnostiku značek v Google Ads — ukážou, zda tag na stránce spouští a zda se události předávají správně, aniž byste čekali na reálné konverze.</p></details>
+    </div>
+
+    <div class="related">
+      <h3>Čtěte také</h3>
+      <ul>
+        <li><a href="/cz/blog/jak-nastavit-google-ads/">Jak nastavit Google Ads</a></li>
+        <li><a href="/cz/blog/jak-snizit-cenu-poptavky/">Jak snížit cenu poptávky v Google Ads</a></li>
+        <li><a href="/cz/blog/optimalizace-vyhledavacich-kampani/">Optimalizace vyhledávacích kampaní po spuštění</a></li>
+        <li><a href="/cz/blog/ucet-google-ads/">Účet Google Ads: přihlášení a nastavení</a></li>
+        <li><a href="/cz/blog/kolik-stoji-reklama-v-google-ads/">Kolik stojí reklama v Google Ads</a></li>
+        <li><a href="/cz/blog/performance-max-a-vyhledavaci-kampane/">Performance Max a vyhledávací kampaně</a></li>
+        <li><a href="https://ads.marketexpert.cz/cz/">Nastavení Google Ads na klíč — M:E Agency</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <h3>Chcete konverze nastavené správně hned napoprvé?</h3>
+      <p>Napište nám — nastavíme tag, události a propojení s GA4 tak, aby algoritmus
+        optimalizoval na reálné poptávky, ne na náhodné kliky.</p>
+      <div class="cta-row">
+        <a href="https://ads.marketexpert.cz/cz/#order" class="btn-g">Nezávazná poptávka</a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <a href="https://marketexpert.cz/" class="site-footer__brand">
+      <img src="/logo.png" alt="M:E agency" decoding="async" onerror="this.onerror=null;this.src='/logo.svg'">
+      <span class="site-footer__brand-text">M:E <em>agency</em></span>
+    </a>
+    <div class="site-footer__middle">
+      <div class="site-footer__links" role="navigation" aria-label="Další služby M:E">
+        <a href="https://ads.marketexpert.cz/cz/">Google Ads</a>
+        <a href="https://consult.marketexpert.cz/cs/" target="_blank" rel="noopener noreferrer">Konzultace</a>
+        <a href="https://seo.marketexpert.cz/cs/" target="_blank" rel="noopener noreferrer">SEO</a>
+        <a href="https://reputation.marketexpert.cz/cz/" target="_blank" rel="noopener noreferrer">Reputace</a>
+      </div>
+      <div class="site-footer__cookie"><a href="https://marketexpert.cz/cookie-policy" target="_blank" rel="noopener noreferrer">Zásady cookies</a></div>
+    </div>
+    <div class="site-footer__contact">
+      <a href="mailto:ads@marketexpert.cz">ads@marketexpert.cz</a>
+      <a href="tel:+420705995770">+420 705 995 770</a>
+    </div>
+  </div>
+  <div class="site-footer__copy-row">
+    <p class="site-footer__copy">© 2026 M:E Agency · Praha · Reklama</p>
+    <p class="site-footer__crafted">
+      <a href="https://landing.marketexpert.cz/cz/" target="_blank" rel="noopener noreferrer"><span class="site-footer__crafted-label">Created by</span><span class="site-footer__crafted-brand"><span class="site-footer__crafted-me">M:E</span> <em>agency</em></span></a>
+    </p>
+  </div>
+</footer>
+
+<script src="/cz/blog/blog.js?v=20260707"></script>
+</body>
+</html>

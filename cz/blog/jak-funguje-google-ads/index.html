@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jak funguje Google Ads: aukce, Ad Rank a cena za proklik | M:E Agency</title>
+<meta name="description" content="Jak funguje reklama v Google Ads zevnitř: jak probíhá aukce při každém vyhledávání, z čeho se skládá Ad Rank a proč nevyhrává ten, kdo platí nejvíc.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ads.marketexpert.cz/cz/blog/jak-funguje-google-ads/">
+<link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/jak-funguje-google-ads/">
+<link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kak-rabotaet-google-ads/">
+<link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/jak-funguje-google-ads/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="M:E Agency">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:url" content="https://ads.marketexpert.cz/cz/blog/jak-funguje-google-ads/">
+<meta property="og:title" content="Jak funguje Google Ads: aukce, Ad Rank a cena za proklik">
+<meta property="og:description" content="Jak probíhá aukce při každém vyhledávání, z čeho se skládá Ad Rank a proč nevyhrává ten, kdo platí nejvíc.">
+<meta property="og:image" content="https://ads.marketexpert.cz/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jak funguje Google Ads: aukce, Ad Rank a cena za proklik">
+<meta name="twitter:description" content="Jak probíhá aukce při každém vyhledávání, z čeho se skládá Ad Rank a proč nevyhrává ten, kdo platí nejvíc.">
+<meta name="twitter:image" content="https://ads.marketexpert.cz/logo.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/footer.css">
+<link rel="stylesheet" href="/blog/blog.css?v=20260703b">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Jak funguje Google Ads","description":"Jak je uspořádaná aukce Google Ads, z čeho se skládá Ad Rank a proč nevyhrává ten, kdo jen nabídne nejvyšší cenu za proklik.","inLanguage":"cs","mainEntityOfPage":"https://ads.marketexpert.cz/cz/blog/jak-funguje-google-ads/","image":"https://ads.marketexpert.cz/logo.png","author":{"@type":"Organization","name":"M:E Agency"},"publisher":{"@type":"Organization","name":"M:E Agency","logo":{"@type":"ImageObject","url":"https://ads.marketexpert.cz/logo.png"}},"datePublished":"2026-03-20","dateModified":"2026-03-20"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domů","item":"https://ads.marketexpert.cz/cz/"},{"@type":"ListItem","position":2,"name":"Znalostní báze","item":"https://ads.marketexpert.cz/cz/blog/"},{"@type":"ListItem","position":3,"name":"Jak funguje Google Ads","item":"https://ads.marketexpert.cz/cz/blog/jak-funguje-google-ads/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Je pravda, že ve výsledcích vždy vyhrává ten, kdo platí víc?","acceptedAnswer":{"@type":"Answer","text":"Ne. Pozici určuje Ad Rank — kombinace nabídky a kvality reklamy s cílovou stránkou, ne jen výše nabídky. Relevantnější a kvalitnější reklama může zaujmout vyšší pozici při nižší nabídce než konkurent s vyšší nabídkou, ale méně relevantní reklamou."}},{"@type":"Question","name":"Může se reklama zobrazovat, když došel rozpočet?","acceptedAnswer":{"@type":"Answer","text":"Ne. Jakmile denní útrata dosáhne nastaveného limitu, zobrazení reklam v daný den skončí a obnoví se následující den (nebo dříve, pokud Google v rámci měsíčního limitu kompenzuje nižší útratu v jiné dny)."}},{"@type":"Question","name":"Ovlivňuje kvalitativní skóre přímo výslednou cenu za proklik?","acceptedAnswer":{"@type":"Answer","text":"Ano, ale nepřímo. Samotné kvalitativní skóre v rozhraní (škála 1–10) je diagnostický nástroj a v okamžiku aukce se nepoužívá. V aukci se počítá skutečná kvalita reklamy v daném okamžiku — očekávaný CTR, relevance reklamy a kvalita cílové stránky — a právě ta ovlivňuje Ad Rank a výslednou cenu za proklik."}},{"@type":"Question","name":"Může menší firma konkurovat v aukci konkurentovi s velkým rozpočtem?","acceptedAnswer":{"@type":"Answer","text":"Ano, pokud má vyšší kvalitu reklam a cílové stránky. Google to přímo zakládá do aukce: relevantnější a užitečnější reklama může předběhnout konkurenty s vyšší nabídkou, ale horšími reklamami."}}]}</script>
+</head>
+<body>
+
+<nav class="bnav" aria-label="Menu">
+  <a href="https://ads.marketexpert.cz/cz/" class="bnav-logo">
+    <img src="/logo.png" alt="M:E agency" decoding="async" onerror="this.onerror=null;this.src='/logo.svg'">
+    <span class="bnav-name">M:E <em>agency</em></span>
+  </a>
+  <div class="bnav-links">
+    <a href="https://ads.marketexpert.cz/cz/blog/">Znalostní báze</a>
+    <a href="https://ads.marketexpert.cz/cz/#pricing">Ceník</a>
+  </div>
+</nav>
+
+<div class="wrap wrap--art">
+  <nav class="crumbs" aria-label="Drobečková navigace">
+    <a href="https://ads.marketexpert.cz/cz/">Domů</a> / <a href="https://ads.marketexpert.cz/cz/blog/">Znalostní báze</a> / <span>Jak funguje Google Ads</span>
+  </nav>
+
+  <article class="art">
+    <div class="art-tag">Znalostní báze · Google Ads od nuly</div>
+    <h1>Jak funguje Google Ads</h1>
+    <div class="art-meta">Publikováno 20. března 2026 · ~7 minut čtení</div>
+    <div class="art-tags">
+      <a href="/cz/blog/?tag=aukce" class="art-tag-link">aukce</a>
+      <a href="/cz/blog/?tag=Ad%20Rank" class="art-tag-link">Ad Rank</a>
+    </div>
+
+    <div class="lead-box">
+      Google Ads zobrazuje reklamy prostřednictvím aukce, která se odehrává znovu při každém
+      jednotlivém vyhledávání. Nevyhrává v ní ten, kdo nabídne nejvyšší cenu za proklik, ale ten,
+      kdo má vyšší Ad Rank — kombinaci nabídky a kvality reklamy s cílovou stránkou. Díky tomu
+      může relevantnější reklama menší firmy předběhnout ve výsledcích konkurenta s několikanásobně
+      větším rozpočtem. Mechaniku si projdeme krok za krokem.
+    </div>
+
+    <h2>Aukce se spouští při každém vyhledávání — znovu</h2>
+    <p>
+      Když uživatel zadá dotaz, Google v reálném čase vybere reklamy, které nabídly cenu za proklik
+      u relevantních klíčových slov, a provede pro ně samostatnou aukci — přímo pro tento konkrétní
+      dotaz, s ohledem na polohu uživatele, typ zařízení, čas a další signály. Pozice vaší reklamy
+      tedy není pevná: u stejného klíčového slova můžete být nad konkurentem teď a pod ním za hodinu,
+      pokud se změní kontext dotazu nebo kvalita reklam.
+    </p>
+
+    <h2>Z čeho se skládá Ad Rank</h2>
+    <p>
+      Pozici a samotné zobrazení určuje Ad Rank. Oficiálně Google zohledňuje
+      výši nabídky, kvalitu reklamy a cílové stránky, minimální práh Ad Rank,
+      úroveň konkurence v dané aukci, kontext vyhledávání (zařízení, čas,
+      poloha) a očekávaný dopad rozšíření reklamy.
+    </p>
+    <div class="formula">
+      Ad Rank <span>≈</span> nabídka <span>×</span> kvalita reklamy
+      <small>zjednodušený model — skutečný výpočet zahrnuje více faktorů včetně rozšíření a kontextu vyhledávání</small>
+    </div>
+    <p>
+      Praktický závěr z tohoto vzorce: vysoká kvalita reklamy částečně kompenzuje
+      nižší nabídku. Proto může menší podnik s přesnou, relevantní reklamou
+      a dobrou cílovou stránkou předběhnout ve výsledcích konkurenta, který jen
+      nabízí víc peněz za proklik.
+    </p>
+
+    <h2>Co je kvalitativní skóre a proč to není přesně to, co rozhoduje aukci</h2>
+    <p>
+      V účtu Google Ads je kvalitativní skóre na stupnici 1–10. Důležitý detail:
+      oficiálně jde o diagnostický nástroj a samo o sobě se v okamžiku aukce
+      nepoužívá. V aukci se počítá skutečná, v reálném čase přepočítávaná
+      kvalita reklamy ve třech složkách:
+    </p>
+    <ul>
+      <li><strong>Očekávaný CTR</strong> — pravděpodobnost prokliku reklamy na základě
+        historie zobrazení u daného klíčového slova a reklamy.</li>
+      <li><strong>Relevance reklamy</strong> — jak přesně text reklamy odpovídá
+        smyslu a záměru vyhledávacího dotazu.</li>
+      <li><strong>Kvalita cílové stránky</strong> — jak užitečná a přehledná je stránka,
+        na kterou reklama vede.</li>
+    </ul>
+    <p>
+      Kvalitativní skóre v rozhraní používejte jako nápovědu, co zlepšit —
+      ale honit se za číslem 10/10 jako za cílem nemá smysl: skutečný efekt přináší
+      zlepšení samotných reklam a cílové stránky, ne číslo v reportu.
+    </p>
+
+    <h2>Proč obvykle platíte méně než maximální nabídku</h2>
+    <p>
+      Google Ads používá upravenou aukci druhé ceny: téměř nikdy nezaplatíte
+      celou deklarovanou maximální nabídku. Skutečná cena za proklik se vypočítá jako
+      minimální částka potřebná k udržení vaší pozice — vázaná na Ad Rank
+      dalšího konkurenta v aukci a na vaši vlastní kvalitu.
+      Čím vyšší je kvalita, tím méně ve skutečnosti platíte za stejnou pozici.
+    </p>
+
+    <table class="myth-table">
+      <tr><th>Mýtus</th><th>Jak to je ve skutečnosti</th></tr>
+      <tr>
+        <td>Vyhrává ten, kdo nabídne víc peněz</td>
+        <td>Vyhrává ten, kdo má vyšší Ad Rank — nabídka a kvalita dohromady</td>
+      </tr>
+      <tr>
+        <td>Vždy platíte maximální nabídku</td>
+        <td>Obvykle platíte méně — přesně tolik, kolik stačí k předběhnutí dalšího konkurenta</td>
+      </tr>
+      <tr>
+        <td>Pozice reklamy je pevně daná</td>
+        <td>Aukce a Ad Rank se přepočítávají znovu při každém jednotlivém vyhledávání</td>
+      </tr>
+      <tr>
+        <td>Kvalitativní skóre v účtu určuje cenu v aukci</td>
+        <td>V aukci se počítá kvalita reklamy v reálném čase; skóre v účtu je diagnostika</td>
+      </tr>
+    </table>
+
+    <div class="cta-box">
+      <h3>Chcete vědět, kolik to bude stát právě váš byznys?</h3>
+      <p>Mechanika aukce je pro všechny stejná, cena za proklik ne. Počítáme reálné náklady
+        podle vašeho oboru a regionu, ne podle průměrných čísel z internetu.</p>
+      <div class="cta-row">
+        <a href="https://ads.marketexpert.cz/cz/#pricing" class="btn-g">Zjistit cenu nastavení a správy</a>
+        <a href="https://ads.marketexpert.cz/cz/#order" class="btn-o">Nezávazná konzultace</a>
+      </div>
+    </div>
+
+    <h2>Kde přesně se může reklama zobrazovat</h2>
+    <p>
+      Aukce popsaná výše je mechanika vyhledávací reklamy. Google Ads ale není jen
+      řádek vyhledávání: podle zvoleného typu kampaně se reklama může zobrazovat
+      ve vyhledávání, na YouTube, v obsahové síti na milionech webů, v Gmailu, v kanálu
+      Discover a v Mapách — samostatně, nebo vše najednou v rámci jedné automatizované
+      kampaně. Podrobně o rozdílu mezi formáty — v článku
+      «<a href="/cz/blog/performance-max-a-vyhledavaci-kampane/">Performance Max a vyhledávací kampaně jednoduše</a>».
+    </p>
+
+    <h2>Role automatizace a AI v aukci</h2>
+    <p>
+      Dnes většina inzerentů nenastavuje nabídky ručně u každého klíčového slova —
+      tuto práci přebírají algoritmy Smart Bidding, které v reálném čase upravují
+      nabídku pro každou jednotlivou aukci podle zadaného cíle (např. cílová
+      cena za konverzi). To nezrušuje samotnou mechaniku aukce — jen nabídku v ní
+      častěji nastavuje algoritmus, ne člověk, na základě signálů, které zadáte:
+      cílů kampaně a dat o sledovaných konverzích.
+    </p>
+
+    <section class="art-video">
+      <h2>Video k tématu</h2>
+      <div class="yt" data-id="dZrYqgV2doc"></div>
+    </section>
+
+    <h2>Časté otázky</h2>
+    <div class="faq">
+      <details><summary>Je pravda, že ve výsledcích vždy vyhrává ten, kdo platí víc?</summary><p>Ne. Pozici určuje Ad Rank — kombinace nabídky a kvality reklamy s cílovou stránkou, ne jen výše nabídky. Relevantnější a kvalitnější reklama může zaujmout vyšší pozici při nižší nabídce než konkurent s vyšší nabídkou, ale méně relevantní reklamou.</p></details>
+      <details><summary>Může se reklama zobrazovat, když došel rozpočet?</summary><p>Ne. Jakmile denní útrata dosáhne nastaveného limitu, zobrazení reklam v daný den skončí a obnoví se následující den (nebo dříve, pokud Google v rámci měsíčního limitu kompenzuje nižší útratu v jiné dny).</p></details>
+      <details><summary>Ovlivňuje kvalitativní skóre přímo výslednou cenu za proklik?</summary><p>Ano, ale nepřímo. Samotné kvalitativní skóre v rozhraní (škála 1–10) je diagnostický nástroj a v okamžiku aukce se nepoužívá. V aukci se počítá skutečná kvalita reklamy v daném okamžiku — očekávaný CTR, relevance reklamy a kvalita cílové stránky — a právě ta ovlivňuje Ad Rank a výslednou cenu za proklik.</p></details>
+      <details><summary>Může menší firma konkurovat v aukci konkurentovi s velkým rozpočtem?</summary><p>Ano, pokud má vyšší kvalitu reklam a cílové stránky. Google to přímo zakládá do aukce: relevantnější a užitečnější reklama může předběhnout konkurenty s vyšší nabídkou, ale horšími reklamami.</p></details>
+    </div>
+
+    <div class="related">
+      <h3>Čtěte také</h3>
+      <ul>
+        <li><a href="/cz/blog/co-je-google-ads/">Co je Google Ads</a></li>
+        <li><a href="/cz/blog/jak-nastavit-google-ads/">Jak nastavit Google Ads</a></li>
+        <li><a href="/cz/blog/jak-spustit-reklamu-v-google-ads/">Jak spustit reklamu v Google a kolik potřebujete rozpočtu</a></li>
+        <li><a href="/cz/blog/performance-max-a-vyhledavaci-kampane/">Performance Max a vyhledávací kampaně jednoduše</a></li>
+        <li><a href="/cz/blog/ucet-google-ads/">Účet Google Ads: přihlášení a nastavení</a></li>
+        <li><a href="https://ads.marketexpert.cz/cz/">Google Ads na klíč — M:E Agency</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <h3>Chcete reklamu, která vyhrává aukci díky kvalitě, ne jen rozpočtu?</h3>
+      <p>Podívejte se na naše tarify pro nastavení a správu Google Ads — bez přeplácení
+        nabídek, které nemusíte platit.</p>
+      <div class="cta-row">
+        <a href="https://ads.marketexpert.cz/cz/#pricing" class="btn-g">Zobrazit ceník</a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <a href="https://marketexpert.cz/" class="site-footer__brand">
+      <img src="/logo.png" alt="M:E agency" decoding="async" onerror="this.onerror=null;this.src='/logo.svg'">
+      <span class="site-footer__brand-text">M:E <em>agency</em></span>
+    </a>
+    <div class="site-footer__middle">
+      <div class="site-footer__links" role="navigation" aria-label="Další služby M:E">
+        <a href="https://ads.marketexpert.cz/cz/">Google Ads</a>
+        <a href="https://consult.marketexpert.cz/cs/" target="_blank" rel="noopener noreferrer">Konzultace</a>
+        <a href="https://seo.marketexpert.cz/cs/" target="_blank" rel="noopener noreferrer">SEO</a>
+        <a href="https://reputation.marketexpert.cz/cz/" target="_blank" rel="noopener noreferrer">Reputace</a>
+      </div>
+      <div class="site-footer__cookie"><a href="https://marketexpert.cz/cookie-policy" target="_blank" rel="noopener noreferrer">Zásady cookies</a></div>
+    </div>
+    <div class="site-footer__contact">
+      <a href="mailto:ads@marketexpert.cz">ads@marketexpert.cz</a>
+      <a href="tel:+420705995770">+420 705 995 770</a>
+    </div>
+  </div>
+  <div class="site-footer__copy-row">
+    <p class="site-footer__copy">© 2026 M:E Agency · Praha · Reklama</p>
+    <p class="site-footer__crafted">
+      <a href="https://landing.marketexpert.cz/cz/" target="_blank" rel="noopener noreferrer"><span class="site-footer__crafted-label">Created by</span><span class="site-footer__crafted-brand"><span class="site-footer__crafted-me">M:E</span> <em>agency</em></span></a>
+    </p>
+  </div>
+</footer>
+
+<script src="/cz/blog/blog.js?v=20260707"></script>
+</body>
+</html>

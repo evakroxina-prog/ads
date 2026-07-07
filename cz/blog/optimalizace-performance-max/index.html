@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Performance Max po spuštění: co sledovat a co ladit | M:E Agency</title>
+<meta name="description" content="Co kontrolovat v Performance Max po startu: reporty a Insights, skupiny podkladů, signály publika, vyloučení značky a mínusová slova, doba učení a propojení se Search bez kanibalizace.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ads.marketexpert.cz/cz/blog/optimalizace-performance-max/">
+<link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/optimalizace-performance-max/">
+<link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/optimizaciya-performance-max/">
+<link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/optimalizace-performance-max/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="M:E Agency">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:url" content="https://ads.marketexpert.cz/cz/blog/optimalizace-performance-max/">
+<meta property="og:title" content="Performance Max po spuštění: co sledovat a co ladit">
+<meta property="og:description" content="Insights, skupiny podkladů, mínusová slova a vyloučení značky v PMax, učení kampaně a propojení se Search bez kanibalizace brandového trafficu.">
+<meta property="og:image" content="https://ads.marketexpert.cz/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Performance Max po spuštění: co sledovat a co ladit">
+<meta name="twitter:description" content="Insights, skupiny podkladů, mínusová slova a vyloučení značky v PMax, učení kampaně a propojení se Search bez kanibalizace brandového trafficu.">
+<meta name="twitter:image" content="https://ads.marketexpert.cz/logo.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/footer.css">
+<link rel="stylesheet" href="/blog/blog.css?v=20260703b">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Performance Max po spuštění: co sledovat a co ladit","description":"Reporty a Insights, skupiny podkladů, signály publika, vyloučení značky a mínusová slova v PMax, učení kampaně a propojení se Search bez kanibalizace brandového trafficu.","inLanguage":"cs","mainEntityOfPage":"https://ads.marketexpert.cz/cz/blog/optimalizace-performance-max/","image":"https://ads.marketexpert.cz/logo.png","author":{"@type":"Organization","name":"M:E Agency"},"publisher":{"@type":"Organization","name":"M:E Agency","logo":{"@type":"ImageObject","url":"https://ads.marketexpert.cz/logo.png"}},"datePublished":"2026-06-07","dateModified":"2026-06-07"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Úvod","item":"https://ads.marketexpert.cz/cz/"},{"@type":"ListItem","position":2,"name":"Znalostní báze","item":"https://ads.marketexpert.cz/cz/blog/"},{"@type":"ListItem","position":3,"name":"Optimalizace Performance Max","item":"https://ads.marketexpert.cz/cz/blog/optimalizace-performance-max/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Mohu přidávat mínusová slova přímo do Performance Max?","acceptedAnswer":{"@type":"Answer","text":"Ano — od ledna 2025 lze mínusová slova přidávat přímo na úrovni kampaně Performance Max, bez kontaktu s podporou Google. Dříve šly použít hlavně sdílené seznamy mínusových slov na úrovni účtu, které platí pro všechny vyhledávací a PMax kampaně."}},{"@type":"Question","name":"Co jsou vyloučení značky (brand exclusions) a kdy je použít?","acceptedAnswer":{"@type":"Answer","text":"Vyloučení značky je nastavení v doplňkových parametrech kampaně, které vyloučí zobrazení u brandových dotazů (vlastních nebo cizích). Funguje jako mínusové slovo v široké shodě a pokrývá překlepy i varianty v různých jazycích. Použijte je, když PMax přetahovává levný brandový traffic, který by jinak šel přes samostatnou brandovou vyhledávací kampaň — ale značku vylučujte jen spolu se spuštěním takové kampaně, jinak o tyto zobrazení přijdete."}},{"@type":"Question","name":"Jak poznám, že kampaň ještě učí, a ne jen špatně funguje?","acceptedAnswer":{"@type":"Answer","text":"Jasný časovač neexistuje, ale platí orientační pravidlo: od startu nebo poslední významné změny uplynulo málo času a nasbíralo se málo konverzí — závěry jsou předčasné. Prudké změny rozpočtu nebo nastavení (např. zdvojení rozpočtu najednou) resetují vzorce a spustí nové učení — rozpočet proto zvyšujte postupně, ne skoky."}},{"@type":"Question","name":"Mohu vést Performance Max a Search u stejných produktů bez kanibalizace?","acceptedAnswer":{"@type":"Answer","text":"Ano, pokud nastavíte vyloučení. Performance Max doplňuje vyhledávací kampaně, ale při paralelním běhu může přetahovat zobrazení — zejména brandový traffic. Vyloučení značky, mínusová slova a start Search jako první fáze snižují překryv. Když dotaz přesně sedí na klíčové slovo s přesnou shodou ve Search, obvykle vyhraje vyhledávací kampaň."}}]}</script>
+</head>
+<body>
+
+<nav class="bnav" aria-label="Menu">
+  <a href="https://ads.marketexpert.cz/cz/" class="bnav-logo">
+    <img src="/logo.png" alt="M:E agency" decoding="async" onerror="this.onerror=null;this.src='/logo.svg'">
+    <span class="bnav-name">M:E <em>agency</em></span>
+  </a>
+  <div class="bnav-links">
+    <a href="https://ads.marketexpert.cz/cz/blog/">Znalostní báze</a>
+    <a href="https://ads.marketexpert.cz/cz/#pricing">Ceník</a>
+    <a href="https://ads.marketexpert.cz/blog/optimizaciya-performance-max/" hreflang="ru">RU</a>
+  </div>
+</nav>
+
+<div class="wrap wrap--art">
+  <nav class="crumbs" aria-label="Drobečková navigace">
+    <a href="https://ads.marketexpert.cz/cz/">Úvod</a> / <a href="https://ads.marketexpert.cz/cz/blog/">Znalostní báze</a> / <span>Optimalizace Performance Max</span>
+  </nav>
+
+  <article class="art">
+    <div class="art-tag">Znalostní báze · Pokročilé pro ty, kdo už vedou kampaně</div>
+    <h1>Performance Max po spuštění: co sledovat a co ladit</h1>
+    <div class="art-meta">Publikováno 7. června 2026 · ~10 minut čtení</div>
+    <div class="art-tags">
+      <a href="/cz/blog/?tag=optimalizace" class="art-tag-link">optimalizace</a>
+      <a href="/cz/blog/?tag=konverze" class="art-tag-link">konverze</a>
+      <a href="/cz/blog/?tag=spu%C5%A1t%C4%9Bn%C3%AD" class="art-tag-link">spuštění</a>
+    </div>
+
+    <div class="lead-box">
+      Performance Max automatizuje zobrazení, ale nezbavuje vás řízení. Po startu máte
+      šest bodů kontroly, které reálně ovlivňují výsledek: reporty a Insights, kvalitu
+      skupin podkladů, signály publika, vyloučení značky a mínusová slova, realistická
+      očekávání k době učení a propojení s vyhledávacími kampaněmi bez kanibalizace —
+      zejména brandového trafficu. Rozebereme každý z nich.
+    </div>
+
+    <h2>Co sledovat jako první: reporty a Insights</h2>
+    <p>
+      Záložka Insights je výchozí bod diagnostiky. U každého vyhledávacího tématu uvidíte
+      indikátor užitečnosti: přináší extra traffic, nebo by PMax tyto dotazy našel sám.
+      Nerelevantní témata a dotazy z Insights jsou přímý zdroj pro seznam mínusových slov.
+    </p>
+    <p>
+      Zvlášť kontrolujte report podle kanálů a umístění: ukáže, kde šla zobrazení —
+      ve vyhledávání, na YouTube, v Display síti nebo Gmailu — a odhalí, jestli významná
+      část rozpočtu neodtéká do neočekávaných míst, např. mobilních her nebo aplikací
+      mimo vaše publikum.
+    </p>
+
+    <h2>Skupiny podkladů: kvalita prvků a struktura</h2>
+    <p>
+      Google hodnotí každý prvek ve skupině podkladů stavem nízká, dobrá nebo vynikající
+      kvalita. Slabé prvky měňte po 2–3 najednou, ne vše najednou — lépe poznáte,
+      která úprava ovlivnila výsledek.
+    </p>
+    <div class="callout">
+      <b>Nesypěte vše do jedné skupiny podkladů.</b> Když jedna kategorie nebo směr
+      přináší většinu konverzí a druhá jen žere rozpočet, rozdělte je do samostatných
+      skupin nebo kampaní. Společná skupina průměruje data a brání algoritmu pochopit,
+      co funguje.
+    </div>
+
+    <h2>Signály publika — nápověda, ne tvrdé cílení</h2>
+    <p>
+      Signály publika (seznamy Customer Match, remarketing, zájmy, demografie) přidáváte
+      při vytváření nebo úpravě kampaně. Důležité je pochopit jejich roli: ve výchozím
+      stavu nejde o přísné omezení zobrazení, ale o kompas pro algoritmus — doporučení,
+      komu se pravděpodobně vyplatí reklamu ukázat, ne jediné možné publikum.
+    </p>
+
+    <div class="update-block">
+      <span class="tag">Aktualizace 2025–2026</span>
+      <h3>Vyloučení podle vašich dat — skutečné omezení, ne jen nápověda</h3>
+      <p>
+        Od aktualizací 2025–2026 je v Performance Max k dispozici nastavení
+        Vyloučení podle vašich dat (Your data exclusions — v parametrech kampaně
+        vedle demografických vyloučení). Umožní skutečně vyloučit konkrétní seznamy
+        Customer Match nebo návštěvníky webu ze zobrazení, ne jen dát algoritmu tip.
+        Je to užitečné zejména u cíle Získání nových zákazníků — dříve byl seznam
+        stávajících klientů jen doporučením, teď ho lze vyloučit natvrdo.
+      </p>
+      <p>
+        Před aktivací ověřte aktuálnost seznamu Customer Match — zastaralý seznam
+        může vyloučit špatné uživatele. Rozumnější je úzký, přesně definovaný segment
+        (např. „nakoupili za posledních 90 dní“), ne celá databáze kontaktů, a zapište
+        si datum zapnutí vyloučení do reportingu: po aktivaci může objem konverzí klesnout,
+        protože se už nepočítají opakované nákupy stávajících klientů — to není pokles
+        efektivity. Vyloučení není dokonalé — část publika Google nemusí spárovat přes CRM data.
+      </p>
+    </div>
+
+    <div class="cta-box">
+      <h3>Chcete zjistit, co brzdí vaši kampaň?</h3>
+      <p>Uděláme audit Performance Max: rozebereme Insights, skupiny podkladů, signály
+        publika a nastavení vyloučení — a ukážeme konkrétní body růstu.</p>
+      <div class="cta-row">
+        <a href="https://ads.marketexpert.cz/cz/#order" class="btn-g">Požádat o audit Performance Max</a>
+        <a href="https://ads.marketexpert.cz/cz/#pricing" class="btn-o">Ceník</a>
+      </div>
+    </div>
+
+    <h2>Vyloučení značky a mínusová slova: jak řídit traffic</h2>
+    <p>
+      Dlouho byla hlavní výtka k PMax nemožnost přidat mínusová slova přímo do kampaně —
+      muselo se žádat podporu Google nebo používat jen sdílené seznamy na úrovni účtu.
+      Od ledna 2025 to platí jinak: mínusová slova lze přidávat přímo na úrovni kampaně
+      Performance Max jako u běžného Search; limit je až 10&nbsp;000 mínusových slov na kampaň.
+    </p>
+    <ul>
+      <li><strong>Mínusová slova na úrovni kampaně</strong> — cíleně vylučujte dotazy z Insights:
+        nerelevantní formulace, „zdarma“ nebo „sleva“, pokud prodáváte prémiový segment,
+        názvy konkurentů.</li>
+      <li><strong>Vyloučení značky (brand exclusions)</strong> — samostatné nastavení v doplňkových
+        parametrech kampaně, funguje jako mínusové slovo v široké shodě a pokrývá překlepy
+        i různé jazykové varianty značky. Pokud vyloučíte vlastní značku z PMax, současně
+        spusťte samostatnou brandovou vyhledávací kampaň — jinak přestanete být vidět
+        u lidí, kteří vás hledají podle názvu, a ztratíte levné konverze. PMax totiž
+        často přetahovává právě tento brandový traffic na sebe.</li>
+      <li><strong>Vyloučení klíčových slov v obsahu</strong> — méně známý nástroj na úrovni účtu:
+        zakáže zobrazení u videí, kanálů a webů, v jejichž názvu nebo popisu jsou zadaná
+        slova. Platí jen pro přesnou shodu a řeší bezpečnost značky, ne odfiltrování
+        nerelevantních vyhledávacích dotazů.</li>
+      <li><strong>Vyloučení umístění</strong> — když v reportu umístění vidíte zobrazení
+        v pochybných aplikacích nebo mobilních hrách, přidejte je přímo do vyloučení.</li>
+    </ul>
+
+    <h2>Kdy čekat na učení a kdy zasáhnout</h2>
+    <p>
+      Přesný časovač učení neexistuje, ale platí praktické pravidlo: čím méně konverzí
+      od startu nebo poslední významné změny, tím méně spolehlivé jsou závěry o efektivitě.
+      Prudké změny — např. zdvojení rozpočtu za den — resetují vzorce, na kterých se systém
+      už naučil, a spustí nové učení. Rozpočet zvyšujte postupně po malých krocích během
+      týdne, ne skoky.
+    </p>
+    <p>
+      Než usoudíte, že kampaň „nefunguje“, vylučte technické příčiny: předávají se konverze
+      správně, není chyba v produktovém feedu, máte dost podkladů dobré kvality ve skupinách.
+      Často to, co vypadá jako selhání algoritmu, je problém dat, která do něj posíláte.
+      Viz první vrstva v „<a href="/cz/blog/jak-snizit-cenu-poptavky/">Jak snížit cenu poptávky</a>“
+      — kontrola správnosti konverzí.
+    </p>
+
+    <h2>Propojení se Search bez kanibalizace</h2>
+    <p>
+      Performance Max má doplňovat vyhledávací kampaně, ne je plně nahradit. Při paralelním
+      běhu ale PMax může přetahovat zobrazení — zejména u brandových dotazů, kde je traffic
+      levný a konverzní. Proto jsou <strong>vyloučení značky</strong> a mínusová slova důležité
+      od prvního dne: bez nich PMax často „ukradne“ brandový traffic, který by jinak šel
+      přes vaši brandovou Search kampaň.
+    </p>
+    <p>
+      Když dotaz přesně odpovídá klíčovému slovu s přesnou shodou ve vyhledávací kampani,
+      obvykle vyhraje právě Search, ne PMax. Více o rizicích kanibalizace — v článku
+      „<a href="/cz/blog/performance-max-a-vyhledavaci-kampane/">Performance Max a vyhledávací
+      kampaně</a>“; o týdenní optimalizaci Search — v „<a href="/cz/blog/optimalizace-vyhledavacich-kampani/">Optimalizace
+      vyhledávacích kampaní po spuštění</a>“.
+    </p>
+    <p>
+      Překryv dále snížíte mínusovými slovy na úrovni účtu nebo samostatné PMax kampaně
+      u dotazů, které už pokrývá vaše Search — hlavně u brandových dotazů, pokud pro ně
+      máte samostatnou brandovou kampaň ve vyhledávání.
+    </p>
+
+    <h2>Časté dotazy</h2>
+    <div class="faq">
+      <details><summary>Mohu přidávat mínusová slova přímo do Performance Max?</summary><p>Ano — od ledna 2025 lze mínusová slova přidávat přímo na úrovni kampaně Performance Max, bez kontaktu s podporou Google. Dříve šly použít hlavně sdílené seznamy mínusových slov na úrovni účtu, které platí pro všechny vyhledávací a PMax kampaně.</p></details>
+      <details><summary>Co jsou vyloučení značky (brand exclusions) a kdy je použít?</summary><p>Vyloučení značky je nastavení v doplňkových parametrech kampaně, které vyloučí zobrazení u brandových dotazů (vlastních nebo cizích). Funguje jako mínusové slovo v široké shodě a pokrývá překlepy i varianty v různých jazycích. Použijte je, když PMax přetahovává levný brandový traffic, který by jinak šel přes samostatnou brandovou vyhledávací kampaň — ale značku vylučujte jen spolu se spuštěním takové kampaně, jinak o tyto zobrazení přijdete.</p></details>
+      <details><summary>Jak poznám, že kampaň ještě učí, a ne jen špatně funguje?</summary><p>Jasný časovač neexistuje, ale platí orientační pravidlo: od startu nebo poslední významné změny uplynulo málo času a nasbíralo se málo konverzí — závěry jsou předčasné. Prudké změny rozpočtu nebo nastavení (např. zdvojení rozpočtu najednou) resetují vzorce a spustí nové učení — rozpočet proto zvyšujte postupně, ne skoky.</p></details>
+      <details><summary>Mohu vést Performance Max a Search u stejných produktů bez kanibalizace?</summary><p>Ano, pokud nastavíte vyloučení. Performance Max doplňuje vyhledávací kampaně, ale při paralelním běhu může přetahovat zobrazení — zejména brandový traffic. Vyloučení značky, mínusová slova a start Search jako první fáze snižují překryv. Když dotaz přesně sedí na klíčové slovo s přesnou shodou ve Search, obvykle vyhraje vyhledávací kampaň.</p></details>
+    </div>
+
+    <div class="related">
+      <h3>Čtěte také</h3>
+      <ul>
+        <li><a href="/cz/blog/performance-max-a-vyhledavaci-kampane/">Performance Max a vyhledávací kampaně</a> — základy formátu</li>
+        <li><a href="/cz/blog/optimalizace-vyhledavacich-kampani/">Optimalizace vyhledávacích kampaní po spuštění</a></li>
+        <li><a href="/cz/blog/kvalitativni-skore-a-ad-rank/">Kvalitativní skóre, reklamy a landing</a></li>
+        <li><a href="/cz/blog/jak-funguje-google-ads/">Jak funguje Google Ads</a></li>
+        <li><a href="/cz/blog/jak-spustit-reklamu-v-google-ads/">Jak spustit reklamu v Google a kolik potřebujete rozpočtu</a></li>
+        <li><a href="https://ads.marketexpert.cz/cz/">Vedení Google Ads na klíč — M:E Agency</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <h3>Chcete, aby Performance Max skutečně přinášel výsledky, ne jen „běžel“?</h3>
+      <p>Napište nám na audit — rozebereme skupiny podkladů, signály a vyloučení
+        ve vašem účtu a ukážeme, co opravit jako první.</p>
+      <div class="cta-row">
+        <a href="https://ads.marketexpert.cz/cz/#order" class="btn-g">Nezávazná poptávka</a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <a href="https://marketexpert.cz/" class="site-footer__brand">
+      <img src="/logo.png" alt="M:E agency" decoding="async" onerror="this.onerror=null;this.src='/logo.svg'">
+      <span class="site-footer__brand-text">M:E <em>agency</em></span>
+    </a>
+    <div class="site-footer__middle">
+      <div class="site-footer__links" role="navigation" aria-label="Další služby M:E">
+        <a href="https://ads.marketexpert.cz/cz/">Google Ads</a>
+        <a href="https://consult.marketexpert.cz/cs/" target="_blank" rel="noopener noreferrer">Konzultace</a>
+        <a href="https://seo.marketexpert.cz/cs/" target="_blank" rel="noopener noreferrer">SEO</a>
+        <a href="https://reputation.marketexpert.cz/cz/" target="_blank" rel="noopener noreferrer">Reputace</a>
+      </div>
+      <div class="site-footer__cookie"><a href="https://marketexpert.cz/cookie-policy" target="_blank" rel="noopener noreferrer">Zásady cookies</a></div>
+    </div>
+    <div class="site-footer__contact">
+      <a href="mailto:ads@marketexpert.cz">ads@marketexpert.cz</a>
+      <a href="tel:+420705995770">+420 705 995 770</a>
+    </div>
+  </div>
+  <div class="site-footer__copy-row">
+    <p class="site-footer__copy">© 2026 M:E Agency · Praha · Reklama</p>
+    <p class="site-footer__crafted">
+      <a href="https://landing.marketexpert.cz/cz/" target="_blank" rel="noopener noreferrer"><span class="site-footer__crafted-label">Created by</span><span class="site-footer__crafted-brand"><span class="site-footer__crafted-me">M:E</span> <em>agency</em></span></a>
+    </p>
+  </div>
+</footer>
+
+<script src="/cz/blog/blog.js?v=20260707"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+[
+  {
+    "slug": "remarketing-v-google-ads",
+    "ruSlug": "remarketing-google-ads",
+    "title": "Remarketing v Google Ads: doplňkové kampaně pro služby a e‑shop",
+    "excerpt": "Kdy spustit, jaké audience sestavit, RLSA vs Display vs PMax, consent mode a metriky — bez plýtvání rozpočtem na „všechny, kdo navštívili web“.",
+    "category": "Google Ads · Pokročilé",
+    "date": "2026-07-03",
+    "tags": ["optimalizace", "konverze", "spuštění"]
+  },
+  {
+    "slug": "google-ads-pro-mistni-firmy",
+    "ruSlug": "google-ads-lokalnyj-biznes-chehiya",
+    "title": "Google Ads pro místní firmy: geotargeting, jazyky a rozpočty",
+    "excerpt": "Geotargeting na Prahu a regiony, jazyky cs/en, reálné CPC podle oborů a proč Local Services Ads v Česku zatím nejsou dostupné.",
+    "category": "Google Ads · Místní byznys",
+    "date": "2026-06-21",
+    "tags": ["spuštění", "rozpočet", "nastavení"]
+  },
+  {
+    "slug": "cilova-stranka-pro-google-ads",
+    "ruSlug": "posadochnaya-stranica-google-ads",
+    "title": "Cílová stránka pro Google Ads: rychlost, formulář a message match",
+    "excerpt": "Message match, Core Web Vitals, mobilní formulář a thank-you page — co zkontrolovat před spuštěním a po prvních 100 relacích.",
+    "category": "Google Ads · Pokročilé",
+    "date": "2026-06-14",
+    "tags": ["optimalizace", "konverze", "nastavení"]
+  },
+  {
+    "slug": "optimalizace-performance-max",
+    "ruSlug": "optimizaciya-performance-max",
+    "title": "Performance Max po spuštění: co sledovat a co ladit",
+    "excerpt": "Insights, skupiny podkladů, mínusová slova a brand exclusions v PMax, doba učení a propojení se Search bez kanibalizace rozpočtu.",
+    "category": "Google Ads · Pokročilé",
+    "date": "2026-06-07",
+    "tags": ["optimalizace", "konverze", "spuštění"]
+  },
+  {
+    "slug": "konverze-a-ga4-pro-google-ads",
+    "ruSlug": "konversii-i-ga4-google-ads",
+    "title": "Konverze a GA4 pro Google Ads: jak nastavit měření",
+    "excerpt": "Tag, události, thank-you page, Primary/Secondary, Enhanced Conversions a offline import — jak neoptimalizovat reklamu naslepo.",
+    "category": "Google Ads · Nastavení",
+    "date": "2026-05-31",
+    "tags": ["konverze", "nastavení", "optimalizace"]
+  },
+  {
+    "slug": "optimalizace-vyhledavacich-kampani",
+    "ruSlug": "optimizaciya-search-kampanij",
+    "title": "Optimalizace vyhledávacích kampaní po spuštění",
+    "excerpt": "Týdenní checklist: vyhledávací dotazy, mínusová slova, RSA, Auction Insights a nabídky — co dělat v prvním měsíci a po stabilizaci.",
+    "category": "Google Ads · Pokročilé",
+    "date": "2026-05-24",
+    "tags": ["optimalizace", "mínusová slova", "nastavení"]
+  },
+  {
+    "slug": "kvalitativni-skore-a-ad-rank",
+    "ruSlug": "pokazatel-kachestva-i-ad-rank",
+    "title": "Kvalitativní skóre, reklamy a landing: jak vyhrát aukci",
+    "excerpt": "Tři složky kvalitativního skóre, propojení klíč → reklama → stránka, proč SKAG zastaral a jak platit méně než konkurent při stejné nabídce.",
+    "category": "Google Ads · Pokročilé",
+    "date": "2026-05-17",
+    "tags": ["Ad Rank", "aukce", "optimalizace"]
+  },
+  {
+    "slug": "jak-snizit-cenu-poptavky",
+    "ruSlug": "kak-snizit-cenu-zayavki",
+    "title": "Jak snížit cenu poptávky v Google Ads",
+    "excerpt": "Pět vrstev snížení CPL: konverze, mínusová slova, kvalita reklam, landing a nabídky — co dělat postupně a co neladit předčasně.",
+    "category": "Google Ads · Optimalizace",
+    "date": "2026-05-10",
+    "tags": ["CPL", "optimalizace", "mínusová slova"]
+  },
+  {
+    "slug": "maly-rozpocet-v-google-ads",
+    "ruSlug": "malyj-budzhet-google-ads",
+    "title": "Malý rozpočet v Google Ads: stačí 10 € denně?",
+    "excerpt": "10 €/den ≈ 300 €/měs.: kdy malý rozpočet stačí, jaká jsou rizika na startu a playbook optimalizace bez plýtvání na učení algoritmu.",
+    "category": "Google Ads · Rozpočet",
+    "date": "2026-05-03",
+    "tags": ["rozpočet", "spuštění", "optimalizace"]
+  },
+  {
+    "slug": "kurzy-google-ads-nebo-agentura",
+    "ruSlug": "kursy-google-ads-ili-agentstvo",
+    "title": "Kurzy Google Ads nebo agentura: co zvolit v roce 2026",
+    "excerpt": "Srovnání kurzů a agentury podle rozpočtu, času a rizik — a kdy dává smysl obojí kombinovat místo volby jednoho.",
+    "category": "Google Ads · Volba",
+    "date": "2026-04-26",
+    "tags": ["rozpočet", "spuštění", "nastavení"]
+  },
+  {
+    "slug": "kolik-stoji-reklama-v-google-ads",
+    "ruSlug": "skolko-stoit-google-ads",
+    "title": "Kolik stojí reklama v Google Ads",
+    "excerpt": "Z čeho se skládá cena reklamy: CPC, DPH, agentura, minimální rozpočet a proč je cena za proklik v jednom oboru různá.",
+    "category": "Google Ads · Rozpočet",
+    "date": "2026-04-19",
+    "tags": ["rozpočet", "CPC"]
+  },
+  {
+    "slug": "performance-max-a-vyhledavaci-kampane",
+    "ruSlug": "performance-max-i-search-ads",
+    "title": "Performance Max a vyhledávací kampaně jednoduše",
+    "excerpt": "Čím se liší vyhledávací kampaně a Performance Max, co zvolit na start a jak oba formáty kombinovat bez kanibalizace rozpočtu.",
+    "category": "Google Ads · Formáty",
+    "date": "2026-04-12",
+    "tags": ["spuštění", "nastavení", "optimalizace", "konverze"]
+  },
+  {
+    "slug": "jak-spustit-reklamu-v-google-ads",
+    "ruSlug": "kak-zapustit-reklamu-google-ads",
+    "title": "Jak spustit reklamu v Google a kolik potřebujete rozpočtu",
+    "excerpt": "Jak se formuje cena za proklik, jak spočítat reálný rozpočet pro váš obor a co se v pravidlech útraty změnilo v roce 2026.",
+    "category": "Google Ads · Rozpočet",
+    "date": "2026-04-05",
+    "tags": ["rozpočet", "CPC", "spuštění", "pravidla 2026"]
+  },
+  {
+    "slug": "klicova-slova-a-shody",
+    "ruSlug": "klyuchevye-slova-i-match-types",
+    "title": "Klíčová slova a typy shody v Google Ads",
+    "excerpt": "Sémantika podle záměru, Exact/Phrase/Broad na startu, STAG, mínusová slova a Search Terms v prvních 14 dnech — bez prokliků na nerelevantní dotazy.",
+    "category": "Google Ads · Nastavení",
+    "date": "2026-04-02",
+    "tags": ["nastavení", "mínusová slova", "spuštění"]
+  },
+  {
+    "slug": "ucet-google-ads",
+    "ruSlug": "kabinet-google-ads",
+    "title": "Účet Google Ads: přihlášení a nastavení",
+    "excerpt": "Jak se přihlásit na ads.google.com, založit účet bez chyb, nastavit konverze, přístupová práva a neztratit účet na startu.",
+    "category": "Google Ads · Účet",
+    "date": "2026-03-28",
+    "tags": ["nastavení", "spuštění", "konverze"]
+  },
+  {
+    "slug": "jak-funguje-google-ads",
+    "ruSlug": "kak-rabotaet-google-ads",
+    "title": "Jak funguje Google Ads: aukce a hodnocení reklamy",
+    "excerpt": "Jak probíhá aukce při každém vyhledávání, z čeho se skládá Ad Rank a proč nevyhrává ten, kdo platí víc.",
+    "category": "Google Ads · Teorie",
+    "date": "2026-03-20",
+    "tags": ["aukce", "Ad Rank"]
+  },
+  {
+    "slug": "jak-nastavit-google-ads",
+    "ruSlug": "kak-nastroit-reklamu-google-ads",
+    "title": "Jak nastavit Google Ads: podrobný návod 2026",
+    "excerpt": "9 kroků od cíle a rozpočtu po spuštění a optimalizaci. Upřímný odhad podle vaší sémantiky, bez balastu a bez plýtvání rozpočtem na testy.",
+    "category": "Google Ads · Návod",
+    "date": "2026-03-12",
+    "tags": ["nastavení", "konverze"]
+  },
+  {
+    "slug": "co-je-google-ads",
+    "ruSlug": "chto-takoe-google-ads",
+    "title": "Co je Google Ads: jednoduché vysvětlení pro začátečníky",
+    "excerpt": "Jak Google Ads funguje, čím se liší od SEO, komu se hodí a jaké základní pojmy znát před spuštěním.",
+    "category": "Google Ads · Základy",
+    "date": "2026-03-05",
+    "tags": ["spuštění", "nastavení"]
+  }
+]
