@@ -21,114 +21,339 @@
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/"/>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/"/>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/remarketing-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/remarketing-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/remarketing-v-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/remarketing-v-google-ads/"/>
     <lastmod>2026-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/google-ads-lokalnyj-biznes-chehiya/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/google-ads-lokalnyj-biznes-chehiya/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/google-ads-pro-mistni-firmy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/google-ads-pro-mistni-firmy/"/>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/posadochnaya-stranica-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/posadochnaya-stranica-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/cilova-stranka-pro-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/cilova-stranka-pro-google-ads/"/>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/optimizaciya-performance-max/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/optimizaciya-performance-max/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/optimalizace-performance-max/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/optimalizace-performance-max/"/>
     <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/konversii-i-ga4-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/konversii-i-ga4-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/konverze-a-ga4-pro-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/konverze-a-ga4-pro-google-ads/"/>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/optimizaciya-search-kampanij/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/optimizaciya-search-kampanij/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/optimalizace-vyhledavacich-kampani/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/optimalizace-vyhledavacich-kampani/"/>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/pokazatel-kachestva-i-ad-rank/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/pokazatel-kachestva-i-ad-rank/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/kvalitativni-skore-a-ad-rank/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/kvalitativni-skore-a-ad-rank/"/>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/kak-snizit-cenu-zayavki/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kak-snizit-cenu-zayavki/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/jak-snizit-cenu-poptavky/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/jak-snizit-cenu-poptavky/"/>
     <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/malyj-budzhet-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/malyj-budzhet-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/maly-rozpocet-v-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/maly-rozpocet-v-google-ads/"/>
     <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/kursy-google-ads-ili-agentstvo/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kursy-google-ads-ili-agentstvo/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/kurzy-google-ads-nebo-agentura/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/kurzy-google-ads-nebo-agentura/"/>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/skolko-stoit-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/skolko-stoit-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/kolik-stoji-reklama-v-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/kolik-stoji-reklama-v-google-ads/"/>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/performance-max-i-search-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/performance-max-i-search-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/performance-max-a-vyhledavaci-kampane/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/performance-max-a-vyhledavaci-kampane/"/>
     <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/kak-zapustit-reklamu-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kak-zapustit-reklamu-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/jak-spustit-reklamu-v-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/jak-spustit-reklamu-v-google-ads/"/>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/klyuchevye-slova-i-match-types/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/klyuchevye-slova-i-match-types/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/klicova-slova-a-shody/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/klicova-slova-a-shody/"/>
     <lastmod>2026-04-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/kabinet-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kabinet-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/ucet-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/ucet-google-ads/"/>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/kak-rabotaet-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kak-rabotaet-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/jak-funguje-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/jak-funguje-google-ads/"/>
     <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/kak-nastroit-reklamu-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kak-nastroit-reklamu-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/jak-nastavit-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/jak-nastavit-google-ads/"/>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/chto-takoe-google-ads/</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/remarketing-v-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/remarketing-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/remarketing-v-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/remarketing-v-google-ads/"/>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/google-ads-pro-mistni-firmy/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/google-ads-lokalnyj-biznes-chehiya/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/google-ads-pro-mistni-firmy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/google-ads-pro-mistni-firmy/"/>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/cilova-stranka-pro-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/posadochnaya-stranica-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/cilova-stranka-pro-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/cilova-stranka-pro-google-ads/"/>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/optimalizace-performance-max/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/optimizaciya-performance-max/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/optimalizace-performance-max/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/optimalizace-performance-max/"/>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/konverze-a-ga4-pro-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/konversii-i-ga4-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/konverze-a-ga4-pro-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/konverze-a-ga4-pro-google-ads/"/>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/optimalizace-vyhledavacich-kampani/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/optimizaciya-search-kampanij/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/optimalizace-vyhledavacich-kampani/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/optimalizace-vyhledavacich-kampani/"/>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/kvalitativni-skore-a-ad-rank/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/pokazatel-kachestva-i-ad-rank/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/kvalitativni-skore-a-ad-rank/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/kvalitativni-skore-a-ad-rank/"/>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/jak-snizit-cenu-poptavky/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kak-snizit-cenu-zayavki/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/jak-snizit-cenu-poptavky/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/jak-snizit-cenu-poptavky/"/>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/maly-rozpocet-v-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/malyj-budzhet-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/maly-rozpocet-v-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/maly-rozpocet-v-google-ads/"/>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/kurzy-google-ads-nebo-agentura/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kursy-google-ads-ili-agentstvo/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/kurzy-google-ads-nebo-agentura/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/kurzy-google-ads-nebo-agentura/"/>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/kolik-stoji-reklama-v-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/skolko-stoit-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/kolik-stoji-reklama-v-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/kolik-stoji-reklama-v-google-ads/"/>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/performance-max-a-vyhledavaci-kampane/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/performance-max-i-search-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/performance-max-a-vyhledavaci-kampane/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/performance-max-a-vyhledavaci-kampane/"/>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/jak-spustit-reklamu-v-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kak-zapustit-reklamu-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/jak-spustit-reklamu-v-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/jak-spustit-reklamu-v-google-ads/"/>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/klicova-slova-a-shody/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/klyuchevye-slova-i-match-types/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/klicova-slova-a-shody/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/klicova-slova-a-shody/"/>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/ucet-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kabinet-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/ucet-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/ucet-google-ads/"/>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/jak-funguje-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kak-rabotaet-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/jak-funguje-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/jak-funguje-google-ads/"/>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/jak-nastavit-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kak-nastroit-reklamu-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/jak-nastavit-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/jak-nastavit-google-ads/"/>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/co-je-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/chto-takoe-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/co-je-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/co-je-google-ads/"/>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
