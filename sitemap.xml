@@ -192,6 +192,9 @@
   </url>
   <url>
     <loc>https://ads.marketexpert.cz/blog/chto-takoe-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/chto-takoe-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/co-je-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/co-je-google-ads/"/>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
