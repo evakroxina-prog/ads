@@ -1,5 +1,32 @@
 [
   {
+    "slug": "externi-ai-pro-google-ads",
+    "ruSlug": "vneshnij-ii-dlya-google-ads",
+    "title": "Externí AI nástroje pro Google Ads: kde reálně pomáhají a kde překáží",
+    "excerpt": "Jak ChatGPT, Claude, Gemini a specializované PPC služby pomáhají se sémantikou, reklamami, vylučujícími slovy a reporty — a kde AI nenahrazuje specialistu.",
+    "category": "Google Ads · Nástroje",
+    "date": "2026-07-15",
+    "tags": ["ai", "produktivita", "nástroje"]
+  },
+  {
+    "slug": "umela-inteligence-v-google-ads",
+    "ruSlug": "iskusstvennyj-intellekt-v-google-ads",
+    "title": "Umělá inteligence v Google Ads v roce 2026: co se skutečně změnilo",
+    "excerpt": "AI Max for Search, AI Brief, AI generace reklam a formáty pro AI vyhledávání — co už funguje, co se zavádí a jak neztratit kontrolu nad kampaní.",
+    "category": "Google Ads · Pokročilé",
+    "date": "2026-07-13",
+    "tags": ["ai", "trendy", "automatizace"]
+  },
+  {
+    "slug": "klikovy-podvod-v-google-ads",
+    "ruSlug": "kak-zaschititsya-ot-klikfroda-google-ads",
+    "title": "Klikový podvod v Google Ads: co to je, jak ho rozpoznat a jak se chránit",
+    "excerpt": "Jak odlišit skutečný klikový podvod od šumu, co Google filtruje sám, Click Quality Form a proč odhady 10–40 % podvodu jsou spíš marketing dodavatelů než nezávislá statistika.",
+    "category": "Google Ads · Optimalizace",
+    "date": "2026-07-09",
+    "tags": ["klikový podvod", "invalid traffic", "optimalizace", "rozpočet"]
+  },
+  {
     "slug": "remarketing-v-google-ads",
     "ruSlug": "remarketing-google-ads",
     "title": "Remarketing v Google Ads: doplňkové kampaně pro služby a e‑shop",

@@ -78,3 +78,9 @@ src = re.sub(r"\n  /\* --- Чек-лист \(Formspree \+ PDF\) --- \*/.*", "\n}
 out = root / "cz" / "blog" / "blog.js"
 out.write_text(src, encoding="utf-8")
 print("written", out, "bytes", out.stat().st_size)
+
+import subprocess
+import sys
+
+hub_script = root / "scripts" / "build-blog-hub-static.py"
+subprocess.run([sys.executable, str(hub_script)], check=True)

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klikový podvod v Google Ads: co to je, jak ho rozpoznat a jak se chránit | M:E Agency</title>
+<meta name="description" content="Klikový podvod v Google Ads: jak odlišit skutečný problém od statistického šumu, co Google už automaticky filtruje, jak podat žádost o Invalid Activity Credit Report a proč „10–40 % kliků je podvod" je marketing, ne nezávislá statistika.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ads.marketexpert.cz/cz/blog/klikovy-podvod-v-google-ads/">
+<link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/klikovy-podvod-v-google-ads/">
+<link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kak-zaschititsya-ot-klikfroda-google-ads/">
+<link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/klikovy-podvod-v-google-ads/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="M:E Agency">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:url" content="https://ads.marketexpert.cz/cz/blog/klikovy-podvod-v-google-ads/">
+<meta property="og:title" content="Klikový podvod v Google Ads: co to je, jak ho rozpoznat a jak se chránit">
+<meta property="og:description" content="Rozbor klikového podvodu v Google Ads bez strašení od dodavatelů: jak funguje ochrana Google, čím se credit liší od refund a co reálně může udělat inzerent.">
+<meta property="og:image" content="https://ads.marketexpert.cz/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Klikový podvod v Google Ads: co to je, jak ho rozpoznat a jak se chránit">
+<meta name="twitter:description" content="Rozbor klikového podvodu v Google Ads bez strašení od dodavatelů: jak funguje ochrana Google, čím se credit liší od refund a co reálně může udělat inzerent.">
+<meta name="twitter:image" content="https://ads.marketexpert.cz/logo.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/footer.css">
+<link rel="stylesheet" href="/blog/blog.css?v=20260715b">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Klikový podvod v Google Ads: co to je, jak ho rozpoznat a jak se chránit","description":"Klikový podvod v Google Ads: jak odlišit skutečný problém od šumu, co Google filtruje automaticky, Invalid Activity Credit Report a Click Quality Form — bez strašení od dodavatelů.","inLanguage":"cs","mainEntityOfPage":"https://ads.marketexpert.cz/cz/blog/klikovy-podvod-v-google-ads/","image":"https://ads.marketexpert.cz/logo.png","author":{"@type":"Organization","name":"M:E Agency"},"publisher":{"@type":"Organization","name":"M:E Agency","logo":{"@type":"ImageObject","url":"https://ads.marketexpert.cz/logo.png"}},"datePublished":"2026-07-09","dateModified":"2026-07-09"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domů","item":"https://ads.marketexpert.cz/cz/"},{"@type":"ListItem","position":2,"name":"Znalostní báze","item":"https://ads.marketexpert.cz/cz/blog/"},{"@type":"ListItem","position":3,"name":"Klikový podvod v Google Ads","item":"https://ads.marketexpert.cz/cz/blog/klikovy-podvod-v-google-ads/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Google skutečně neúčtuje peníze za neplatná kliknutí?","acceptedAnswer":{"@type":"Answer","text":"Za kliknutí, která systém určí jako neplatná ještě před vystavením faktury, se peníze vůbec neúčtují — děje se to v reálném čase. Za kliknutí uznaná neplatnými dodatečně se připisuje kredit na budoucí výdaje, ne peněžní vrácení."}},{"@type":"Question","name":"Dá se věřit číslům X % návštěvnosti je podvod z článků o klikovém podvodu?","acceptedAnswer":{"@type":"Answer","text":"S opatrností. Většinu takových odhadů zveřejňují firmy prodávající placené ochranné služby proti klikovým podvodům. Rozumnější je orientovat se na poměr kliknutí a konverzí ve vlastním účtu než na zprůměrované procento z cizího marketingového materiálu."}},{"@type":"Question","name":"Kolik času je na podání žádosti o neplatnou návštěvnost?","acceptedAnswer":{"@type":"Answer","text":"Ruční šetření přes Click Quality Form je omezeno na 60 dní od data podezřelé aktivity do momentu podání žádosti — starší návštěvnost se vůbec neposuzuje."}},{"@type":"Question","name":"Nahrazuje Invalid Activity Credit Report ruční podání žádosti?","acceptedAnswer":{"@type":"Answer","text":"Ne. Report ukazuje už připsané kredity — to, co Google sám odhalil a potvrdil, a zatím jen u Search a Performance Max. Pokud máte podezření na neplatnou návštěvnost, kterou si systém sám nevšiml, bude potřeba samostatná žádost přes Click Quality Form."}},{"@type":"Question","name":"Potřebuje placenou ochrannou službu proti klikovým podvodům každý inzerent?","acceptedAnswer":{"@type":"Answer","text":"Ne. Pro menší a střední rozpočty na Search obvykle stačí vestavěné nástroje Google a základní hygiena účtu. Placené služby se vyplatí u velkých rozpočtů na Display/PMax nebo u potvrzeného stabilního vzorce umělého navyšování kliknutí."}}]}</script>
+</head>
+<body>
+
+<nav class="bnav" aria-label="Menu">
+  <a href="https://ads.marketexpert.cz/cz/" class="bnav-logo">
+    <img src="/logo.png" alt="M:E agency" decoding="async" onerror="this.onerror=null;this.src='/logo.svg'">
+    <span class="bnav-name">M:E <em>agency</em></span>
+  </a>
+  <div class="bnav-links">
+    <a href="https://ads.marketexpert.cz/cz/blog/">Znalostní báze</a>
+    <a href="https://ads.marketexpert.cz/cz/#pricing">Ceník</a>
+    <a href="https://ads.marketexpert.cz/blog/kak-zaschititsya-ot-klikfroda-google-ads/" hreflang="ru">RU</a>
+  </div>
+</nav>
+
+<div class="wrap wrap--art">
+  <nav class="crumbs" aria-label="Drobečková navigace">
+    <a href="https://ads.marketexpert.cz/cz/">Domů</a> / <a href="https://ads.marketexpert.cz/cz/blog/">Znalostní báze</a> / <span>Klikový podvod</span>
+  </nav>
+
+  <article class="art">
+    <div class="art-tag">Znalostní báze · Google Ads</div>
+    <h1>Klikový podvod v Google Ads: co to je, jak ho rozpoznat a jak se chránit</h1>
+    <div class="art-meta">Publikováno 9. července 2026 · ~13 minut čtení</div>
+    <div class="art-tags">
+      <a href="/cz/blog/?tag=klikov%C3%BD%20podvod" class="art-tag-link">klikový podvod</a>
+      <a href="/cz/blog/?tag=invalid%20traffic" class="art-tag-link">invalid traffic</a>
+      <a href="/cz/blog/?tag=optimalizace" class="art-tag-link">optimalizace</a>
+      <a href="/cz/blog/?tag=rozpo%C4%8Det" class="art-tag-link">rozpočet</a>
+    </div>
+
+    <div class="lead-box">
+      Klikový podvod (click fraud) jsou kliknutí na reklamu, která nesouvisí se skutečným
+      zájmem uživatele: boti, klikací farmy, umělé navyšování kliknutí ze strany konkurence
+      nebo samotných zobrazovacích ploch. Problém je reálný, ale kolem něj vyrostlo celé
+      odvětví placených ochranných služeb, které má zájem na tom, aby inzerent problém
+      považoval za větší, než ve skutečnosti je. Krátká a poctivá odpověď: Google už
+      automaticky a v reálném čase filtruje a neúčtuje velkou část neplatné návštěvnosti;
+      to, co proklouzne filtry, lze a je třeba zachytit i vlastními silami — bez
+      předplatného externí služby, alespoň na začátku. Níže je rozbor toho, jak to
+      skutečně funguje, jaká čísla si nezaslouží důvěru a co dělat krok po kroku.
+    </div>
+
+    <div class="step"><div class="step-num">1</div><h2>Co je klikový podvod a čím se liší od „invalid traffic"</h2></div>
+    <p>
+      V oboru se tyto dva termíny často zaměňují, a někdy záměrně — protože druhý zní
+      vážněji a lépe prodává ochranné služby.
+    </p>
+    <ul>
+      <li><strong>Invalid traffic (neplatná návštěvnost)</strong> — oficiální termín Google,
+        který zahrnuje úplně jakákoli kliknutí a zobrazení nesouvisející se skutečným
+        zájmem uživatele: náhodné druhé kliknutí při dvojitém ťuknutí, kliknutí robotem
+        vyhledávacího crawleru, duplicitní kliknutí při obnovení stránky. Většina takové
+        návštěvnosti není zlý úmysl, ale technický šum.</li>
+      <li><strong>Click fraud (klikový podvod)</strong> — úzká podmnožina invalid traffic:
+        kliknutí se záměrným cílem uškodit inzerentovi nebo vydělat na zobrazeních. Patří
+        sem konkurenti klikající na cizí reklamy, aby vyčerpali denní rozpočet, plochy
+        uměle navyšující kliknutí kvůli vlastnímu příjmu z Display sítě, a automatizovaní
+        boti napodobující chování člověka.</li>
+    </ul>
+    <p>
+      Praktický závěr: když ve výkazech Google Ads vidíte řádek „Neplatná kliknutí", jde
+      téměř vždy o první kategorii — technický šum, který Google už odfiltroval a za který
+      vám nebyly účtovány peníze. Skutečný cílený klikový podvod je vzácnější, ale právě
+      ten stojí za pozornost.
+    </p>
+
+    <div class="step"><div class="step-num">2</div><h2>Odkud se berou čísla „10–40 % návštěvnosti je podvod" a proč jim slepě nedůvěřovat</h2></div>
+    <p>
+      Pokud si klikový podvod vygooglíte, téměř v každém článku narazíte na číslo typu
+      „až 40 % kliknutí v některých oborech je podvodných" nebo „globální ztráty z reklamních
+      podvodů — 84 miliard dolarů ročně". Zde je důležité pochopit zdroj.
+    </p>
+    <p>
+      Prakticky všechny podobné odhady zveřejňují samotní dodavatelé placených ochranných
+      služeb proti klikovým podvodům — firmy, jejichž produkt se prodává právě na tezi
+      „bez nás ztrácíte X % rozpočtu". Nejde o nezávislou oborovou statistiku, ale o
+      marketingový materiál zdůvodňující koupi konkrétního nástroje. Metodologie takových
+      výzkumů se zřídka zveřejňuje celá, vzorky nejsou vždy reprezentativní, a samotná
+      metrika „invalid traffic rate" se může počítat různě — od programmatic zobrazení
+      obecně až po kliknutí konkrétně ve vyhledávací reklamě, což dává zcela odlišná čísla.
+    </p>
+    <p>
+      To neznamená, že problém neexistuje — existuje, a Google sám zveřejňuje data o objemu
+      odfiltrované návštěvnosti. Ale když se číslo objeví v článku nebo na landing page
+      služby, která to samé číslo zpeněžuje, stojí za to brát ho jako argument prodejce,
+      ne jako fakt. Rozumná strategie je orientovat se ne na procenta „průměr trhu", ale
+      na vlastní data účtu: poměr kliknutí a konverzí, opakovanost IP, geografii návštěvnosti.
+    </p>
+
+    <div class="step"><div class="step-num">3</div><h2>Jak vás Google už chrání — ještě než jste si problém vůbec všimli</h2></div>
+    <p>
+      Google má vícevrstvý automatický systém ochrany, který funguje v reálném čase,
+      ještě před vystavením faktury.
+    </p>
+    <table class="myth-table">
+      <tr><th>Kdy odhaleno</th><th>Co se stane</th><th>Co vidí inzerent</th></tr>
+      <tr>
+        <td>Před vytvořením faktury (v reálném čase)</td>
+        <td>Kliknutí se odfiltruje, zobrazení se nezapočítá, peníze se vůbec neúčtují</td>
+        <td>Sloupec „Neplatná kliknutí" ve výkazech</td>
+      </tr>
+      <tr>
+        <td>Po vytvoření faktury</td>
+        <td>Google potvrdí neplatnost dodatečně a připíše kredit do budoucna</td>
+        <td>Řádek kreditu v billingu a v novém reportu</td>
+      </tr>
+    </table>
+    <p>
+      Důležitá terminologická nuance, kterou stojí za to znát předem: Google oficiálně
+      <strong>nevrací peníze</strong> („refund") za neplatnou návštěvnost — místo toho se připisuje
+      <strong>kredit</strong> („credit"), který se započítá do budoucích výdajů na reklamu.
+      Formulace v nápovědě Google je přímá: vrácení peněz za neplatnou návštěvnost nebude —
+      pouze úprava faktury nebo kredit. Nejde o byrokratickou drobnost: pokud čekáte, že se
+      vám peníze vrátí na kartu nebo bankovní účet, a místo toho dostanete řádek kreditu
+      v billingu, uplatnitelný pouze na budoucí kampaně, jde o věci s odlišným významem,
+      a mnoho článků na internetu (včetně materiálů placených ochranných služeb) to nadále
+      nazývá „refund", což je zavádějící.
+    </p>
+
+    <div class="step"><div class="step-num">4</div><h2>Invalid Activity Credit Report — nový report od června 2026</h2></div>
+    <p>
+      V červnu 2026 Google zveřejnil dokumentaci k reportu <strong>Invalid Activity
+      Credit Report</strong> — první detailizaci kreditů za neplatnou aktivitu na úrovni
+      kampaně a zobrazovací sítě, ne jen jako řádek v billingu.
+    </p>
+    <ul>
+      <li><strong>Kde ho hledat.</strong> Sekce „Statistiky a reporty" → „Editor reportů" →
+        Galerie šablon → „Připsání za neplatnou aktivitu: vyhledávací kampaně a kampaně
+        s maximální výkonností". Google čas od času mění umístění položek v rozhraní,
+        takže pokud sekci nenajdete napoprvé, nejjednodušší je použít vyhledávací řádek
+        uvnitř účtu (ikona lupy v horním panelu).</li>
+      <li><strong>Co ukazuje.</strong> Tři metriky kreditu (credited clicks, credited
+        interactions, credited amount) a sedm „upravených" metrik výkonu (adjusted cost,
+        adjusted clicks, adjusted CTR, adjusted průměrná cena za kliknutí, adjusted konverze
+        a další) — tedy vaše ukazatele „očištěné" od toho, za co už byl připsán kredit.</li>
+      <li><strong>Důležité omezení.</strong> Report zatím pokrývá <strong>pouze kampaně Search
+        a Performance Max</strong>. Display, Video, Demand Gen a aplikace do něj nespadají —
+        pokud je rozpočet soustředěný tam, tento report vám úplný obrázek o kreditech nedá,
+        a bude potřeba se podívat na billing ručně.</li>
+    </ul>
+    <p>
+      Jde o užitečný nástroj pro sesouhlasení „kolik rozpočtu reálně shořelo na neplatné
+      návštěvnosti po vystavení faktury", ale ne o nástroj prevence — ukazuje už proběhlé,
+      ne to, co teprve nastane.
+    </p>
+
+    <div class="step"><div class="step-num">5</div><h2>Když automatika nezafungovala: Click Quality Form a ruční šetření</h2></div>
+    <p>
+      Pokud máte podezření, že část návštěvnosti je neplatná, ale systém ji automaticky
+      neodfiltroval, můžete požádat o ruční šetření přes <strong>Click Quality Form</strong>.
+      Než žádost podáte, stojí za to střízlivě zhodnotit šance: Google potvrzuje a připisuje
+      kredit až po vlastní kontrole, „kde je to vhodné a možné" — záruka výsledku neexistuje
+      a rozhodnutí je zcela na straně Google.
+    </p>
+    <h3>Co je potřeba připravit před podáním žádosti</h3>
+    <ul>
+      <li>10místné Customer ID účtu.</li>
+      <li>Přesné datové rozmezí podezřelé aktivity — <strong>ne starší než 60 dní</strong>
+        před momentem podání (jde o pevné omezení: šetření návštěvnosti starší 60 dní
+        Google zásadně neprovádí).</li>
+      <li>Názvy dotčených kampaní a reklamních skupin, podezřelá klíčová slova.</li>
+      <li>Serverové logy s IP adresami, user agentem a hodnotami GCLID u podezřelých kliknutí.</li>
+      <li>Stručné zdůvodnění — proč právě tato návštěvnost vypadá jako neplatná (například
+        nárůst kliknutí bez růstu konverzí, opakující se IP, geografie mimo cílení).</li>
+    </ul>
+    <h3>Kdo může žádost podat</h3>
+    <p>
+      Formulář může odeslat pouze uživatel s <strong>administrátorskými právy</strong> k
+      platebnímu profilu účtu. Pokud máte standardní nebo read-only přístup, žádost musí
+      podat administrátor.
+    </p>
+    <h3>Co dál</h3>
+    <p>
+      Doba šetření není Googlem oficiálně stanovena a v praxi se pohybuje od několika dní
+      po několik týdnů podle složitosti případu. Pokud se neplatnost potvrdí, připíše se
+      kredit na budoucí výdaje, ne vrácení na účet (viz sekce 3 výše).
+    </p>
+
+    <div class="step"><div class="step-num">6</div><h2>Signály, u kterých se vyplatí podezírat problém ve vlastním účtu</h2></div>
+    <p>
+      Než podáte šetření nebo dokonce zaplatíte za externí ochrannou službu, je rozumné
+      zkontrolovat základní signály přímo v dostupných reportech — často to stačí k pochopení
+      rozsahu.
+    </p>
+    <table class="myth-table">
+      <tr><th>Signál</th><th>Kde se podívat</th><th>Na co ukazuje</th></tr>
+      <tr>
+        <td>Prudký nárůst kliknutí bez růstu konverzí</td>
+        <td>Denní report v kampani</td>
+        <td>Možné umělé navyšování kliknutí nebo technická chyba sledování</td>
+      </tr>
+      <tr>
+        <td>Vysoký CTR při téměř nulové konverzi</td>
+        <td>Srovnání CTR a conversion rate podle reklamních skupin</td>
+        <td>Kliknutí jsou, skutečný zájem chybí</td>
+      </tr>
+      <tr>
+        <td>Opakující se kliknutí ze stejných IP nebo zařízení</td>
+        <td>Serverové logy / externí analytika</td>
+        <td>Možné cílené umělé navyšování kliknutí</td>
+      </tr>
+      <tr>
+        <td>Kliknutí z geografie mimo cílení</td>
+        <td>Report podle umístění uživatelů</td>
+        <td>Únik zobrazení mimo nastavenou geografii</td>
+      </tr>
+      <tr>
+        <td>Rozpor mezi kliknutími Google Ads a sezeními v GA4</td>
+        <td>Srovnání Ads kliknutí a sezení se stejným zdrojem v GA4</td>
+        <td>Část kliknutí se na web vůbec nedostane — znak botů</td>
+      </tr>
+      <tr>
+        <td>Velmi krátká sezení a vysoká míra opuštění z reklamy</td>
+        <td>GA4, řez podle zdroje návštěvnosti</td>
+        <td>Návštěvnost je technicky platná, ale bezcenná</td>
+      </tr>
+    </table>
+    <p>
+      Žádný z těchto signálů sám o sobě klikový podvod nedokazuje — kombinace více signálů
+      dává mnohem spolehlivější obrázek než jeden prudký skok čísla.
+    </p>
+
+    <div class="step"><div class="step-num">7</div><h2>Co reálně lze udělat samostatně — bez placených služeb</h2></div>
+    <ul>
+      <li><strong>Ruční vyloučení IP adres.</strong> V nastavení účtu (Admin → Account
+        settings) lze přidat seznam IP, které je třeba vyloučit ze zobrazení — užitečné,
+        pokud jste přesně určili zdroj umělého navyšování kliknutí (například IP kanceláře
+        konkurenta).</li>
+      <li><strong>Vyloučení umístění v Display a PMax.</strong> Část klikového podvodu
+        v bannerové reklamě nepochází od botů, ale od nepoctivých ploch, které reklamu
+        zobrazují kvůli vlastnímu příjmu. Pravidelná kontrola reportu podle umístění
+        a vyloučení nekvalitních webů snižuje tento podíl návštěvnosti.</li>
+      <li><strong>Geografické cílení a omezení doby zobrazení.</strong> Čím přesněji je
+        cílení nastavené, tím méně prostoru pro náhodnou a uměle navyšovanou návštěvnost
+        obecně — jde o stejný princip jako u celkové optimalizace ceny za poptávku.</li>
+      <li><strong>Server-side validace formulářů a CAPTCHA v klíčových konverzních bodech.</strong>
+        Nezabraňuje kliknutím, ale odřízne boty ve fázi konverze — neplatíte obchodnímu
+        oddělení za zpracování zjevně necílených poptávek.</li>
+      <li><strong>Auto-tagging a GCLID.</strong> Bez zapnutého automatického tagování je
+        obtížné spárovat kliknutí Google Ads se skutečnými relacemi na webu — a bez tohoto
+        párování jsou Click Quality Form a šetření prakticky nemožné.</li>
+      <li><strong>Nastavené a ověřené konverze.</strong> Pokud se konverze počítají nesprávně
+        (viz náš článek o
+        <a href="/cz/blog/konverze-a-ga4-pro-google-ads/">nastavení sledování konverzí a GA4</a>),
+        část „podezřelé" návštěvnosti se ve skutečnosti ukáže jako problém ve značkování,
+        ne klikový podvod.</li>
+    </ul>
+
+    <div class="cta-box">
+      <h3>Nejste si jistí, zda máte skutečný problém s návštěvností?</h3>
+      <p>Zkontrolujeme reporty vašeho účtu, rozlišíme technický šum, problémy se značkováním
+        konverzí a znaky skutečného umělého navyšování kliknutí — a řekneme na rovinu,
+        zda vůbec stojí za to něco podnikat.</p>
+      <div class="cta-row">
+        <a href="https://ads.marketexpert.cz/cz/#audit" class="btn-g">Objednat audit kampaní</a>
+      </div>
+    </div>
+
+    <div class="step"><div class="step-num">8</div><h2>Kdy zvážit placenou ochrannou službu proti klikovým podvodům</h2></div>
+    <p>
+      Externí služby (obvykle fungující přes JavaScript skript na landing page a automatické
+      vylučování IP přes API Google Ads) dávají smysl, pokud:
+    </p>
+    <ul>
+      <li>máte velký rozpočet na Display/PMax, kde Invalid Activity Credit Report zatím
+        nefunguje a ruční sesouhlasení zabírá neúměrně mnoho času;</li>
+      <li>už jste ručně zaznamenali stabilní vzorec umělého navyšování kliknutí (ne jednorázový
+        skok, ale opakující se týden co týden) a fyzicky nestíháte vést seznam vyloučení
+        ručně;</li>
+      <li>byznys působí v oboru s historicky vysokou konkurencí o kliknutí a známou praxí
+        umělého navyšování rozpočtu konkurencí (právní služby, havarijní opravy, některé
+        B2B obory).</li>
+    </ul>
+    <p>
+      Při výběru takové služby stojí za to samostatně ověřit, na jakém základě uvádí čísla
+      vlastní účinnosti („blokujeme X % podvodu") — podle stejné logiky jako v sekci 2:
+      dodavatel prodávající ochranu proti klikovým podvodům má zájem na vysokých číslech,
+      ne na přesných.
+    </p>
+
+    <div class="step"><div class="step-num">9</div><h2>Časté chyby při práci s klikovým podvodem</h2></div>
+    <ul>
+      <li><strong>Považovat každý skok kliknutí za podvod.</strong> Sezónnost, virální příspěvek
+        na sociálních sítích, spuštění nové kreativní kampaně jsou časté a mnohem
+        pravděpodobnější příčiny skoku než umělé navyšování kliknutí.</li>
+      <li><strong>Vylučovat IP bez kontroly.</strong> Příliš agresivní vylučování adres může
+        zablokovat zobrazení skutečným uživatelům — například celé kanceláři nebo
+        poskytovateli se sdílenou externí IP.</li>
+      <li><strong>Čekat na vrácení peněz místo kreditu.</strong> Jak je popsáno výše, Google
+        připisuje kredit do budoucna, ne vrací prostředky zpátky — pokud to není zohledněné
+        ve finančním plánování, vzniká zmatek ve výkaznictví vůči klientovi nebo vedení.</li>
+      <li><strong>Ignorovat vlastní data konverzí kvůli procentům dodavatelů.</strong>
+        Rozhodnutí o koupi ochranné služby udělané na základě čísla „40 % trhu je podvod"
+        z cizího marketingového materiálu, ne z reportů vlastního účtu, je rozhodnutí
+        naslepo.</li>
+    </ul>
+
+    <div class="lead-magnet">
+      <h3>Checklist: 10 kritických chyb v Google Ads</h3>
+      <p>Stáhněte si bezplatný PDF checklist s chybami, které nejčastěji spalují rozpočet
+        i v už fungujících kampaních — a jak se jim vyhnout.</p>
+      <form class="lm-form" data-checklist action="https://formspree.io/f/xaqzjoen" method="POST">
+        <input type="hidden" name="_subject" value="Checklist Google Ads — blog CZ">
+        <input type="hidden" name="lead_type" value="checklist">
+        <input type="hidden" name="jazyk" value="CS">
+        <input type="text" name="_gotcha" class="lm-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="email" name="email" placeholder="Váš e-mail" required autocomplete="email">
+        <button type="submit">Získat checklist</button>
+      </form>
+      <div class="lm-success" hidden>
+        <p><strong>Hotovo!</strong> Checklist se otevřel v nové záložce. Kopii pošleme na váš email.
+        Pokud se soubor neotevřel — <a href="/files/checklist-google-ads-cs.pdf" target="_blank" rel="noopener noreferrer">otevřete PDF znovu</a>.</p>
+      </div>
+      <div class="lm-note">Odesláním e-mailu souhlasíte se zasíláním newsletteru od M:E Agency. Odhlásit se můžete kdykoli.</div>
+    </div>
+
+    <h2>Časté otázky</h2>
+    <div class="faq">
+      <details><summary>Google skutečně neúčtuje peníze za neplatná kliknutí?</summary><p>Za kliknutí, která systém určí jako neplatná ještě před vystavením faktury, se peníze vůbec neúčtují — děje se to v reálném čase. Za kliknutí uznaná neplatnými dodatečně se připisuje kredit na budoucí výdaje, ne peněžní vrácení — jde o dvě odlišné situace se stejným výsledkem „za toto kliknutí neplatíte", ale odlišnou mechanikou.</p></details>
+      <details><summary>Dá se věřit číslům „X % návštěvnosti je podvod" z článků o klikovém podvodu?</summary><p>S opatrností. Většinu takových odhadů zveřejňují firmy prodávající placené ochranné služby proti klikovým podvodům a jsou postavené na jejich vlastní metodologii a vzorku, ne vždy transparentním a ne vždy srovnatelném s vaším oborem. Rozumnější je orientovat se na poměr kliknutí a konverzí ve vlastním účtu než na zprůměrované procento z cizího marketingového materiálu.</p></details>
+      <details><summary>Kolik času je na podání žádosti o neplatnou návštěvnost?</summary><p>Ruční šetření přes Click Quality Form je omezeno na 60 dní od data podezřelé aktivity do momentu podání žádosti — starší návštěvnost se vůbec neposuzuje.</p></details>
+      <details><summary>Nahrazuje Invalid Activity Credit Report ruční podání žádosti?</summary><p>Ne. Report ukazuje už připsané kredity — to, co Google sám odhalil a potvrdil, a zatím jen u Search a Performance Max. Pokud máte podezření na neplatnou návštěvnost, kterou si systém sám nevšiml, bude potřeba samostatná žádost přes Click Quality Form.</p></details>
+      <details><summary>Potřebuje placenou ochrannou službu proti klikovým podvodům každý inzerent?</summary><p>Ne. Pro menší a střední rozpočty na Search obvykle stačí vestavěné nástroje Google (vyloučení IP, report o neplatných kliknutích, Invalid Activity Credit Report) a základní hygiena účtu. Placené služby se vyplatí u velkých rozpočtů na Display/PMax nebo u potvrzeného stabilního vzorce umělého navyšování kliknutí.</p></details>
+    </div>
+
+    <div class="related">
+      <h3>Přečtěte si také</h3>
+      <ul>
+        <li><a href="/cz/blog/jak-snizit-cenu-poptavky/">Jak snížit cenu za poptávku v Google Ads</a></li>
+        <li><a href="/cz/blog/konverze-a-ga4-pro-google-ads/">Konverze a GA4 pro Google Ads: jak nastavit sledování</a></li>
+        <li><a href="/cz/blog/optimalizace-vyhledavacich-kampani/">Optimalizace Search kampaní po spuštění</a></li>
+        <li><a href="/cz/blog/optimalizace-performance-max/">Performance Max po spuštění: co sledovat a co ladit</a></li>
+        <li><a href="/cz/blog/kvalitativni-skore-a-ad-rank/">Skóre kvality, reklamy a landing page</a></li>
+        <li><a href="/cz/blog/remarketing-v-google-ads/">Remarketing v Google Ads</a></li>
+        <li><a href="/cz/blog/jak-funguje-google-ads/">Jak funguje Google Ads: aukce a hodnocení reklamy</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-box">
+      <h3>Chcete zjistit, zda máte reálný problém s klikovým podvodem?</h3>
+      <p>Rozebereme reporty vašeho účtu, ukážeme, kde je návštěvnost technický šum, kde
+        je problém se značkováním konverzí, a kde se skutečně vyplatí podat žádost u Google.</p>
+      <div class="cta-row">
+        <a href="https://ads.marketexpert.cz/cz/#order" class="btn-g">Zanechat poptávku</a>
+      </div>
+    </div>
+  </article>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <a href="https://marketexpert.cz/" class="site-footer__brand">
+      <img src="/logo.png" alt="M:E agency" decoding="async" onerror="this.onerror=null;this.src='/logo.svg'">
+      <span class="site-footer__brand-text">M:E <em>agency</em></span>
+    </a>
+    <div class="site-footer__middle">
+      <div class="site-footer__links" role="navigation" aria-label="Další služby M:E">
+        <a href="https://ads.marketexpert.cz/cz/">Google Ads</a>
+        <a href="https://consult.marketexpert.cz/cs/">Konzultace</a>
+        <a href="https://seo.marketexpert.cz/cs/">SEO</a>
+        <a href="https://reputation.marketexpert.cz/cz/">Reputace</a>
+      </div>
+      <div class="site-footer__cookie"><a href="https://marketexpert.cz/cookie-policy">Zásady cookies</a></div>
+    </div>
+    <div class="site-footer__contact">
+      <a href="mailto:ads@marketexpert.cz">ads@marketexpert.cz</a>
+      <a href="tel:+420705995770">+420 705 995 770</a>
+    </div>
+  </div>
+  <div class="site-footer__copy-row">
+    <p class="site-footer__copy">© 2026 M:E Agency · Praha · Reklama</p>
+    <p class="site-footer__crafted">
+      <a href="https://landing.marketexpert.cz/cz/"><span class="site-footer__crafted-label">Created by</span><span class="site-footer__crafted-brand"><span class="site-footer__crafted-me">M:E</span> <em>agency</em></span></a>
+    </p>
+  </div>
+</footer>
+
+<script src="/blog/blog.js?v=20260715b"></script>
+</body>
+</html>
