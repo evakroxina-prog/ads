@@ -88,7 +88,7 @@
 <link rel="stylesheet" href="footer.css">
 <link rel="stylesheet" href="../form-success.css">
 <link rel="stylesheet" href="whatsapp-fab.css">
-<script>window.__GA4_MEASUREMENT_ID__ = 'G-SPKHXMCQGM'; window.__GA4_ADS_ID__ = 'AW-11432613975';</script>
+<script>window.__ME_SERVICE__ = 'ads'; window.__GA4_MEASUREMENT_ID__ = 'G-SPKHXMCQGM'; window.__GA4_ADS_ID__ = 'AW-11432613975';</script>
 <script src="gsap.min.js"></script>
 <script>window.gsap||document.write('<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"><\/script>')</script>
 <style>
@@ -559,7 +559,7 @@ html.form-modal-open{overflow:hidden}
     toggle.setAttribute('aria-label', open ? 'Zavřít menu' : 'Otevřít menu');
   }
   toggle.addEventListener('click', function(){ setOpen(!nav.classList.contains('nav-open')); });
-  menu.querySelectorAll('a[href^="#"]').forEach(function(a){
+  menu.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){ setOpen(false); });
   });
   document.addEventListener('keydown', function(e){
@@ -568,6 +568,12 @@ html.form-modal-open{overflow:hidden}
   window.addEventListener('resize', function(){
     if (window.innerWidth > 960) setOpen(false);
   });
+  document.addEventListener('focusin', function(e){
+    if (e.target && e.target.closest && e.target.closest('#leadForm, #order')) setOpen(false);
+  });
+  document.addEventListener('click', function(e){
+    if (e.target && e.target.closest && e.target.closest('a[href="#order"], #leadForm, #order')) setOpen(false);
+  }, true);
   function closeLangMenus() {
     document.querySelectorAll('.lang-switch.is-open').forEach(function(sw){
       sw.classList.remove('is-open');
@@ -886,7 +892,7 @@ html.form-modal-open{overflow:hidden}
     <form id="leadForm" class="form-box" action="https://formspree.io/f/xwvjeaen" method="POST">
       <input type="hidden" name="_subject" value="Poptávka z CZ landingu — Google Ads">
       <input type="hidden" name="jazyk" value="CZ">
-      <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="text" name="_gotcha" value="" tabindex="-1" autocomplete="new-password" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;overflow:hidden" readonly>
       <div class="form-head">
         <h3 id="leadFormTitle">Řekněte nám o svém byznysu</h3>
         <p>Vyplníte za 40 sekund</p>
@@ -1207,6 +1213,7 @@ html.form-modal-open{overflow:hidden}
 </script>
 <script src="../form-success.js"></script>
 <script src="me-analytics.js"></script>
+<script src="me-form-adapter.js"></script>
 
 <div class="form-modal" id="formModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="leadFormTitle">
   <div class="form-modal-overlay" data-close-form></div>
@@ -1283,6 +1290,8 @@ html.form-modal-open{overflow:hidden}
     e.preventDefault();
     var btn = form.querySelector('.form-submit');
     if (!btn || btn.disabled) return;
+    var hp = form.querySelector('input[name="_gotcha"]');
+    if (hp) hp.value = '';
     var originalHTML = btn.innerHTML;
     btn.disabled = true;
     btn.classList.remove('is-submitted');
@@ -1299,6 +1308,7 @@ html.form-modal-open{overflow:hidden}
         var pkgInput = form.querySelector('input[name="balicek"]:checked');
         if (typeof window.trackLeadConversion === 'function') {
           window.trackLeadConversion({
+            form_id: (form && form.id) || 'leadForm',
             language: langInput ? langInput.value : 'CS',
             package_name: pkgInput ? pkgInput.value : ''
           });
