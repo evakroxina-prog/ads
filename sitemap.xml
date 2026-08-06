@@ -5,7 +5,7 @@
     <loc>https://ads.marketexpert.cz/</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/"/>
     <lastmod>2026-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
     <loc>https://ads.marketexpert.cz/cz/</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/"/>
     <lastmod>2026-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -24,7 +24,7 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/"/>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -33,7 +33,7 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/"/>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -358,6 +358,78 @@
     <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/co-je-google-ads/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/co-je-google-ads/"/>
     <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/blog/vneshnij-ii-dlya-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/vneshnij-ii-dlya-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/externi-ai-pro-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/externi-ai-pro-google-ads/"/>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/externi-ai-pro-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/vneshnij-ii-dlya-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/externi-ai-pro-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/externi-ai-pro-google-ads/"/>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/blog/iskusstvennyj-intellekt-v-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/iskusstvennyj-intellekt-v-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/umela-inteligence-v-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/umela-inteligence-v-google-ads/"/>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/blog/kak-zaschititsya-ot-klikfroda-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kak-zaschititsya-ot-klikfroda-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/klikovy-podvod-v-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/klikovy-podvod-v-google-ads/"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/klikovy-podvod-v-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/kak-zaschititsya-ot-klikfroda-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/klikovy-podvod-v-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/klikovy-podvod-v-google-ads/"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/umela-inteligence-v-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/iskusstvennyj-intellekt-v-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/umela-inteligence-v-google-ads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/umela-inteligence-v-google-ads/"/>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/blog/google-ads-ai-max-avtoperehod-sentyabr-2026/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/google-ads-ai-max-avtoperehod-sentyabr-2026/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/google-ads-ai-max-automaticky-prechod-zari-2026/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/google-ads-ai-max-automaticky-prechod-zari-2026/"/>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ads.marketexpert.cz/cz/blog/google-ads-ai-max-automaticky-prechod-zari-2026/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ads.marketexpert.cz/blog/google-ads-ai-max-avtoperehod-sentyabr-2026/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://ads.marketexpert.cz/cz/blog/google-ads-ai-max-automaticky-prechod-zari-2026/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ads.marketexpert.cz/cz/blog/google-ads-ai-max-automaticky-prechod-zari-2026/"/>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
