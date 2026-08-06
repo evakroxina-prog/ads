@@ -167,6 +167,19 @@
   /* Карточки — из этого массива (articles.json — копия для справки, хаб его не грузит) */
   var ARTICLES = [
     {
+      "slug": "google-ads-ai-max-automaticky-prechod-zari-2026",
+      "title": "Google automaticky převádí kampaně na AI Max: co to znamená pro rozpočet",
+      "excerpt": "Od září 2026 Google Ads sám zapíná AI Max v kampaních s ACA a broad match. Rozebíráme mechaniku, rizika pro rozpočet a checklist nastavení před automatickým přechodem.",
+      "category": "Google Ads · Pokročilé",
+      "date": "2026-08-06",
+      "tags": [
+        "AI Max",
+        "Google Ads",
+        "automatizace",
+        "rozpočet"
+      ]
+    },
+    {
       "slug": "externi-ai-pro-google-ads",
       "title": "Externí AI nástroje pro Google Ads: kde reálně pomáhají a kde překáží",
       "excerpt": "Jak ChatGPT, Claude, Gemini a specializované PPC služby pomáhají se sémantikou, reklamami, vylučujícími slovy a reporty — a kde AI nenahrazuje specialistu.",
